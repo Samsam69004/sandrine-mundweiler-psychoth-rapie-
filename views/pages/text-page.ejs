@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+  <%- include('../partials/head') %>
+  <body class="<%= activePath === '/a-propos' ? 'page-a-propos' : '' %>">
+    <%- include('../partials/header') %>
+
+    <main class="page-split">
+      <div class="container split-grid">
+        <article class="content-card">
+          <% if (kicker) { %>
+          <p class="kicker"><%= kicker %></p>
+          <% } %>
+          <h1><%= heading %></h1>
+
+          <% sections.forEach((section) => { %>
+          <section class="prose-block">
+            <% if (section.title) { %>
+            <h2><%= section.title %></h2>
+            <% } %>
+
+            <% if (section.blocks) { %>
+              <% section.blocks.forEach((block) => { %>
+                <% if (block.type === 'emphasis') { %>
+                <p class="text-emphasis"><%= block.text %></p>
+                <% } else { %>
+                <p><%= block.text %></p>
+                <% } %>
+              <% }) %>
+            <% } %>
+
+            <% if (section.paragraphs) { %>
+              <% section.paragraphs.forEach((paragraph) => { %>
+              <p><%= paragraph %></p>
+              <% }) %>
+            <% } %>
+
+            <% if (section.list) { %>
+            <ul class="list-clean">
+              <% section.list.forEach((item) => { %>
+              <li><%= item %></li>
+              <% }) %>
+            </ul>
+            <% } %>
+          </section>
+          <% }) %>
+
+          <% if (activePath === '/approches-therapeutiques') { %>
+          <figure class="apsyse-showcase">
+            <img src="/assets/images/apsyse.jpg" alt="Logo ApsySE, méthode d'analyse psycho somato énergétique" loading="lazy" />
+            <figcaption>
+              Logo ApsySE - analyse psycho somato énergétique, méthode utilisée dans l'accompagnement thérapeutique.
+            </figcaption>
+          </figure>
+          <% } %>
+
+          <% if (activePath === '/experience-formation') { %>
+          <figure class="ff2p-showcase">
+            <img src="/assets/images/FF2P.jpg" alt="Logo de la FF2P, Fédération Française de Psychothérapie et Psychanalyse" loading="lazy" />
+            <figcaption>
+              Membre de la FF2P - Fédération Française de Psychothérapie et Psychanalyse.
+            </figcaption>
+          </figure>
+          <% } %>
+        </article>
+
+        <aside class="photo-panel">
+          <figure class="portrait">
+            <img src="/assets/images/sandrine_edited_edited.jpg" alt="Sandrine Mundweiler" loading="lazy" />
+          </figure>
+        </aside>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

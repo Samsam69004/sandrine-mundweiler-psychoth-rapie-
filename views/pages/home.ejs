@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+  <%- include('../partials/head') %>
+  <body>
+    <a href="#contenu" class="skip-link">Aller au contenu</a>
+    <%- include('../partials/header') %>
+
+    <main id="contenu" class="hero">
+      <div class="container split-grid">
+        <section class="hero-card" aria-labelledby="titre-principal">
+          <p class="kicker">Cabinet à LYON 6 - Adultes</p>
+          <h1 id="titre-principal">Thérapie psychocorporelle</h1>
+          <p class="subtitle">
+            J'accueille dans mon cabinet à LYON 6 en individuel ou en groupe des personnes adultes en
+            souffrance et en recherche de sens, de compréhension, de solutions et de transformation de leurs
+            problématiques existentielles, impactant leur vie relationnelle ou leur santé physique ou psychique.
+          </p>
+          <p class="lead"><strong>Mon approche thérapeutique est double:</strong></p>
+          <ul class="lead list-clean">
+            <li>
+              analytique à travers l'écoute de la parole, référencée à la psychologie et la psychanalyse
+            </li>
+            <li>
+              corporelle au moyen de postures, mouvements ou respirations permettant de ressentir profondément
+              en soi les blocages psycho-émotionnels et de les exprimer pour s'en libérer.
+            </li>
+          </ul>
+          <p class="lead">
+            Issue des recherches de Wilhelm REICH, psychanalyste freudien et père des thérapies
+            psychocorporelles, la méthode préférentielle que j'utilise est:
+          </p>
+          <p class="quote">APSYSE<br />analyse psycho somato énergétique</p>
+          <p class="lead">
+            Indications: anxiété, dépression, angoisse, perte de confiance en soi, addictions, conflits
+            relationnels, deuils, troubles de l'émotivité, solitude, perte de désir, troubles de la sexualité,
+            somatisations, etc.
+          </p>
+          <p class="lead">
+            Pour en savoir plus : <a href="https://apsyse.com/" target="_blank" rel="noopener noreferrer">https://apsyse.com/</a>
+          </p>
+          <p class="quote">#lyon #thérapie psychocorporelle #apsyse</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/contact">Prendre contact</a>
+            <a class="btn btn-secondary" href="/approches-therapeutiques">Découvrir les approches</a>
+          </div>
+          <p class="notice">
+            Le terme psychotherapeute est reglemente en France. Ce site presente une pratique de
+            psycho-praticienne en therapie psychocorporelle.
+          </p>
+        </section>
+
+        <aside class="photo-panel" aria-label="Portrait">
+          <figure class="portrait portrait-sandrine">
+            <img
+              src="/assets/images/sandrine_edited_edited.jpg"
+              alt="Portrait de Sandrine Mundweiler en foret"
+              loading="eager"
+            />
+          </figure>
+          <p class="caption">Accompagnement a Lyon 6 - en cabinet et en groupe.</p>
+        </aside>
+      </div>
+
+      <section class="section" aria-labelledby="indications">
+        <div class="container content-card">
+          <h2 id="indications" class="section-title">Indications frequentes</h2>
+          <div class="grid-2">
+            <% seoCards.forEach((card) => { %>
+            <article class="card">
+              <h3><%= card.title %></h3>
+              <p><%= card.text %></p>
+              <a href="<%= card.href %>">Lire la page dediee</a>
+            </article>
+            <% }) %>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

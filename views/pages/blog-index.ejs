@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="section">
+      <div class="container content-card">
+        <p class="kicker">Blog</p>
+        <h1>Ressources et reflexions cliniques</h1>
+        <div class="blog-list">
+          <% posts.forEach((post) => { %>
+          <article class="blog-item">
+            <p class="meta"><%= post.date %></p>
+            <h2><%= post.title %></h2>
+            <p><%= post.excerpt %></p>
+            <a href="/blog/<%= post.slug %>">Lire l'article</a>
+          </article>
+          <% }) %>
+        </div>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

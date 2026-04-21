@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="page-split">
+      <div class="container split-grid">
+        <article class="content-card">
+          <p class="kicker">Contact</p>
+          <h1>Prendre rendez-vous</h1>
+          <p>Un premier échange permet de clarifier votre demande et vos besoins.</p>
+
+          <% if (sent) { %>
+          <p class="notice">Message envoyé. Je vous réponds dès que possible.</p>
+          <% } %>
+
+          <% if (typeof error !== 'undefined' && error) { %>
+          <p class="notice"><%= error %></p>
+          <% } %>
+
+          <form method="post" action="/contact">
+            <p>
+              <label for="name">Nom</label><br />
+              <input id="name" name="name" type="text" required value="<%= formData?.name || '' %>" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;" />
+            </p>
+            <p>
+              <label for="email">E-mail</label><br />
+              <input id="email" name="email" type="email" required value="<%= formData?.email || '' %>" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;" />
+            </p>
+            <p>
+              <label for="message">Message</label><br />
+              <textarea id="message" name="message" rows="5" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;"><%= formData?.message || '' %></textarea>
+            </p>
+            <button class="btn btn-primary" type="submit">Envoyer</button>
+          </form>
+
+          <h2>Coordonnées</h2>
+          <ul class="list-clean">
+            <li>Telephone: <a href="tel:+33632466200">06 32 46 62 00</a></li>
+            <li>E-mail: <a href="mailto:sandrinemundweiler@gmail.com">sandrinemundweiler@gmail.com</a></li>
+            <li>Adresse: 11 Rue Curie, 69006 Lyon</li>
+          </ul>
+        </article>
+
+        <aside class="photo-panel">
+          <figure class="portrait">
+            <img src="/assets/images/sandrine_edited_edited.jpg" alt="Portrait de Sandrine Mundweiler" loading="lazy" />
+          </figure>
+        </aside>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
