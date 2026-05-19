@@ -11,6 +11,11 @@
         <div class="blog-list">
           <% posts.forEach((post) => { %>
           <article class="blog-item">
+            <% if (post.image) { %>
+            <figure class="blog-thumb">
+              <img src="/assets/images/<%= post.image %>" alt="<%= post.title %>" />
+            </figure>
+            <% } %>
             <p class="meta"><%= post.date %></p>
             <h2><%= post.title %></h2>
             <p><%= post.excerpt %></p>
