@@ -319,24 +319,16 @@ const blogPosts = [
     title: "APSYSE en Groupe à Lyon",
     date: "27 janvier 2026",
     excerpt: "L'APSySE combine une approche analytique et corporelle pour libérer les traumatismes refoulés.",
-    image: "apsyse.jpg",
-    paragraphs: [
-      "L'Analyse PsychoSomatoEnergetique (APSySE) combine une approche analytique et corporelle. Par des mouvements spécifiques sur 7 niveaux du corps, elle libère les traumatismes refoulés, réunit le corps et l'esprit et permet l'émergence d'une personnalité plus authentique.",
-      "La thérapie en groupe favorise les échanges, le partage d'émotions et la remise en mouvement à travers des protocoles corporels guidés. Elle permet de se sentir soutenu et d'observer sa propre dynamique relationnelle.",
-      "Pour en savoir plus ou participer aux prochains groupes, contactez le cabinet ou consultez les dates annoncées." 
-    ]
+    image: "groupe.png",
+    paragraphs: []
   },
   {
     slug: "therapie-psychocorporelle-en-groupe-a-lyon",
     title: "Thérapie Psychocorporelle en Groupe à LYON",
     date: "27 janvier 2026",
     excerpt: "Des groupes réguliers pour réinvestir le corps et restaurer la présence à soi.",
-    image: "frederiquegranjon.jpg",
-    paragraphs: [
-      "La thérapie en groupe favorise les échanges avec l'autre, l'histoire de l'autre faisant écho à sa propre histoire. Partager ses émotions, ses ressentis dans une écoute bienveillante permet de relativiser ses propres traumatismes et de se sentir soutenu par les autres.",
-      "Le groupe stimule et enrichit le travail thérapeutique individuel en offrant un cadre où la parole, le geste et le ressenti sont reconnus et transformés.",
-      "Ces rencontres sont proposées ponctuellement à Lyon; pour participer, merci de prendre contact pour les modalités et dates." 
-    ]
+    image: "groupe.png",
+    paragraphs: []
   }
 ];
 
