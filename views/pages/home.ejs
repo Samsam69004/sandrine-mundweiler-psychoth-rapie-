@@ -43,10 +43,6 @@
             <a class="btn btn-primary" href="/contact">Prendre contact</a>
             <a class="btn btn-secondary" href="/approches-therapeutiques">Découvrir les approches</a>
           </div>
-          <p class="notice">
-            Le terme psychotherapeute est reglemente en France. Ce site presente une pratique de
-            psycho-praticienne en therapie psychocorporelle.
-          </p>
         </section>
 
         <aside class="photo-panel" aria-label="Portrait">
@@ -61,20 +57,6 @@
         </aside>
       </div>
 
-      <section class="section" aria-labelledby="indications">
-        <div class="container content-card">
-          <h2 id="indications" class="section-title">Indications frequentes</h2>
-          <div class="grid-2">
-            <% seoCards.forEach((card) => { %>
-            <article class="card">
-              <h3><%= card.title %></h3>
-              <p><%= card.text %></p>
-              <a href="<%= card.href %>">Lire la page dediee</a>
-            </article>
-            <% }) %>
-          </div>
-        </div>
-      </section>
     </main>
 
     <%- include('../partials/footer') %>

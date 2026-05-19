@@ -7,47 +7,68 @@
     <main class="page-split">
       <div class="container split-grid">
         <article class="content-card">
-          <p class="kicker">Contact</p>
-          <h1>Prendre rendez-vous</h1>
-          <p>Un premier échange permet de clarifier votre demande et vos besoins.</p>
+          <div class="contact-visual">
+            <div class="contact-info">
+              <p class="kicker">Contact</p>
+              <h1>Prendre rendez-vous</h1>
+              <p class="lead">Un premier échange permet de clarifier votre demande et vos besoins. Vous pouvez contacter Sandrine directement via téléphone ou par e-mail, ou consulter les partenaires listés ci‑dessous.</p>
 
-          <% if (sent) { %>
-          <p class="notice">Message envoyé. Je vous réponds dès que possible.</p>
-          <% } %>
+              <ul class="contact-list">
+                <li><strong>Tél :</strong> <a href="tel:+33632466200">06 32 46 62 00</a></li>
+                <li><strong>E-mail :</strong> <a href="mailto:sandrinemundweiler@gmail.com">sandrinemundweiler@gmail.com</a></li>
+                <li><strong>Adresse :</strong> 11 Rue Curie, 69006 Lyon</li>
+              </ul>
 
-          <% if (typeof error !== 'undefined' && error) { %>
-          <p class="notice"><%= error %></p>
-          <% } %>
+              <div class="social-links" aria-label="Réseaux sociaux de Sandrine">
+                <a class="social-link social-link--instagram" href="https://www.instagram.com/sandrine_mundweiler/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Sandrine Mundweiler">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="4" y="4" width="16" height="16" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.8"></rect>
+                    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                    <circle cx="17" cy="7" r="1.15" fill="currentColor"></circle>
+                  </svg>
+                  <span class="sr-only">Instagram</span>
+                </a>
+                <a class="social-link social-link--facebook" href="https://www.facebook.com/sandrine.mundweiler.56/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Sandrine Mundweiler">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill="currentColor" d="M14 8h2.1V5.5H14c-2 0-3.5 1.6-3.5 3.8V11H8.7v2.8h1.8V21h3V13.8h2.4L16.4 11h-2.9V9.7c0-.9.4-1.7 1.5-1.7z"></path>
+                  </svg>
+                  <span class="sr-only">Facebook</span>
+                </a>
+                <a class="social-link social-link--linkedin" href="https://www.linkedin.com/in/sandrine-mundweiler/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Sandrine Mundweiler">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill="currentColor" d="M6.5 9.2H4V20h2.5V9.2zM5.2 4C4.3 4 3.7 4.6 3.7 5.4c0 .8.6 1.5 1.5 1.5h.1c.9 0 1.5-.7 1.5-1.5C6.8 4.6 6.1 4 5.2 4zM20 14.1c0-2.9-1.6-4.2-3.8-4.2-1.8 0-2.7 1-3.1 1.7V9.2H10.6V20h2.5v-5.9c0-1.6.3-3.1 2.2-3.1 1.8 0 1.8 1.7 1.8 3.2V20H20v-5.9z"></path>
+                  </svg>
+                  <span class="sr-only">LinkedIn</span>
+                </a>
+              </div>
 
-          <form method="post" action="/contact">
-            <p>
-              <label for="name">Nom</label><br />
-              <input id="name" name="name" type="text" required value="<%= formData?.name || '' %>" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;" />
-            </p>
-            <p>
-              <label for="email">E-mail</label><br />
-              <input id="email" name="email" type="email" required value="<%= formData?.email || '' %>" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;" />
-            </p>
-            <p>
-              <label for="message">Message</label><br />
-              <textarea id="message" name="message" rows="5" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;"><%= formData?.message || '' %></textarea>
-            </p>
-            <button class="btn btn-primary" type="submit">Envoyer</button>
-          </form>
+              <section class="partners">
+                <h2>Partenariats</h2>
+                <div class="partners-grid">
+                  <a class="partner partner--ff2p" href="https://www.ff2p.fr/" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/images/FF2P.jpg" alt="FF2P" />
+                    <span>Membre de la FF2P</span>
+                  </a>
+                  <a class="partner" href="https://apsyse.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/images/apsyse.jpg" alt="APsySE" />
+                    <span>APsySE</span>
+                  </a>
+                  <a class="partner partner--portrait" href="https://frederiquegranjon.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/images/frederiquegranjon.jpg" alt="Frédérique Granjon" />
+                    <span>Frédérique Granjon</span>
+                  </a>
+                </div>
+              </section>
+            </div>
 
-          <h2>Coordonnées</h2>
-          <ul class="list-clean">
-            <li>Telephone: <a href="tel:+33632466200">06 32 46 62 00</a></li>
-            <li>E-mail: <a href="mailto:sandrinemundweiler@gmail.com">sandrinemundweiler@gmail.com</a></li>
-            <li>Adresse: 11 Rue Curie, 69006 Lyon</li>
-          </ul>
+            <aside class="contact-photo">
+              <figure class="portrait portrait-contact">
+                <img src="/assets/images/sandrine_edited_edited.jpg" alt="Portrait de Sandrine Mundweiler" loading="eager" />
+              </figure>
+            </aside>
+          </div>
         </article>
 
-        <aside class="photo-panel">
-          <figure class="portrait">
-            <img src="/assets/images/sandrine_edited_edited.jpg" alt="Portrait de Sandrine Mundweiler" loading="lazy" />
-          </figure>
-        </aside>
       </div>
     </main>
 

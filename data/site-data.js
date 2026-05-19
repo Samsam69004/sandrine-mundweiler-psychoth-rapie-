@@ -48,9 +48,9 @@ const pages = {
               "notre corps contient notre mémoire mais nous sommes bien plus que notre mémoire : nous sommes la Vie"
           },
           {
-            type: "paragraph",
+            type: "html",
             text:
-              "La souffrance se manifeste par des symptômes psychiques et/ou physiques : dépression, anxiété, obsessions, angoisses, insomnies, addictions, difficultés relationnelles, perte de confiance en soi, scenario d'échecs répétitifs, burnout, difficultés sexuelles, fatigue chronique, etc. ou simple mal-être."
+              "La souffrance se manifeste par des symptômes psychiques et/ou physiques :<br /><span class=\"red-list\">dépression, anxiété, obsessions, angoisses, insomnies, addictions, difficultés relationnelles, perte de confiance en soi, scenario d'échecs répétitifs, burnout, difficultés sexuelles, fatigue chronique, etc. ou simple mal-être.</span>"
           },
           {
             type: "paragraph",
@@ -103,8 +103,8 @@ const pages = {
     title: "Approches thérapeutiques - APSYSE, EFT, respiration | Lyon",
     description:
       "Approches thérapeutiques complémentaires à Lyon 6 : APSYSE, EFT, respiration consciente, massage thérapeutique et accompagnement de l'enfant intérieur.",
-    kicker: "Approches thérapeutiques",
-    heading: "Approches thérapeutiques complémentaires",
+    kicker: "",
+    heading: "Approches thérapeutiques",
     sections: [
       {
         title: "",
@@ -128,7 +128,7 @@ const pages = {
         title: "",
         paragraphs: [
           "Mes valeurs d'accompagnement sont basées sur la disponibilité à l'autre, une écoute profonde, une posture éthique alliant respect et bienveillance empathique et cadre de fonctionnement clair ajusté à chacun. Je demande aux consultants de s'engager dans leur démarche thérapeutique afin que je puisse moi-même m'engager avec eux sur leur chemin d'éveil de la conscience et de libération intérieure.",
-          "Pour en savoir plus sur la méthode : https://apsyse.com/"
+          "Pour en savoir plus sur la méthode : <a href=\"https://apsyse.com/\" target=\"_blank\" rel=\"noopener noreferrer\">site APsySE</a>"
         ]
       }
     ]
@@ -168,7 +168,7 @@ const pages = {
           "Formée sur 6 ans en Apsyse à l'Institut Somapsy à Lyon, certifiée en 2010.",
           "Formation continue dans différentes approches de psychothérapie, notamment la médecine du sens du Dr Olivier Soulier, Ho'oponopono, EFT, théorie polyvagale, respiration consciente.",
           "En supervision permanente.",
-          "Membre de la FF2P."
+          "Membre de la FF2P - Fédération Française de Psychothérapie et Psychanalyse."
         ]
       }
     ]

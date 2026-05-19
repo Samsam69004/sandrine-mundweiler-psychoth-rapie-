@@ -7,7 +7,7 @@
     <main class="page-split">
       <div class="container split-grid">
         <article class="content-card">
-          <% if (kicker) { %>
+          <% if (kicker && activePath !== '/approches-therapeutiques' && activePath !== '/experience-formation') { %>
           <p class="kicker"><%= kicker %></p>
           <% } %>
           <h1><%= heading %></h1>
@@ -22,6 +22,8 @@
               <% section.blocks.forEach((block) => { %>
                 <% if (block.type === 'emphasis') { %>
                 <p class="text-emphasis"><%= block.text %></p>
+                <% } else if (block.type === 'html') { %>
+                <p><%- block.text %></p>
                 <% } else { %>
                 <p><%= block.text %></p>
                 <% } %>
@@ -30,7 +32,11 @@
 
             <% if (section.paragraphs) { %>
               <% section.paragraphs.forEach((paragraph) => { %>
-              <p><%= paragraph %></p>
+                <% if (typeof paragraph === 'string' && paragraph.indexOf('<a') !== -1) { %>
+                <p><%- paragraph %></p>
+                <% } else { %>
+                <p><%= paragraph %></p>
+                <% } %>
               <% }) %>
             <% } %>
 
@@ -45,21 +51,25 @@
           <% }) %>
 
           <% if (activePath === '/approches-therapeutiques') { %>
-          <figure class="apsyse-showcase">
-            <img src="/assets/images/apsyse.jpg" alt="Logo ApsySE, méthode d'analyse psycho somato énergétique" loading="lazy" />
-            <figcaption>
-              Logo ApsySE - analyse psycho somato énergétique, méthode utilisée dans l'accompagnement thérapeutique.
-            </figcaption>
-          </figure>
+          <a class="apsyse-showcase apsyse-showcase-link" href="https://apsyse.com/" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le site APsySE dans un nouvel onglet">
+            <figure>
+              <img src="/assets/images/apsyse.jpg" alt="Logo ApsySE, méthode d'analyse psycho somato énergétique" loading="lazy" />
+              <figcaption>
+                Logo ApsySE - analyse psycho somato énergétique, méthode utilisée dans l'accompagnement thérapeutique.
+              </figcaption>
+            </figure>
+          </a>
           <% } %>
 
           <% if (activePath === '/experience-formation') { %>
-          <figure class="ff2p-showcase">
-            <img src="/assets/images/FF2P.jpg" alt="Logo de la FF2P, Fédération Française de Psychothérapie et Psychanalyse" loading="lazy" />
-            <figcaption>
-              Membre de la FF2P - Fédération Française de Psychothérapie et Psychanalyse.
-            </figcaption>
-          </figure>
+          <a class="ff2p-showcase ff2p-showcase-link" href="https://www.ff2p.fr/" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le site de la FF2P dans un nouvel onglet">
+            <figure>
+              <img src="/assets/images/FF2P.jpg" alt="Logo de la FF2P, Fédération Française de Psychothérapie et Psychanalyse" loading="lazy" />
+              <figcaption>
+                Membre de la FF2P - Fédération Française de Psychothérapie et Psychanalyse.
+              </figcaption>
+            </figure>
+          </a>
           <% } %>
         </article>
 
