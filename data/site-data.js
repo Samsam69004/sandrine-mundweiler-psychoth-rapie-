@@ -300,25 +300,16 @@ const legalPages = {
 
 const blogPosts = [
   {
-    slug: "comment-le-corps-exprime-l-anxiete",
-    title: "Comment le corps exprime l'anxiete",
-    date: "15 avril 2026",
-    excerpt: "Comprendre les signaux corporels de l'anxiete pour mieux reguler ses etats internes.",
+    slug: "retrouver-la-confiance-en-soi",
+    title: "Retrouver la confiance en soi",
+    date: "19 mai 2026",
+    excerpt: "Idéalement, le développement psychoaffectif de l’enfant devrait permettre l’émergence de cette confiance...",
     paragraphs: [
-      "L'anxiete mobilise le corps entier: respiration haute, tensions musculaires, hypervigilance et fatigue nerveuse.",
-      "Le travail psychocorporel permet de ralentir, sentir, nommer puis transformer ce qui se rejoue automatiquement.",
-      "L'objectif n'est pas de supprimer une emotion, mais de retrouver une capacite de regulation et de choix."
-    ]
-  },
-  {
-    slug: "sortir-du-mode-survie-apres-burnout",
-    title: "Sortir du mode survie apres burn-out",
-    date: "15 avril 2026",
-    excerpt: "Reconstruction progressive apres epuisement: repos, limites et reancrage corporel.",
-    paragraphs: [
-      "Le burn-out laisse souvent un systeme nerveux en alerte permanente.",
-      "Le premier enjeu est de restaurer des cycles de recuperation reelle, puis de refaire de la place au corps et au sens.",
-      "Un accompagnement adapte aide a sortir de la suradaptation et a stabiliser un rythme de vie durable."
+      "Idéalement, le développement psychoaffectif de l’enfant devrait permettre l’émergence de cette confiance, indispensable pour trouver sa place et s’épanouir. Cependant, le contexte familial et sociétal, souvent stressant, exigeant ou jugeant, génère fréquemment chez l’enfant un sentiment d’insuffisance, d’inadéquation ou d’incompétence. Dépendant du regard extérieur, l’enfant qui ne répond pas aux attentes peut développer une peur profonde du rejet ou de l’abandon, accompagnée de honte et de culpabilité.",
+      "Les conditions de vie prénatales, la naissance, un accueil défavorable, des abus, une éducation répressive ou dénarcissisante fragilisent également la construction de la confiance en soi. L’enfant, incapable de remettre en cause ses figures d’attachement, internalise l’idée qu’il est « mauvais ». De nombreux événements ou climats familiaux insécurisants sont ainsi à l’origine du manque de confiance à l’âge adulte.",
+      "L’APSySE (Analyse PsychoSomatoEnergétique) est une approche psychocorporelle qui, dans un cadre d’écoute non directive, permet de revisiter par le corps des expériences fondatrices. Le ressenti corporel et émotionnel, accueilli sans jugement, devient un accès direct à l’histoire personnelle. Le corps, porteur de mémoire, révèle les blocages liés aux traumatismes passés.",
+      "Progressivement, la personne se libère de la honte et de la culpabilité, apprend à s’accepter, à devenir un parent sécurisant pour elle-même et à réhabiliter les fonctions naturelles nécessaires à une relation ajustée. Ce processus permet de retrouver une confiance en soi authentique et durable.",
+      "#thérapiepsychocorporelle #lyon6 #apsyse"
     ]
   }
 ];
