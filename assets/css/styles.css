@@ -430,6 +430,60 @@ h3 {
   box-shadow: 0 8px 20px rgba(20,35,61,0.08);
 }
 
+/* Make whole card clickable and style hover/focus */
+.blog-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-card-link:focus-visible {
+  outline: 3px solid rgba(31,77,143,0.18);
+  border-radius: 16px;
+}
+
+.blog-item {
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  align-items: center;
+}
+
+.blog-card-link:hover .blog-item,
+.blog-card-link:focus .blog-item {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(20,35,61,0.12);
+}
+
+.blog-thumb img {
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.blog-thumb img:hover,
+.blog-card-link:focus .blog-thumb img {
+  transform: scale(1.06) rotate(0.6deg);
+  box-shadow: 0 16px 36px rgba(20,35,61,0.18);
+}
+
+.blog-item .excerpt {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* Improve desktop layout: limit card width so preview doesn't leave large empty space */
+.blog-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1100px) {
+  .blog-list {
+    grid-template-columns: 1fr;
+  }
+  .blog-item {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
 .blog-item .meta {
   margin: 0 0 8px 0;
   color: var(--muted);

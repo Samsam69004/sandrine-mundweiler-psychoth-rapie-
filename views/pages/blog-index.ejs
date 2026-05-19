@@ -10,17 +10,20 @@
         <h1>Ressources et reflexions cliniques</h1>
         <div class="blog-list">
           <% posts.forEach((post) => { %>
-          <article class="blog-item">
-            <% if (post.image) { %>
-            <figure class="blog-thumb">
-              <img src="/assets/images/<%= post.image %>" alt="<%= post.title %>" />
-            </figure>
-            <% } %>
-            <p class="meta"><%= post.date %></p>
-            <h2><%= post.title %></h2>
-            <p><%= post.excerpt %></p>
-            <a href="/blog/<%= post.slug %>">Lire l'article</a>
-          </article>
+          <a class="blog-card-link" href="/blog/<%= post.slug %>">
+            <article class="blog-item" aria-labelledby="post-<%= post.slug %>">
+              <% if (post.image) { %>
+              <figure class="blog-thumb">
+                <img src="/assets/images/<%= post.image %>" alt="<%= post.title %>" />
+              </figure>
+              <% } %>
+              <div>
+                <p class="meta"><%= post.date %></p>
+                <h2 id="post-<%= post.slug %>"><%= post.title %></h2>
+                <p class="excerpt"><%= post.excerpt %></p>
+              </div>
+            </article>
+          </a>
           <% }) %>
         </div>
       </div>
