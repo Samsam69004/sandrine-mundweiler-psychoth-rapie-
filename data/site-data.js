@@ -304,6 +304,7 @@ const blogPosts = [
     title: "Retrouver la confiance en soi",
     date: "19 mai 2026",
     excerpt: "Idéalement, le développement psychoaffectif de l’enfant devrait permettre l’émergence de cette confiance...",
+    image: "confianceensoi.png",
     paragraphs: [
       "Idéalement, le développement psychoaffectif de l’enfant devrait permettre l’émergence de cette confiance, indispensable pour trouver sa place et s’épanouir. Cependant, le contexte familial et sociétal, souvent stressant, exigeant ou jugeant, génère fréquemment chez l’enfant un sentiment d’insuffisance, d’inadéquation ou d’incompétence. Dépendant du regard extérieur, l’enfant qui ne répond pas aux attentes peut développer une peur profonde du rejet ou de l’abandon, accompagnée de honte et de culpabilité.",
       "Les conditions de vie prénatales, la naissance, un accueil défavorable, des abus, une éducation répressive ou dénarcissisante fragilisent également la construction de la confiance en soi. L’enfant, incapable de remettre en cause ses figures d’attachement, internalise l’idée qu’il est « mauvais ». De nombreux événements ou climats familiaux insécurisants sont ainsi à l’origine du manque de confiance à l’âge adulte.",
