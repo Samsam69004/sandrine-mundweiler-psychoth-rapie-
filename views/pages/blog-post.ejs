@@ -5,13 +5,20 @@
     <%- include('../partials/header') %>
 
     <main class="section">
-      <article class="container content-card">
+      <% if (post.image) { %>
+      <header class="post-hero" style="background-image: url('/assets/images/<%= post.image %>')" aria-hidden="true">
+        <div class="post-hero-overlay"></div>
+        <div class="post-hero-inner container">
+          <p class="meta hero-meta"><%= post.date %></p>
+          <h1 class="hero-title"><%= post.title %></h1>
+        </div>
+      </header>
+      <% } %>
+
+      <article class="container content-card post-content">
+        <% if (!post.image) { %>
         <p class="meta"><%= post.date %></p>
         <h1><%= post.title %></h1>
-        <% if (post.image) { %>
-        <figure class="post-image">
-          <img src="/assets/images/<%= post.image %>" alt="<%= post.title %>" />
-        </figure>
         <% } %>
         <% post.paragraphs.forEach((paragraph) => { %>
         <p><%= paragraph %></p>
