@@ -47,13 +47,12 @@
 
         <aside class="photo-panel" aria-label="Portrait">
           <figure class="portrait portrait-sandrine">
-            <img
-              src="/assets/images/sandrine_edited_edited.jpg"
-              alt="Portrait de Sandrine Mundweiler en foret"
-              loading="eager"
-            />
+            <picture>
+              <source type="image/webp" srcset="/assets/images/responsive/sandrine-400.webp 400w, /assets/images/responsive/sandrine-800.webp 800w, /assets/images/responsive/sandrine-1200.webp 1200w" sizes="(max-width: 600px) 90vw, 400px">
+              <img src="/assets/images/responsive/sandrine-800.jpg" srcset="/assets/images/responsive/sandrine-400.jpg 400w, /assets/images/responsive/sandrine-800.jpg 800w, /assets/images/responsive/sandrine-1200.jpg 1200w" sizes="(max-width: 600px) 90vw, 400px" alt="Portrait de Sandrine Mundweiler en foret" loading="eager" />
+            </picture>
           </figure>
-          <p class="caption">Accompagnement a Lyon 6 - en cabinet et en groupe.</p>
+          <p class="caption">Accompagnement à Lyon 6 - en cabinet et en groupe.</p>
         </aside>
       </div>
 

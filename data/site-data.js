@@ -175,11 +175,11 @@ const pages = {
   },
   "therapie-traumatisme-lyon": {
     path: "/therapie-traumatisme-lyon",
-    title: "Therapie traumatisme a Lyon - Approche psychocorporelle",
+    title: "Therapie traumatisme à Lyon - Approche psychocorporelle",
     description:
-      "Accompagnement psychocorporel du traumatisme a Lyon: regulation emotionnelle et restauration de la securite interieure.",
+      "Accompagnement psychocorporel du traumatisme à Lyon: regulation emotionnelle et restauration de la securite interieure.",
     kicker: "Page thematique",
-    heading: "Therapie du traumatisme a Lyon",
+    heading: "Therapie du traumatisme à Lyon",
     sections: [
       {
         title: "Quand consulter",
@@ -197,11 +197,11 @@ const pages = {
   },
   "burn-out-lyon": {
     path: "/burn-out-lyon",
-    title: "Burn-out a Lyon - Accompagnement psychocorporel",
+    title: "Burn-out à Lyon - Accompagnement psychocorporel",
     description:
-      "Accompagnement du burn-out a Lyon: epuisement, surcharge mentale, perte de sens.",
+      "Accompagnement du burn-out à Lyon: epuisement, surcharge mentale, perte de sens.",
     kicker: "Page thematique",
-    heading: "Burn-out: se reconstruire a Lyon",
+    heading: "Burn-out: se reconstruire à Lyon",
     sections: [
       {
         title: "Signes frequents",
@@ -224,11 +224,11 @@ const pages = {
   },
   "gestion-stress-lyon": {
     path: "/gestion-stress-lyon",
-    title: "Gestion du stress a Lyon - Therapie psychocorporelle",
+    title: "Gestion du stress à Lyon - Therapie psychocorporelle",
     description:
-      "Gestion du stress et de l'anxiete a Lyon 6: accompagnement psychocorporel pour retrouver apaisement et stabilite.",
+      "Gestion du stress et de l'anxiete à Lyon 6: accompagnement psychocorporel pour retrouver apaisement et stabilite.",
     kicker: "Page thematique",
-    heading: "Gestion du stress et anxiete a Lyon",
+    heading: "Gestion du stress et anxiete à Lyon",
     sections: [
       {
         title: "Manifestations",
@@ -258,11 +258,44 @@ const legalPages = {
     heading: "Mentions legales",
     sections: [
       {
-        paragraphs: [
-          "Editeur du site: Sandrine Mundweiler, activite de psycho-praticienne, cabinet au 11 Rue Curie, 69006 Lyon.",
-          "Contact: sandrinemundweiler@gmail.com - 06 32 46 62 00.",
-          "Le titre de psychotherapeute etant reglemente en France, ce site presente une activite de psycho-praticienne."
-        ]
+        type: "html",
+        text: `Mentions légales
+Impressum. Un impressum est légalement requis dans certaines régions. Ce modèle ne contient que des informations générales et des exemples de formulation, et il n'est pas prêt à être publié. Les informations contenues dans l’impressum varient en fonction de votre entreprise ou de votre type de site Web. Nous vous recommandons de demander un avis juridique pour vous aider à comprendre et à créer votre impressum.
+
+[Nom de l'entreprise]
+
+Dénomination sociale ou raison sociale
+
+Adresse du siège social de l’entreprise
+
+Noms des dirigeants de l’entreprise
+
+Numéro de téléphone, numéro de fax et adresse e-mail de l'entreprise
+
+Numéro d’enregistrement au registre du commerce et des sociétés, ou autre autorité applicable à l'activité
+
+Numéro d’identification fiscale
+
+Forme juridique de l’entreprise
+
+Montant du Capital Social
+
+Si votre site Web propose des services dans le cadre d'une activité qui nécessite l'approbation d'une autorité publique, les coordonnées de l'autorité de contrôle doivent être fournies
+
+Nom, dénomination ou raison sociale et adresse et numéro de téléphone de l'hébergeur de son site
+
+Mentions relatives à l'utilisation de données personnelles
+
+Mentions relatives à l'utilisation de cookies
+
+La Commission européenne fournit une plateforme de règlement des litiges en ligne (OS). Cette plateforme est disponible à l'adresse http://ec.europa.eu/consumers/odr/. En tant que client, vous avez toujours la possibilité de contacter le conseil d'arbitrage de la Commission européenne. Nous ne sommes ni disposés à, ni obligés de, participer à une procédure de règlement des litiges devant un conseil d'arbitrage de la consommation.
+
+E-mail :
+Tél. :
+
+Fax :
+
+Adresse :`
       }
     ]
   },
@@ -270,14 +303,35 @@ const legalPages = {
     path: "/politique-confidentialite",
     title: "Politique de confidentialite",
     description: "Politique de confidentialite.",
-    kicker: "RGPD",
-    heading: "Politique de confidentialite",
+    kicker: "Politique de confidentialité",
+    heading: "Politique de confidentialité",
     sections: [
       {
-        paragraphs: [
-          "Ce site ne collecte pas de donnees personnelles sans action volontaire (e-mail, appel, formulaire).",
-          "Vous pouvez demander acces, rectification ou suppression de vos donnees via sandrinemundweiler@gmail.com."
-        ]
+        type: "html",
+        text: `Politique de confidentialité : Politique de confidentialité
+Ce modèle est un exemple de texte et ne peut pas être publié. Les explications et les informations fournies ici ne sont que des explications, des informations et des exemples généraux. Vous ne devez pas vous fier à ce modèle comme à un conseil juridique ou à des recommandations sur ce que vous devez faire. Nous vous recommandons de demander un avis juridique pour vous aider à comprendre et à élaborer votre politique de protection de confidentialité.
+
+Une politique de confidentialité est une déclaration qui divulgue tout ou partie des façons dont un site Web collecte, utilise, divulgue et gère les données de ses visiteurs et clients. Elle répond à une obligation légale de protéger la vie privée d'un visiteur ou d'un client. Le lien vers votre politique de confidentialité doit apparaître sur toutes les pages de votre site.
+
+Voici quelques exemples de contenu que vous pouvez inclure dans votre politique de confidentialité :
+
+Quelles informations vous recueillez
+
+Comment vous recueillez les informations
+
+Pourquoi vous recueillez les informations
+
+Avec qui vous partagez les informations
+
+Où sont stockées les informations
+
+Combien de temps vous conservez les informations
+
+Comment vous protégez les informations
+
+Les modifications ou mises à jour de la Politique de confidentialité
+
+Cliquez ici pour obtenir des informations plus détaillées sur la création de votre politique de confidentialité.`
       }
     ]
   },
@@ -289,10 +343,44 @@ const legalPages = {
     heading: "Politique de cookies",
     sections: [
       {
-        paragraphs: [
-          "Le site n'utilise pas de cookies publicitaires par defaut. Des cookies techniques peuvent etre utilises par l'hebergeur.",
-          "Si un outil d'audience est active, un consentement conforme CNIL doit etre mis en place."
-        ]
+        type: "html",
+        text: `1. Qu'est-ce qu'un cookie ?
+Un cookie est un petit fichier constitué de lettres et de chiffres, et téléchargé sur votre ordinateur lorsque vous accédez à certains sites Web. En général, les cookies permettent à un site Web de reconnaître l'ordinateur de l’utilisateur.
+
+La chose la plus importante à savoir sur les cookies que nous plaçons est qu'ils servent à améliorer la convivialité de notre site web, par exemple en mémorisant les préférences du site et les paramètres linguistiques.
+
+2. Pourquoi utilisons-nous des cookies ?
+Nous pouvons utiliser des cookies et d'autres technologies similaires pour un certain nombre de raisons, par exemple : i) pour des besoins de sécurité ou de protection contre la fraude, et afin d'identifier et de prévenir les cyber-attaques, ii) pour vous fournir le service que vous avez choisi de recevoir de notre part, iii) pour contrôler et analyser les performances, le fonctionnement et l'efficacité de notre service et iv) améliorer votre expérience utilisateur.
+
+3. Tableau des cookies :
+Dans cette section, vous devez mentionner les cookies que vous utilisez sur votre site. Pour plus d'informations, cliquez ici.
+
+4. Vos choix :
+Pour en savoir plus sur les cookies, notamment sur la manière de voir quels cookies ont été définis et de comprendre comment les gérer, les supprimer ou les bloquer, visitez https://aboutcookies.org/ ou https://www.allaboutcookies.org/fr/.
+
+Il est également possible d'empêcher votre navigateur d'accepter les cookies en modifiant les paramètres concernés dans votre navigateur. Vous pouvez généralement trouver ces paramètres dans le menu « Options » ou « Préférences » de votre navigateur.
+
+Veuillez noter que la suppression de nos cookies ou la désactivation de futurs cookies ou technologies de suivi pourront vous empêcher d'accéder à certaines zones ou fonctionnalités de nos services, ou pourront autrement affecter négativement votre expérience d'utilisateur.
+
+Les liens suivants peuvent être utiles, ou vous pouvez utiliser l'option « Aide » de votre navigateur.
+
+Paramètres des cookies dans Firefox
+
+Paramètres des cookies dans Internet Explorer
+
+Paramètres des cookies dans Google Chrome
+
+Paramètres des cookies dans Safari (OS X)
+
+Paramètres des cookies dans Safari (iOS)
+
+Paramètres des cookies dans Android
+
+Pour refuser et empêcher que vos données soient utilisées par Google Analytics sur tous les sites Web, consultez les instructions suivantes :
+
+https://tools.google.com/dlpage/gaoptout?hl=fr
+
+Il se peut que nous modifiions cette politique en matière de cookies. Nous vous encourageons à consulter régulièrement cette page pour obtenir les dernières informations sur les cookies.`
       }
     ]
   }
@@ -327,7 +415,7 @@ const blogPosts = [
     title: "Thérapie Psychocorporelle en Groupe à LYON",
     date: "27 janvier 2026",
     excerpt: "Des groupes réguliers pour réinvestir le corps et restaurer la présence à soi.",
-    image: "groupe.png",
+    image: "groupe1.png",
     paragraphs: []
   }
 ];

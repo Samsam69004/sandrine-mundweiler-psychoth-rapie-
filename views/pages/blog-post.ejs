@@ -5,7 +5,7 @@
     <%- include('../partials/header') %>
 
     <main class="section">
-      <% if (post.image) { %>
+      <% if (post.image && post.paragraphs && post.paragraphs.length > 0) { %>
       <header class="post-hero" style="background-image: url('/assets/images/<%= post.image %>')" aria-hidden="true">
         <div class="post-hero-overlay"></div>
         <div class="post-hero-inner container">
@@ -13,16 +13,22 @@
           <h1 class="hero-title"><%= post.title %></h1>
         </div>
       </header>
+      <% } else if (post.image) { %>
+      <figure class="post-image-full container">
+        <img src="/assets/images/<%= post.image %>" alt="<%= post.title %>">
+      </figure>
       <% } %>
 
       <article class="container content-card post-content">
-        <% if (!post.image) { %>
         <p class="meta"><%= post.date %></p>
         <h1><%= post.title %></h1>
+        <% if (post.paragraphs && post.paragraphs.length > 0) { %>
+          <% post.paragraphs.forEach((paragraph) => { %>
+            <p><%= paragraph %></p>
+          <% }) %>
+        <% } else if (post.excerpt) { %>
+          <p><%= post.excerpt %></p>
         <% } %>
-        <% post.paragraphs.forEach((paragraph) => { %>
-        <p><%= paragraph %></p>
-        <% }) %>
         <p><a href="/blog">Retour au blog</a></p>
       </article>
     </main>

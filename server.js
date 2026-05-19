@@ -1,5 +1,8 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
+const validator = require("validator");
 const path = require("path");
 const {
   navLinks,
@@ -29,6 +32,17 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use("/assets", express.static(path.join(__dirname, "assets")));
+
+// Security middlewares
+app.use(helmet());
+
+// Simple rate limiter for contact form to mitigate spam/abuse
+const contactLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5, // limit each IP to 5 requests per windowMs
+  standardHeaders: true,
+  legacyHeaders: false
+});
 
 const legacyPathMap = {
   "/index.html": "/",
@@ -109,9 +123,9 @@ async function sendContactEmail({ name, email, message }) {
 app.get("/", (req, res) => {
   res.render("pages/home", {
     ...baseViewData("/"),
-    title: "Therapie psychocorporelle a Lyon 6 - Sandrine Mundweiler",
+    title: "Therapie psychocorporelle à Lyon 6 - Sandrine Mundweiler",
     description:
-      "Sandrine Mundweiler, psycho-praticienne en therapie psychocorporelle a Lyon 6. Accompagnement adulte: anxiete, stress, burn-out, deuil.",
+      "Sandrine Mundweiler, psycho-praticienne en therapie psychocorporelle à Lyon 6. Accompagnement adulte: anxiete, stress, burn-out, deuil.",
     seoCards: [
       {
         title: "Anxiete, stress, angoisse",
@@ -154,9 +168,9 @@ app.get("/contact", (req, res) => {
   const sent = req.query.sent === "1";
   res.render("pages/contact", {
     ...baseViewData("/contact"),
-    title: "Contact - Cabinet de therapie psychocorporelle a Lyon 6",
+    title: "Contact - Cabinet de therapie psychocorporelle à Lyon 6",
     description:
-      "Contactez Sandrine Mundweiler, psycho-praticienne a Lyon 6: telephone, e-mail, adresse du cabinet.",
+      "Contactez Sandrine Mundweiler, psycho-praticienne à Lyon 6: telephone, e-mail, adresse du cabinet.",
     sent,
     formData: {
       name: "",
@@ -166,19 +180,37 @@ app.get("/contact", (req, res) => {
   });
 });
 
-app.post("/contact", async (req, res) => {
-  const name = (req.body.name || "").trim();
-  const email = (req.body.email || "").trim();
-  const message = (req.body.message || "").trim();
+app.post("/contact", contactLimiter, async (req, res) => {
+  // Basic sanitization and validation
+  let name = (req.body.name || "").trim().slice(0, 200);
+  let email = (req.body.email || "").trim().slice(0, 200);
+  let message = (req.body.message || "").trim().slice(0, 2000);
+
+  // Prevent header injection via CRLF
+  name = name.replace(/[\r\n]/g, " ");
+  email = email.replace(/[\r\n]/g, " ");
 
   if (!name || !email || !message) {
     return res.status(400).render("pages/contact", {
       ...baseViewData("/contact"),
-      title: "Contact - Cabinet de therapie psychocorporelle a Lyon 6",
+      title: "Contact - Cabinet de therapie psychocorporelle à Lyon 6",
       description:
-        "Contactez Sandrine Mundweiler, psycho-praticienne a Lyon 6: telephone, e-mail, adresse du cabinet.",
+        "Contactez Sandrine Mundweiler, psycho-praticienne à Lyon 6: telephone, e-mail, adresse du cabinet.",
       sent: false,
       error: "Merci de remplir tous les champs du formulaire.",
+      formData: { name, email, message }
+    });
+  }
+
+  // Validate email format
+  if (!validator.isEmail(email)) {
+    return res.status(400).render("pages/contact", {
+      ...baseViewData("/contact"),
+      title: "Contact - Cabinet de therapie psychocorporelle à Lyon 6",
+      description:
+        "Contactez Sandrine Mundweiler, psycho-praticienne à Lyon 6: telephone, e-mail, adresse du cabinet.",
+      sent: false,
+      error: "Merci de fournir une adresse e-mail valide.",
       formData: { name, email, message }
     });
   }
@@ -193,9 +225,9 @@ app.post("/contact", async (req, res) => {
 
     return res.status(500).render("pages/contact", {
       ...baseViewData("/contact"),
-      title: "Contact - Cabinet de therapie psychocorporelle a Lyon 6",
+      title: "Contact - Cabinet de therapie psychocorporelle à Lyon 6",
       description:
-        "Contactez Sandrine Mundweiler, psycho-praticienne a Lyon 6: telephone, e-mail, adresse du cabinet.",
+        "Contactez Sandrine Mundweiler, psycho-praticienne à Lyon 6: telephone, e-mail, adresse du cabinet.",
       sent: false,
       error: userError,
       formData: { name, email, message }
@@ -208,7 +240,7 @@ app.post("/contact", async (req, res) => {
 app.get("/blog", (req, res) => {
   res.render("pages/blog-index", {
     ...baseViewData("/blog"),
-    title: "Blog - Therapie psychocorporelle a Lyon",
+    title: "Blog - Therapie psychocorporelle à Lyon",
     description:
       "Articles sur l'anxiete, le stress, le burn-out et les approches psychocorporelles.",
     posts: blogPosts
