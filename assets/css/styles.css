@@ -178,10 +178,12 @@ a:focus-visible {
 .home-hero::after {
   content: "";
   position: absolute;
+  /* cover the entire right half of the hero */
   inset: 0 0 0 50%;
-  /* background handled by the right column panel now */
-  background-image: none;
-  background-color: transparent;
+  background-image: url('/assets/images/background.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   filter: none;
   box-shadow: inset 1px 0 0 rgba(31, 77, 143, 0.12);
   transform: translateX(0);
@@ -191,7 +193,7 @@ a:focus-visible {
 
 .home-hero > .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Keep the hero card readable above the image but with a warmer tint */
@@ -260,6 +262,23 @@ a:focus-visible {
   align-items: flex-start;
   justify-content: center;
 }
+.photo-panel,
+.home-photo-stack {
+  /* keep layout but no background so ::after covers the right half */
+  background: transparent !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.photo-panel { border-left: none !important; }
+
+/* ensure hero card sits above the background image */
+.home-hero .hero-card { z-index: 3; }
 
 .hero-background-art {
   position: absolute;
