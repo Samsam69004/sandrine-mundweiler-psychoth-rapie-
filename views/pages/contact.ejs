@@ -7,6 +7,23 @@
     <main class="page-split">
       <div class="container split-grid">
         <article class="content-card">
+          <% if (typeof sent !== 'undefined' && sent) { %>
+          <div class="contact-status-banner contact-status-banner--success" id="contact-status" tabindex="-1" role="status" aria-live="polite">
+            <span class="contact-status-banner__label">Message envoyé</span>
+            <strong>Merci, votre message a bien été envoyé.</strong>
+            <p>Sandrine vous répondra dès que possible.</p>
+          </div>
+          <script>
+            window.addEventListener("load", function () {
+              const notice = document.getElementById("contact-status");
+              if (notice) {
+                notice.scrollIntoView({ behavior: "smooth", block: "center" });
+                notice.focus({ preventScroll: true });
+              }
+            });
+          </script>
+          <% } %>
+
           <div class="contact-visual">
             <div class="contact-info">
               <p class="kicker">Contact</p>
@@ -18,11 +35,6 @@
                 <li><strong>E-mail :</strong> <a href="mailto:sandrinemundweiler@gmail.com">sandrinemundweiler@gmail.com</a></li>
                 <li><strong>Adresse :</strong> 11 Rue Curie, 69006 Lyon</li>
               </ul>
-              <% if (typeof sent !== 'undefined' && sent) { %>
-              <div class="form-alert form-alert--success" role="status">
-                Merci, votre message a bien été envoyé. Sandrine vous répondra dès que possible.
-              </div>
-              <% } %>
 
               <% if (typeof error !== 'undefined' && error) { %>
               <div class="form-alert form-alert--error" role="alert">
