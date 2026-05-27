@@ -187,6 +187,55 @@ a:focus-visible {
   z-index: 0;
 }
 
+/* Homepage-specific hero: left = background.jpg, right = teal->sage gradient */
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 50%;
+  background-image: url('/assets/images/background.jpg');
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 50%;
+  background: linear-gradient(180deg, rgba(22,90,82,0.94) 0%, rgba(183,209,188,0.92) 100%);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: none;
+  box-shadow: inset 1px 0 0 rgba(31, 77, 143, 0.06);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Stack portrait and caption under the portrait on the homepage */
+.home-hero .photo-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(18px, 3vw, 34px);
+  background: transparent !important;
+}
+
+.home-hero .portrait {
+  margin: 0 auto;
+  width: min(82%, 360px);
+}
+
+.home-hero .caption {
+  margin-top: 14px;
+  color: rgba(23,32,50,0.86);
+  z-index: 2;
+}
+
 .hero > .container {
   position: relative;
   z-index: 2;
