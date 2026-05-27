@@ -177,11 +177,9 @@ a:focus-visible {
   content: "";
   position: absolute;
   inset: 0 0 0 50%;
-  background-image: url('/assets/images/background.jpg');
-  background-color: rgba(244,246,249,0.96);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  /* background handled by the right column panel now */
+  background-image: none;
+  background-color: transparent;
   filter: none;
   box-shadow: inset 1px 0 0 rgba(31, 77, 143, 0.12);
   transform: translateX(0);
@@ -239,6 +237,26 @@ a:focus-visible {
 .home-photo-stack {
   position: relative;
   min-height: clamp(360px, 52vw, 620px);
+}
+
+/* Make the right column (aside) show the background art full-size */
+.photo-panel,
+.home-photo-stack {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-origin: border-box;
+  border-radius: var(--radius);
+}
+
+/* Subtle divider between columns, visible when image has light areas */
+.photo-panel {
+  box-shadow: none;
+  border-left: 1px solid rgba(31,77,143,0.06);
+  padding: clamp(18px, 3vw, 34px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .hero-background-art {
