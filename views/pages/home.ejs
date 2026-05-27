@@ -48,7 +48,7 @@
         <aside
           class="photo-panel home-photo-stack"
           aria-label="Portrait"
-          <%= backgroundArtDataUri ? `style="background-image: url('${backgroundArtDataUri}');"` : "" %>
+          style="background-image: url('<%= backgroundArtDataUri || '/assets/images/background.jpg' %>');"
         >
           <figure class="portrait portrait-sandrine">
             <picture>

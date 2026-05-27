@@ -154,8 +154,10 @@ a:focus-visible {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  background: linear-gradient(90deg, rgba(233, 247, 239, 0.96) 0 50%, rgba(248, 249, 251, 0.96) 50% 100%);
+  /* remove the global split gradient so the right column background shows through */
+  background: transparent;
   color: var(--text);
+  min-height: clamp(520px, 48vh, 780px);
 }
 
 .home-hero::before {
@@ -319,7 +321,8 @@ a:focus-visible {
 
 .split-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  /* enforce a true 50/50 split so the right panel occupies half the hero */
+  grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: start;
 }
