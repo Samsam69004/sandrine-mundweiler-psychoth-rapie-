@@ -227,7 +227,7 @@ a:focus-visible {
 
 .home-hero .portrait {
   margin: 0 auto;
-  width: min(82%, 390px);
+  width: min(82%, 380px);
 }
 
 .home-hero .caption {
