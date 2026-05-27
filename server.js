@@ -1,4 +1,5 @@
 const express = require("express");
+const fs = require("fs");
 const nodemailer = require("nodemailer");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
@@ -16,6 +17,10 @@ const app = express();
 const port = process.env.PORT || 4173;
 const host = process.env.HOST || "0.0.0.0";
 const siteUrl = (process.env.SITE_URL || `http://127.0.0.1:${port}`).replace(/\/$/, "");
+const backgroundArtPath = path.join(__dirname, "assets", "images", "background.jpg");
+const backgroundArtDataUri = fs.existsSync(backgroundArtPath)
+  ? `data:image/jpeg;base64,${fs.readFileSync(backgroundArtPath).toString("base64")}`
+  : "";
 const smtpPort = Number(process.env.SMTP_PORT || 587);
 const smtpSecure = process.env.SMTP_SECURE === "true";
 const smtpHost = process.env.SMTP_HOST;
@@ -144,6 +149,7 @@ async function sendContactEmail({ name, email, message }) {
 app.get("/", (req, res) => {
   res.render("pages/home", {
     ...viewData("/", req),
+    backgroundArtDataUri,
     title: "Therapie psychocorporelle à Lyon 6 - Sandrine Mundweiler",
     description:
       "Sandrine Mundweiler, psycho-praticienne en therapie psychocorporelle à Lyon 6. Accompagnement adulte: anxiete, stress, burn-out, deuil.",
