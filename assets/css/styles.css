@@ -145,6 +145,25 @@ a:focus-visible {
   padding: 60px 0;
 }
 
+/* Homepage: more joyful hero colors */
+.home-hero {
+  background: linear-gradient(120deg, #fff9f6 0%, #fff1e6 30%, #fff8f0 100%);
+}
+
+.home-hero .hero-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,249,244,0.92));
+  border-color: rgba(31,77,143,0.06);
+}
+
+.home-hero .hero-card h1::after {
+  background: linear-gradient(90deg, #ff7a5a, #ffb88c);
+}
+
+.home-hero .btn-primary {
+  background: linear-gradient(90deg, #ff7a5a, #ff8f64);
+  border-color: transparent;
+}
+
 .split-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
