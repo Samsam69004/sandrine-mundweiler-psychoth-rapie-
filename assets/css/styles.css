@@ -227,7 +227,7 @@ a:focus-visible {
 
 .home-hero .portrait {
   margin: 0 auto;
-  width: min(82%, 380px);
+  width: min(82%, 480px);
 }
 
 .home-hero .caption {
@@ -356,7 +356,7 @@ a:focus-visible {
 .home-photo-stack .portrait-sandrine {
   position: relative;
   z-index: 1;
-  width: min(82%, 390px);
+  width: min(82%, 480px);
   margin: clamp(18px, 3vw, 34px) auto 0;
 }
 
@@ -682,7 +682,7 @@ h3 {
   isolation: isolate;
   border-radius: 14px;
   overflow: hidden;
-  width: min(82%, 380px);
+  width: min(82%, 480px);
   margin: 0 auto;
 }
 
