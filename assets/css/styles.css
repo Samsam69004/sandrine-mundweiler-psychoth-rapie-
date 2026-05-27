@@ -247,6 +247,11 @@ a:focus-visible {
   overflow: hidden;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  background:
+    radial-gradient(circle at 26% 20%, rgba(255, 120, 64, 0.92) 0 18%, rgba(255, 120, 64, 0) 42%),
+    radial-gradient(circle at 72% 30%, rgba(123, 39, 133, 0.82) 0 14%, rgba(123, 39, 133, 0) 38%),
+    radial-gradient(circle at 48% 78%, rgba(255, 43, 96, 0.68) 0 20%, rgba(255, 43, 96, 0) 44%),
+    linear-gradient(145deg, #ff4f2d 0%, #f33f2b 30%, #7d245e 68%, #31124c 100%);
 }
 
 .hero-background-art img {
@@ -255,6 +260,10 @@ a:focus-visible {
   object-fit: cover;
   object-position: center center;
   display: block;
+}
+
+.hero-background-art:empty {
+  border: 1px solid rgba(31, 77, 143, 0.08);
 }
 
 .home-photo-stack .portrait-sandrine {

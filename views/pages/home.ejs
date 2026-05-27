@@ -47,7 +47,9 @@
 
         <aside class="photo-panel home-photo-stack" aria-label="Portrait">
           <figure class="hero-background-art" aria-hidden="true">
+            <% if (backgroundArtDataUri) { %>
             <img src="<%= backgroundArtDataUri %>" alt="" loading="eager" />
+            <% } %>
           </figure>
           <figure class="portrait portrait-sandrine">
             <picture>
