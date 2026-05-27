@@ -147,70 +147,66 @@ a:focus-visible {
   padding: 60px 0;
 }
 
-/* Homepage hero: strict split layout
-   Left 50%: mountain image
-   Right 50%: abstract background image with a green tint */
-.home-hero {
+/* Site-wide hero: left 50% background image, right 50% green translucent */
+.hero {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  /* remove the global split gradient so the right column background shows through */
   background: transparent;
   color: var(--text);
   min-height: clamp(520px, 48vh, 780px);
 }
 
-.home-hero::before {
+.hero::before {
   content: "";
   position: absolute;
   inset: 0 auto 0 0;
   width: 50%;
-  background-image:
-    linear-gradient(170deg, rgba(5, 52, 104, 0.24), rgba(12, 96, 166, 0.06)),
-    url('/assets/images/hero-mountains.jpg');
+  /* left half: background art */
+  background-image: url('/assets/images/background.jpg');
   background-size: cover;
-  background-position: left top;
+  background-position: center left;
   background-repeat: no-repeat;
   pointer-events: none;
   z-index: 0;
 }
 
-.home-hero::after {
+.hero::after {
   content: "";
   position: absolute;
-  /* cover the entire right half of the hero */
+  /* right half: translucent green overlay */
   inset: 0 0 0 50%;
-  background-image: url('/assets/images/background.jpg');
+  background: linear-gradient(180deg, rgba(169,205,187,0.92), rgba(169,205,187,0.92));
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   filter: none;
-  box-shadow: inset 1px 0 0 rgba(31, 77, 143, 0.12);
+  box-shadow: inset 1px 0 0 rgba(31, 77, 143, 0.06);
   transform: translateX(0);
   pointer-events: none;
   z-index: 0;
 }
 
-.home-hero > .container {
+.hero > .container {
   position: relative;
   z-index: 2;
 }
 
-/* Keep the hero card readable above the image but with a warmer tint */
-.home-hero .hero-card {
+/* Keep the hero card readable above the image but with a softer tint */
+.hero .hero-card {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   background: rgba(248, 255, 251, 0.78);
-  border-color: rgba(36, 98, 78, 0.2);
+  border-color: rgba(36, 98, 78, 0.12);
   box-shadow: 0 18px 40px rgba(20,35,61,0.09);
 }
 
-.home-hero .hero-card h1::after {
+.hero .hero-card h1::after {
   background: linear-gradient(90deg, #ff7a5a, #ffb88c);
 }
 
-/* Make primary CTAs pop against the warmer hero */
-.home-hero .btn-primary {
+/* Make primary CTAs pop against the hero */
+.hero .btn-primary {
   background: linear-gradient(90deg, #ff6f3c, #ff9a5e);
   border-color: transparent;
   color: #fff;
@@ -264,21 +260,23 @@ a:focus-visible {
 }
 .photo-panel,
 .home-photo-stack {
-  /* keep layout but no background so ::after covers the right half */
+  /* make aside a vertical stack: portrait then caption */
   background: transparent !important;
   background-image: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  padding: 0 !important;
+  padding: clamp(18px, 3vw, 34px);
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .photo-panel { border-left: none !important; }
 
 /* ensure hero card sits above the background image */
-.home-hero .hero-card { z-index: 3; }
+.hero .hero-card { z-index: 3; }
 
 .hero-background-art {
   position: absolute;
@@ -635,6 +633,8 @@ h3 {
   isolation: isolate;
   border-radius: 14px;
   overflow: hidden;
+  width: min(82%, 380px);
+  margin: 0 auto;
 }
 
 .portrait-sandrine::before {
@@ -701,9 +701,10 @@ h3 {
 }
 
 .caption {
-  margin-top: 10px;
+  margin-top: 6px;
   font-size: 1rem;
-  color: #f3f7f3;
+  color: var(--text);
+  text-align: center;
 }
 
 .section {
