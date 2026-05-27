@@ -79,6 +79,27 @@ function baseViewData(activePath) {
   };
 }
 
+function getCanonicalBase(req) {
+  const forwardedProto = (req.get("x-forwarded-proto") || "").split(",")[0].trim();
+  const protocol = forwardedProto || (req.secure ? "https" : "http");
+  const forwardedHost = (req.get("x-forwarded-host") || "").split(",")[0].trim();
+  const hostHeader = (req.get("host") || "").split(",")[0].trim();
+  const hostName = forwardedHost || hostHeader;
+
+  if (!hostName) {
+    return siteUrl;
+  }
+
+  return `${protocol}://${hostName}`.replace(/\/$/, "");
+}
+
+function viewData(activePath, req) {
+  return {
+    ...baseViewData(activePath),
+    canonicalBase: getCanonicalBase(req)
+  };
+}
+
 function getTransporter() {
   if (!transporter) {
     transporter = nodemailer.createTransport({
@@ -122,7 +143,7 @@ async function sendContactEmail({ name, email, message }) {
 
 app.get("/", (req, res) => {
   res.render("pages/home", {
-    ...baseViewData("/"),
+    ...viewData("/", req),
     title: "Therapie psychocorporelle à Lyon 6 - Sandrine Mundweiler",
     description:
       "Sandrine Mundweiler, psycho-praticienne en therapie psychocorporelle à Lyon 6. Accompagnement adulte: anxiete, stress, burn-out, deuil.",
@@ -149,7 +170,7 @@ app.get("/", (req, res) => {
 Object.values(pages).forEach((page) => {
   app.get(page.path, (req, res) => {
     res.render("pages/text-page", {
-      ...baseViewData(page.path),
+      ...viewData(page.path, req),
       ...page
     });
   });
@@ -158,7 +179,7 @@ Object.values(pages).forEach((page) => {
 Object.values(legalPages).forEach((page) => {
   app.get(page.path, (req, res) => {
     res.render("pages/text-page", {
-      ...baseViewData(page.path),
+      ...viewData(page.path, req),
       ...page
     });
   });
@@ -167,11 +188,12 @@ Object.values(legalPages).forEach((page) => {
 app.get("/contact", (req, res) => {
   const sent = req.query.sent === "1";
   res.render("pages/contact", {
-    ...baseViewData("/contact"),
+    ...viewData("/contact", req),
     title: "Contact - Cabinet de therapie psychocorporelle à Lyon 6",
     description:
       "Contactez Sandrine Mundweiler, psycho-praticienne à Lyon 6: telephone, e-mail, adresse du cabinet.",
     sent,
+    error: null,
     formData: {
       name: "",
       email: "",
@@ -192,7 +214,7 @@ app.post("/contact", contactLimiter, async (req, res) => {
 
   if (!name || !email || !message) {
     return res.status(400).render("pages/contact", {
-      ...baseViewData("/contact"),
+      ...viewData("/contact", req),
       title: "Contact - Cabinet de therapie psychocorporelle à Lyon 6",
       description:
         "Contactez Sandrine Mundweiler, psycho-praticienne à Lyon 6: telephone, e-mail, adresse du cabinet.",
@@ -205,7 +227,7 @@ app.post("/contact", contactLimiter, async (req, res) => {
   // Validate email format
   if (!validator.isEmail(email)) {
     return res.status(400).render("pages/contact", {
-      ...baseViewData("/contact"),
+      ...viewData("/contact", req),
       title: "Contact - Cabinet de therapie psychocorporelle à Lyon 6",
       description:
         "Contactez Sandrine Mundweiler, psycho-praticienne à Lyon 6: telephone, e-mail, adresse du cabinet.",
@@ -224,7 +246,7 @@ app.post("/contact", contactLimiter, async (req, res) => {
         : "L'envoi du message a echoue. Merci de reessayer.";
 
     return res.status(500).render("pages/contact", {
-      ...baseViewData("/contact"),
+      ...viewData("/contact", req),
       title: "Contact - Cabinet de therapie psychocorporelle à Lyon 6",
       description:
         "Contactez Sandrine Mundweiler, psycho-praticienne à Lyon 6: telephone, e-mail, adresse du cabinet.",
@@ -239,7 +261,7 @@ app.post("/contact", contactLimiter, async (req, res) => {
 
 app.get("/blog", (req, res) => {
   res.render("pages/blog-index", {
-    ...baseViewData("/blog"),
+    ...viewData("/blog", req),
     title: "Blog - Therapie psychocorporelle à Lyon",
     description:
       "Articles sur l'anxiete, le stress, le burn-out et les approches psychocorporelles.",
@@ -251,14 +273,14 @@ app.get("/blog/:slug", (req, res) => {
   const post = blogPosts.find((item) => item.slug === req.params.slug);
   if (!post) {
     return res.status(404).render("pages/not-found", {
-      ...baseViewData(""),
+      ...viewData("", req),
       title: "Page non trouvee",
       description: "La page demandee est introuvable."
     });
   }
 
   return res.render("pages/blog-post", {
-    ...baseViewData("/blog"),
+    ...viewData("/blog", req),
     title: `${post.title} | Blog`,
     description: post.excerpt,
     post
@@ -266,11 +288,13 @@ app.get("/blog/:slug", (req, res) => {
 });
 
 app.get("/robots.txt", (req, res) => {
+  const canonicalBase = getCanonicalBase(req);
   res.type("text/plain");
-  res.send(`User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\n`);
+  res.send(`User-agent: *\nAllow: /\n\nSitemap: ${canonicalBase}/sitemap.xml\n`);
 });
 
 app.get("/sitemap.xml", (req, res) => {
+  const canonicalBase = getCanonicalBase(req);
   const staticPaths = [
     "/",
     "/a-propos",
@@ -288,7 +312,7 @@ app.get("/sitemap.xml", (req, res) => {
   const allPaths = [...staticPaths, ...postPaths];
 
   const urls = allPaths
-    .map((entry) => `  <url><loc>${siteUrl}${entry}</loc></url>`)
+    .map((entry) => `  <url><loc>${canonicalBase}${entry}</loc></url>`)
     .join("\n");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
@@ -299,7 +323,7 @@ app.get("/sitemap.xml", (req, res) => {
 
 app.use((req, res) => {
   res.status(404).render("pages/not-found", {
-    ...baseViewData(""),
+    ...viewData("", req),
     title: "Page non trouvee",
     description: "La page demandee est introuvable."
   });
