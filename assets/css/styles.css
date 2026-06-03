@@ -1559,7 +1559,9 @@ h3 {
 
   h1 {
     letter-spacing: 0.03em; /* Moins d'espacement pour gagner de la place */
-    hyphens: auto; /* Active la césure automatique */
+    hyphens: none !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
   }
 
   body {

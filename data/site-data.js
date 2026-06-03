@@ -14,7 +14,7 @@ const pages = {
     description:
       "Découvrez le parcours de Sandrine Mundweiler, praticienne en psychothérapie à Lyon 6. 35 ans d'expérience en santé mentale et accompagnement corps-psychisme.",
     kicker: "",
-    heading: "À PROPOS",
+    heading: "À PROPOS DE SANDRINE MUNDWEILER",
     sections: [
       {
         title: "",
@@ -100,11 +100,11 @@ const pages = {
   },
   "approches-therapeutiques": {
     path: "/approches-therapeutiques",
-    title: "Approches : APSYSE, EFT et gestion des émotions | Lyon 6",
+    title: "Approches Thérapeutiques - Sandrine Mundweiler | Lyon 6",
     description:
       "Ma pratique de la psychothérapie à Lyon intègre l'APSYSE, l'EFT et la respiration consciente pour une gestion des émotions et un équilibre de santé mentale durable.",
     kicker: "",
-    heading: "Approches thérapeutiques",
+    heading: "Approches thérapeutiques - Sandrine Mundweiler",
     sections: [
       {
         title: "",
@@ -139,7 +139,7 @@ const pages = {
     description:
       "Expérience professionnelle à Lyon et formation continue: kinésithérapie, ostéopathie, médecine chinoise, APSYSE, EFT et respiration consciente.",
     kicker: "Expérience professionnelle",
-    heading: "Expérience professionnelle",
+    heading: "Expérience et Formation - Sandrine Mundweiler",
     sections: [
       {
         title: "1991 à 2022",
@@ -175,11 +175,11 @@ const pages = {
   },
   "therapie-traumatisme-lyon": {
     path: "/therapie-traumatisme-lyon",
-    title: "Therapie traumatisme à Lyon - Approche psychocorporelle",
+    title: "Sandrine Mundweiler - Thérapie du traumatisme à Lyon",
     description:
-      "Accompagnement psychocorporel du traumatisme à Lyon: regulation emotionnelle et restauration de la securite interieure.",
+      "Thérapie du traumatisme à Lyon avec Sandrine Mundweiler. Accompagnement psychocorporel pour réguler les émotions et restaurer la sécurité intérieure.",
     kicker: "Page thematique",
-    heading: "Therapie du traumatisme à Lyon",
+    heading: "Sandrine Mundweiler - Thérapie du traumatisme à Lyon",
     sections: [
       {
         title: "Quand consulter",
@@ -197,11 +197,11 @@ const pages = {
   },
   "burn-out-lyon": {
     path: "/burn-out-lyon",
-    title: "Burn-out à Lyon - Accompagnement psychocorporel",
+    title: "Sandrine Mundweiler - Accompagnement Burn-out à Lyon",
     description:
-      "Accompagnement du burn-out à Lyon: epuisement, surcharge mentale, perte de sens.",
+      "Accompagnement du burn-out à Lyon par Sandrine Mundweiler. Retrouvez l'équilibre face à l'épuisement, la surcharge mentale et la perte de sens.",
     kicker: "Page thematique",
-    heading: "Burn-out: se reconstruire à Lyon",
+    heading: "Sandrine Mundweiler - Accompagnement Burn-out à Lyon",
     sections: [
       {
         title: "Signes frequents",
@@ -224,11 +224,11 @@ const pages = {
   },
   "gestion-stress-lyon": {
     path: "/gestion-stress-lyon",
-    title: "Gestion du stress et des émotions à Lyon - Psychothérapie",
+    title: "Sandrine Mundweiler - Gestion du stress et des émotions à Lyon",
     description:
-      "Spécialiste en gestion des émotions et du stress à Lyon 6. Accompagnement en thérapie psychocorporelle pour retrouver apaisement et santé mentale.",
+      "Sandrine Mundweiler, spécialiste en gestion du stress à Lyon 6. Accompagnement en thérapie psychocorporelle pour retrouver apaisement et santé mentale.",
     kicker: "Page thematique",
-    heading: "Gestion du stress et anxiete à Lyon",
+    heading: "Sandrine Mundweiler - Gestion du stress et anxiété à Lyon",
     sections: [
       {
         title: "Manifestations",
@@ -252,50 +252,31 @@ const pages = {
 const legalPages = {
   "mentions-legales": {
     path: "/mentions-legales",
-    title: "Mentions legales",
+    title: "Mentions Légales - Sandrine Mundweiler",
     description: "Mentions legales du site.",
     kicker: "Cadre legal",
-    heading: "Mentions legales",
+    heading: "Mentions Légales",
     sections: [
       {
         type: "html",
-        text: `Mentions légales
-Impressum. Un impressum est légalement requis dans certaines régions. Ce modèle ne contient que des informations générales et des exemples de formulation, et il n'est pas prêt à être publié. Les informations contenues dans l’impressum varient en fonction de votre entreprise ou de votre type de site Web. Nous vous recommandons de demander un avis juridique pour vous aider à comprendre et à créer votre impressum.
+        text: `
+          <p><strong>Responsable de la publication :</strong> Sandrine Mundweiler</p>
+          <p><strong>Dénomination sociale :</strong> Sandrine Mundweiler</p>
+          <p><strong>Adresse du cabinet :</strong> 11 Rue Curie, 69006 Lyon</p>
+          <p><strong>Téléphone :</strong> 06 32 46 62 00</p>
+          <p><strong>E-mail :</strong> sandrinemundweiler@gmail.com</p>
+          <p><strong>Forme juridique :</strong> Profession libérale (Psycho-praticienne)</p>
 
-[Nom de l'entreprise]
+          <p><strong>Hébergeur :</strong> Vercel Inc.<br>
+          440 N Barranca Ave #4133<br>
+          Covina, CA 91723<br>
+          États-Unis</p>
 
-Dénomination sociale ou raison sociale
+          <p><strong>Propriété intellectuelle :</strong><br>
+          L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés.</p>
 
-Adresse du siège social de l’entreprise
-
-Noms des dirigeants de l’entreprise
-
-Numéro de téléphone, numéro de fax et adresse e-mail de l'entreprise
-
-Numéro d’enregistrement au registre du commerce et des sociétés, ou autre autorité applicable à l'activité
-
-Numéro d’identification fiscale
-
-Forme juridique de l’entreprise
-
-Montant du Capital Social
-
-Si votre site Web propose des services dans le cadre d'une activité qui nécessite l'approbation d'une autorité publique, les coordonnées de l'autorité de contrôle doivent être fournies
-
-Nom, dénomination ou raison sociale et adresse et numéro de téléphone de l'hébergeur de son site
-
-Mentions relatives à l'utilisation de données personnelles
-
-Mentions relatives à l'utilisation de cookies
-
-La Commission européenne fournit une plateforme de règlement des litiges en ligne (OS). Cette plateforme est disponible à l'adresse http://ec.europa.eu/consumers/odr/. En tant que client, vous avez toujours la possibilité de contacter le conseil d'arbitrage de la Commission européenne. Nous ne sommes ni disposés à, ni obligés de, participer à une procédure de règlement des litiges devant un conseil d'arbitrage de la consommation.
-
-E-mail :
-Tél. :
-
-Fax :
-
-Adresse :`
+          <p>La Commission européenne fournit une plateforme de règlement des litiges en ligne (OS) disponible à l'adresse <a href="http://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">http://ec.europa.eu/consumers/odr/</a>.</p>
+        `
       }
     ]
   },
@@ -425,8 +406,8 @@ const seoLandingPaths = [
 ];
 
 const cabinet = {
-  address: "31 Rue de Créqui, 69006 Lyon",
-  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.356247348483!2d4.8427773!3d45.7640498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea61df400373%3A0xc3f982875b43397d!2s31%20Rue%20de%20Cr%C3%A9qui%2C%2069006%20Lyon!5e0!3m2!1sfr!2sfr!4v1713180000000!5m2!1sfr!2sfr"
+  address: "11 Rue Curie, 69006 Lyon",
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.155460596328!2d4.849089576722659!3d45.76807691361276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea6607a75931%3A0x67399a9a304f56f1!2s11%20Rue%20Curie%2C%2069006%20Lyon!5e0!3m2!1sfr!2sfr!4v1715783315664!5m2!1sfr!2sfr"
 };
 
 module.exports = {

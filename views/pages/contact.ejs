@@ -11,7 +11,7 @@
           <div class="contact-status-banner contact-status-banner--success" id="contact-status" tabindex="-1" role="status" aria-live="polite">
             <span class="contact-status-banner__label">Message envoyé</span>
             <strong>Merci, votre message a bien été envoyé.</strong>
-            <p>Sandrine vous répondra dès que possible.</p>
+            <p>Je vous répondrai dès que possible.</p>
           </div>
           <script>
             window.addEventListener("load", function () {
@@ -28,13 +28,22 @@
             <div class="contact-info">
               <p class="kicker">Contact</p>
               <h1>Prendre rendez-vous</h1>
-              <p class="lead">Un premier échange permet de clarifier votre demande et vos besoins. Vous pouvez contacter Sandrine directement via téléphone ou par e-mail, ou consulter les partenaires listés ci‑dessous.</p>
+              <p class="lead">Un premier échange permet de clarifier votre demande et vos besoins. Vous pouvez me contacter directement via téléphone, par e-mail, ou consulter les partenaires listés ci‑dessous.</p>
 
               <ul class="contact-list">
                 <li><strong>Tél :</strong> <a href="tel:+33632466200">06 32 46 62 00</a></li>
                 <li><strong>E-mail :</strong> <a href="mailto:sandrinemundweiler@gmail.com">sandrinemundweiler@gmail.com</a></li>
                 <li><strong>Adresse :</strong> <%= cabinet.address %></li>
               </ul>
+
+              <div class="access-info" style="margin-bottom: 24px; font-size: 0.95rem; color: var(--muted);">
+                <p><strong>Accès :</strong></p>
+                <ul style="list-style: none; padding: 0;">
+                  <li>🚇 <strong>Métro :</strong> Ligne A — Arrêt Masséna (à 3 min à pied)</li>
+                  <li>🚌 <strong>Bus :</strong> C1, C6, 38 — Arrêt Parc de la Tête d'Or Churchill</li>
+                  <li>🚆 <strong>Gare :</strong> Lyon Part-Dieu (à 15 min à pied ou via Bus C1/C6)</li>
+                </ul>
+              </div>
 
               <% if (typeof error !== 'undefined' && error) { %>
               <div class="form-alert form-alert--error" role="alert">
@@ -69,7 +78,7 @@
                 </form>
               </section>
 
-              <div class="social-links" aria-label="Réseaux sociaux de Sandrine">
+              <div class="social-links" aria-label="Mes réseaux sociaux">
                 <a class="social-link social-link--instagram" href="https://www.instagram.com/sandrine_mundweiler/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Sandrine Mundweiler">
                   <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <rect x="4" y="4" width="16" height="16" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.8"></rect>
