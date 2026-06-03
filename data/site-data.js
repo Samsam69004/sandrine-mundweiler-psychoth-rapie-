@@ -10,9 +10,9 @@ const navLinks = [
 const pages = {
   "a-propos": {
     path: "/a-propos",
-    title: "À propos - Sandrine Mundweiler | Thérapie psychocorporelle Lyon",
+    title: "Sandrine Mundweiler | Psychothérapie et Thérapie psychocorporelle Lyon",
     description:
-      "Depuis 35 ans dans le secteur médical, une recherche passionnée sur l'origine de la souffrance et l'accompagnement corps-psychisme.",
+      "Découvrez le parcours de Sandrine Mundweiler, praticienne en psychothérapie à Lyon 6. 35 ans d'expérience en santé mentale et accompagnement corps-psychisme.",
     kicker: "",
     heading: "À PROPOS",
     sections: [
@@ -100,22 +100,22 @@ const pages = {
   },
   "approches-therapeutiques": {
     path: "/approches-therapeutiques",
-    title: "Approches thérapeutiques - APSYSE, EFT, respiration | Lyon",
+    title: "Approches : APSYSE, EFT et gestion des émotions | Lyon 6",
     description:
-      "Approches thérapeutiques complémentaires à Lyon 6 : APSYSE, EFT, respiration consciente, massage thérapeutique et accompagnement de l'enfant intérieur.",
+      "Ma pratique de la psychothérapie à Lyon intègre l'APSYSE, l'EFT et la respiration consciente pour une gestion des émotions et un équilibre de santé mentale durable.",
     kicker: "",
     heading: "Approches thérapeutiques",
     sections: [
       {
         title: "",
         paragraphs: [
-          "Je dispose de différentes approches thérapeutiques complémentaires :"
+          "Dans mon cabinet de Lyon 6, je propose une psychothérapie intégrative s'appuyant sur différentes approches pour votre santé mentale et la gestion des émotions :"
         ]
       },
       {
         title: "",
         list: [
-          "L'APSYSE, qui allie l'écoute psychanalytique à la végétothérapie reichienne, dont le principe est de stimuler le corps sur ses 7 niveaux fonctionnels énergétiques afin de libérer les blocages psycho-émotionnels figés dans le temps et cristallisés dans le corps et le psychisme.",
+          "L'APSYSE (Analyse Psycho-Somato-Énergétique) : une thérapie psychocorporelle qui allie l'écoute psychanalytique à la végétothérapie pour libérer les blocages émotionnels cristallisés.",
           "L'EFT (Emotional Freedom Technique) pour diminuer les charges émotionnelles.",
           "Le contact guérisseur avec l'enfant intérieur pour développer l'amour de soi et la capacité à " +
             "être avec" +
@@ -224,9 +224,9 @@ const pages = {
   },
   "gestion-stress-lyon": {
     path: "/gestion-stress-lyon",
-    title: "Gestion du stress à Lyon - Therapie psychocorporelle",
+    title: "Gestion du stress et des émotions à Lyon - Psychothérapie",
     description:
-      "Gestion du stress et de l'anxiete à Lyon 6: accompagnement psychocorporel pour retrouver apaisement et stabilite.",
+      "Spécialiste en gestion des émotions et du stress à Lyon 6. Accompagnement en thérapie psychocorporelle pour retrouver apaisement et santé mentale.",
     kicker: "Page thematique",
     heading: "Gestion du stress et anxiete à Lyon",
     sections: [
@@ -403,20 +403,18 @@ const blogPosts = [
   }
   ,
   {
-    slug: "apsyse-en-groupe-a-lyon",
-    title: "APSYSE en Groupe à Lyon",
+    slug: "groupe-therapie-apsyse-lyon",
+    title: "Groupe de thérapie psychocorporelle APSYSE à Lyon",
     date: "27 janvier 2026",
-    excerpt: "L'APSySE combine une approche analytique et corporelle pour libérer les traumatismes refoulés.",
+    excerpt: "Un espace de travail thérapeutique en groupe pour réinvestir le corps, libérer les blocages et restaurer la présence à soi.",
     image: "groupe.png",
-    paragraphs: []
-  },
-  {
-    slug: "therapie-psychocorporelle-en-groupe-a-lyon",
-    title: "Thérapie Psychocorporelle en Groupe à LYON",
-    date: "27 janvier 2026",
-    excerpt: "Des groupes réguliers pour réinvestir le corps et restaurer la présence à soi.",
-    image: "groupe1.png",
-    paragraphs: []
+    additionalImages: ["groupe1.png"],
+    fullImage: true,
+    paragraphs: [
+      "Le travail en groupe est un puissant catalyseur de changement. L'APSySE combine une approche analytique et une dimension corporelle (végétothérapie) pour libérer les traumatismes refoulés et les blocages émotionnels cristallisés.",
+      "Ces groupes réguliers offrent un cadre sécurisant pour explorer votre intériorité, assouplir les cuirasses musculaires et permettre à l'énergie de vie de circuler plus librement.",
+      "Vous pouvez consulter l'affiche complète ci-dessus pour le détail des dates et des modalités d'inscription, ou me contacter directement pour plus de renseignements."
+    ]
   }
 ];
 
@@ -426,10 +424,16 @@ const seoLandingPaths = [
   "/gestion-stress-lyon"
 ];
 
+const cabinet = {
+  address: "31 Rue de Créqui, 69006 Lyon",
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.356247348483!2d4.8427773!3d45.7640498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea61df400373%3A0xc3f982875b43397d!2s31%20Rue%20de%20Cr%C3%A9qui%2C%2069006%20Lyon!5e0!3m2!1sfr!2sfr!4v1713180000000!5m2!1sfr!2sfr"
+};
+
 module.exports = {
   navLinks,
   pages,
   legalPages,
   blogPosts,
-  seoLandingPaths
+  seoLandingPaths,
+  cabinet
 };

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr">
   <%- include('../partials/head') %>
-  <body>
+  <body class="<%= bodyClass %>">
     <%- include('../partials/header') %>
 
     <main class="page-split">
@@ -33,7 +33,7 @@
               <ul class="contact-list">
                 <li><strong>Tél :</strong> <a href="tel:+33632466200">06 32 46 62 00</a></li>
                 <li><strong>E-mail :</strong> <a href="mailto:sandrinemundweiler@gmail.com">sandrinemundweiler@gmail.com</a></li>
-                <li><strong>Adresse :</strong> 11 Rue Curie, 69006 Lyon</li>
+                <li><strong>Adresse :</strong> <%= cabinet.address %></li>
               </ul>
 
               <% if (typeof error !== 'undefined' && error) { %>
@@ -119,6 +119,10 @@
                 </picture>
               </figure>
             </aside>
+          </div>
+
+          <div class="contact-map">
+            <iframe src="<%= cabinet.mapEmbedUrl %>" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </article>
 

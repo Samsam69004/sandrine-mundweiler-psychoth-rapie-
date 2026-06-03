@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="fr">
   <%- include('../partials/head') %>
-  <body>
+  <body class="<%= bodyClass %>">
     <%- include('../partials/header') %>
 
     <main class="section">
-      <% if (post.image && post.paragraphs && post.paragraphs.length > 0) { %>
+      <% if (post.image && post.paragraphs && post.paragraphs.length > 0 && !post.fullImage) { %>
       <header class="post-hero" style="background-image: url('/assets/images/<%= post.image %>')" aria-hidden="true">
         <div class="post-hero-overlay"></div>
         <div class="post-hero-inner container">
@@ -13,15 +13,18 @@
           <h1 class="hero-title"><%= post.title %></h1>
         </div>
       </header>
-      <% } else if (post.image) { %>
-      <figure class="post-image-full container">
-        <img src="/assets/images/<%= post.image %>" alt="<%= post.title %>">
-      </figure>
       <% } %>
 
       <article class="container content-card post-content">
         <p class="meta"><%= post.date %></p>
         <h1><%= post.title %></h1>
+
+        <% if (post.image && post.fullImage) { %>
+          <div class="post-main-image-container">
+            <img src="/assets/images/<%= post.image %>" alt="<%= post.title %>" class="post-image-secondary">
+          </div>
+        <% } %>
+
         <% if (post.paragraphs && post.paragraphs.length > 0) { %>
           <% post.paragraphs.forEach((paragraph) => { %>
             <p><%= paragraph %></p>
@@ -29,6 +32,15 @@
         <% } else if (post.excerpt) { %>
           <p><%= post.excerpt %></p>
         <% } %>
+
+        <% if (post.additionalImages && post.additionalImages.length > 0) { %>
+          <div class="post-additional-images">
+            <% post.additionalImages.forEach((img) => { %>
+              <img src="/assets/images/<%= img %>" alt="Information complémentaire - <%= post.title %>" class="post-image-secondary">
+            <% }) %>
+          </div>
+        <% } %>
+
         <p><a href="/blog">Retour au blog</a></p>
       </article>
     </main>

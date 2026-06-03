@@ -10,7 +10,8 @@ const {
   pages,
   legalPages,
   blogPosts,
-  seoLandingPaths
+  seoLandingPaths,
+  cabinet
 } = require("./data/site-data");
 
 const app = express();
@@ -38,8 +39,24 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 
+// Indispensable pour que Express récupère l'IP réelle derrière Vercel ou un proxy
+app.set("trust proxy", 1);
+
 // Security middlewares
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        "script-src": ["'self'", "'unsafe-inline'"],
+        "style-src": ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+        "font-src": ["'self'", "https://fonts.gstatic.com"],
+        "img-src": ["'self'", "data:"],
+        "frame-src": ["'self'", "https://www.google.com", "https://maps.google.com"],
+      },
+    },
+  })
+);
 
 // Simple rate limiter for contact form to mitigate spam/abuse
 const contactLimiter = rateLimit({
@@ -85,23 +102,20 @@ function baseViewData(activePath) {
 }
 
 function getCanonicalBase(req) {
-  const forwardedProto = (req.get("x-forwarded-proto") || "").split(",")[0].trim();
-  const protocol = forwardedProto || (req.secure ? "https" : "http");
-  const forwardedHost = (req.get("x-forwarded-host") || "").split(",")[0].trim();
-  const hostHeader = (req.get("host") || "").split(",")[0].trim();
-  const hostName = forwardedHost || hostHeader;
-
-  if (!hostName) {
+  const host = req.get("host");
+  if (!host) {
     return siteUrl;
   }
 
-  return `${protocol}://${hostName}`.replace(/\/$/, "");
+  return `${req.protocol}://${host}`.replace(/\/$/, "");
 }
 
 function viewData(activePath, req) {
   return {
     ...baseViewData(activePath),
-    canonicalBase: getCanonicalBase(req)
+    canonicalBase: getCanonicalBase(req),
+    cabinet,
+    bodyClass: activePath === "/" ? "home-page" : "page-internal"
   };
 }
 
@@ -150,9 +164,9 @@ app.get("/", (req, res) => {
   res.render("pages/home", {
     ...viewData("/", req),
     backgroundArtDataUri,
-    title: "Therapie psychocorporelle à Lyon 6 - Sandrine Mundweiler",
+    title: "Psychothérapie et Thérapie Psychocorporelle Lyon 6 - Sandrine Mundweiler",
     description:
-      "Sandrine Mundweiler, psycho-praticienne en therapie psychocorporelle à Lyon 6. Accompagnement adulte: anxiete, stress, burn-out, deuil.",
+      "Cabinet de psychothérapie et thérapie psychocorporelle (APSYSE) à Lyon 6. Sandrine Mundweiler vous accompagne en santé mentale : gestion des émotions, stress et trauma.",
     seoCards: [
       {
         title: "Anxiete, stress, angoisse",

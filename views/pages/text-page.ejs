@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr">
   <%- include('../partials/head') %>
-  <body class="<%= activePath === '/a-propos' ? 'page-a-propos' : '' %>">
+  <body class="<%= bodyClass %> <%= activePath === '/a-propos' ? 'page-a-propos' : '' %>">
     <%- include('../partials/header') %>
 
     <main class="page-split">
