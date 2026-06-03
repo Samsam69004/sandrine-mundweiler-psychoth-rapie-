@@ -1195,6 +1195,12 @@ h3 {
   align-items: start;
 }
 
+@media (max-width: 900px) {
+  .contact-visual {
+    grid-template-columns: 1fr;
+  }
+}
+
 .contact-info .lead {
   margin-bottom: 18px;
   color: #203152;
@@ -1533,10 +1539,12 @@ h3 {
 @media (max-width: 980px) {
   body {
     background: linear-gradient(180deg, #d9ede3 0%, #ffd4b8 100%);
+    background-attachment: scroll;
   }
 
   body.home-page {
     background: linear-gradient(180deg, var(--bg-left) 50%, var(--bg-right) 50%);
+    background-attachment: scroll;
   }
 
   .split-grid {
@@ -1560,6 +1568,10 @@ h3 {
     display: none;
     width: 100%;
     padding: 10px 0 16px;
+  }
+
+  .contact-map {
+    height: 300px;
   }
 
   .site-nav.open {
