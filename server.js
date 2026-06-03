@@ -102,11 +102,11 @@ function baseViewData(activePath) {
 }
 
 function getCanonicalBase(req) {
-  const host = req.get("host");
-  if (!host) {
+  // Priorité absolue à l'URL officielle définie dans les variables d'environnement (SEO)
+  if (process.env.SITE_URL) {
     return siteUrl;
   }
-
+  const host = req.get("host") || "localhost";
   return `${req.protocol}://${host}`.replace(/\/$/, "");
 }
 

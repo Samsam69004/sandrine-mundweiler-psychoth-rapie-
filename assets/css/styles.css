@@ -379,13 +379,19 @@ a:focus-visible {
 }
 
 @media (max-width: 900px) {
-  .hero::before, .hero::after,
-  .home-hero::before, .home-hero::after {
-    display: none; /* On cache les effets de split complexes sur mobile */
+  .hero::before, .hero::after, .home-hero::after {
+    display: none;
+  }
+
+  .home-hero::before {
+    display: block;
+    width: 100%;
+    opacity: 0.7; /* On restaure la photo rouge en fond sur toute la largeur */
+    z-index: 0;
   }
 
   .hero {
-    background: var(--bg-left); /* Fond simple pour la lisibilité */
+    background: transparent;
     min-height: auto;
     padding: 40px 0;
   }
@@ -1557,14 +1563,13 @@ h3 {
   }
 
   body {
-    /* Sur mobile, le dégradé suit le flux vertical du texte */
     background: linear-gradient(180deg, #d9ede3 0%, #ffffff 30%, #ffd4b8 100%) !important;
     background-attachment: scroll;
   }
 
   body.home-page {
-    /* Correction du split de l'accueil qui coupait le texte au milieu */
-    background: linear-gradient(180deg, var(--bg-left) 0%, var(--bg-right) 100%) !important;
+    /* On retire le !important vert pour laisser la photo rouge de l'accueil s'exprimer */
+    background: #ffffff;
     background-attachment: scroll;
   }
 
