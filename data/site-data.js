@@ -12,7 +12,7 @@ const pages = {
     path: "/a-propos",
     title: "Sandrine Mundweiler | Psychothérapie et Thérapie psychocorporelle Lyon",
     description:
-      "Découvrez le parcours de Sandrine Mundweiler, praticienne en psychothérapie à Lyon 6. 35 ans d'expérience en santé mentale et accompagnement corps-psychisme.",
+      "Sandrine Mundweiler, praticienne en psychothérapie à Lyon 6. 35 ans d'expérience en santé mentale et accompagnement de l'unité corps-psychisme via l'APSYSE.",
     kicker: "",
     heading: "À PROPOS DE SANDRINE MUNDWEILER",
     sections: [

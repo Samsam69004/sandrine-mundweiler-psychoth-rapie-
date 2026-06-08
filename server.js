@@ -164,9 +164,9 @@ app.get("/", (req, res) => {
   res.render("pages/home", {
     ...viewData("/", req),
     backgroundArtDataUri,
-    title: "Sandrine Mundweiler - Psychothérapie et Thérapie Psychocorporelle Lyon 6",
+    title: "Sandrine Mundweiler | Psychothérapie et Thérapie Psychocorporelle Lyon 6",
     description:
-      "Cabinet de psychothérapie et thérapie psychocorporelle (APSYSE) à Lyon 6. Sandrine Mundweiler vous accompagne en santé mentale : gestion des émotions, stress et trauma.",
+      "Sandrine Mundweiler, psycho-praticienne à Lyon 6. Spécialisée en psychothérapie et thérapie psychocorporelle (APSYSE) pour la gestion du stress, burn-out et traumatismes.",
     seoCards: [
       {
         title: "Anxiete, stress, angoisse",
