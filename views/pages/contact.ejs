@@ -4,137 +4,113 @@
   <body class="<%= bodyClass %>">
     <%- include('../partials/header') %>
 
-    <main class="page-split">
-      <div class="container split-grid">
-        <article class="content-card">
-          <% if (typeof sent !== 'undefined' && sent) { %>
-          <div class="contact-status-banner contact-status-banner--success" id="contact-status" tabindex="-1" role="status" aria-live="polite">
-            <span class="contact-status-banner__label">Message envoyé</span>
-            <strong>Merci, votre message a bien été envoyé.</strong>
-            <p>Je vous répondrai dès que possible.</p>
-          </div>
-          <script>
-            window.addEventListener("load", function () {
-              const notice = document.getElementById("contact-status");
-              if (notice) {
-                notice.scrollIntoView({ behavior: "smooth", block: "center" });
-                notice.focus({ preventScroll: true });
-              }
-            });
-          </script>
-          <% } %>
+    <main class="page-internal-main">
+      <div class="container">
+        <% if (typeof sent !== 'undefined' && sent) { %>
+        <div class="contact-status-banner contact-status-banner--success" id="contact-status" tabindex="-1" role="status" aria-live="polite">
+          <span class="contact-status-banner__label">Message envoyé</span>
+          <strong>Merci, votre message a bien été envoyé.</strong>
+          <p>Je vous répondrai dès que possible.</p>
+        </div>
+        <script>
+          window.addEventListener("load", function () {
+            const notice = document.getElementById("contact-status");
+            if (notice) {
+              notice.scrollIntoView({ behavior: "smooth", block: "center" });
+              notice.focus({ preventScroll: true });
+            }
+          });
+        </script>
+        <% } %>
 
-          <div class="contact-visual">
-            <div class="contact-info">
-              <p class="kicker">Contact</p>
-              <h1>Prendre rendez-vous</h1>
-              <p class="lead">Un premier échange permet de clarifier votre demande et vos besoins. Vous pouvez me contacter directement via téléphone, par e-mail, ou consulter les partenaires listés ci‑dessous.</p>
+        <% if (typeof error !== 'undefined' && error) { %>
+        <div class="form-alert form-alert--error" role="alert">
+          <%= error %>
+        </div>
+        <% } %>
 
-              <ul class="contact-list">
-                <li><strong>Tél :</strong> <a href="tel:+33632466200">06 32 46 62 00</a></li>
-                <li><strong>E-mail :</strong> <a href="mailto:sandrinemundweiler@gmail.com">sandrinemundweiler@gmail.com</a></li>
-                <li><strong>Adresse :</strong> <%= cabinet.address %></li>
+        <div class="contact-visual">
+          <!-- Bloc de gauche : Coordonnées -->
+          <div class="contact-info">
+            <p class="kicker">Contact</p>
+            <h1>Prendre rendez-vous</h1>
+            <p class="lead">Un premier échange permet de clarifier votre demande et vos besoins.</p>
+
+            <ul class="contact-list">
+              <li><strong>Téléphone :</strong> <a href="tel:+33632466200">06 32 46 62 00</a></li>
+              <li><strong>E-mail :</strong> <a href="mailto:sandrinemundweiler@gmail.com" class="text-break">sandrinemundweiler@gmail.com</a></li>
+              <li><strong>Adresse :</strong> <%= cabinet.address %></li>
+            </ul>
+
+            <div class="access-info" style="margin-top: 30px; margin-bottom: 24px; font-size: 0.95rem; color: var(--muted);">
+              <p><strong>Accès :</strong></p>
+              <ul style="list-style: none; padding: 0;">
+                <li>🚇 <strong>Métro :</strong> Ligne A — Arrêt Masséna (3 min)</li>
+                <li>🚌 <strong>Bus :</strong> C1, C6, 38 — Arrêt Churchill</li>
+                <li>🚆 <strong>Gare :</strong> Lyon Part-Dieu (15 min à pied)</li>
               </ul>
-
-              <div class="access-info" style="margin-bottom: 24px; font-size: 0.95rem; color: var(--muted);">
-                <p><strong>Accès :</strong></p>
-                <ul style="list-style: none; padding: 0;">
-                  <li>🚇 <strong>Métro :</strong> Ligne A — Arrêt Masséna (à 3 min à pied)</li>
-                  <li>🚌 <strong>Bus :</strong> C1, C6, 38 — Arrêt Parc de la Tête d'Or Churchill</li>
-                  <li>🚆 <strong>Gare :</strong> Lyon Part-Dieu (à 15 min à pied ou via Bus C1/C6)</li>
-                </ul>
-              </div>
-
-              <% if (typeof error !== 'undefined' && error) { %>
-              <div class="form-alert form-alert--error" role="alert">
-                <%= error %>
-              </div>
-              <% } %>
-
-              <section class="contact-form-panel" aria-labelledby="contact-form-title">
-                <p class="kicker">Formulaire</p>
-                <h2 id="contact-form-title">Laisser un message</h2>
-                <p class="form-intro">Le message arrive directement au cabinet. Vous pouvez préciser votre situation, vos attentes ou poser une première question.</p>
-
-                <form class="contact-form" action="/contact" method="post">
-                  <div class="form-grid">
-                    <div class="form-field">
-                      <label for="name">Nom et prénom</label>
-                      <input id="name" name="name" type="text" value="<%= (formData && formData.name) ? formData.name : '' %>" autocomplete="name" maxlength="200" required />
-                    </div>
-
-                    <div class="form-field">
-                      <label for="email">Adresse e-mail</label>
-                      <input id="email" name="email" type="email" value="<%= (formData && formData.email) ? formData.email : '' %>" autocomplete="email" maxlength="200" required />
-                    </div>
-                  </div>
-
-                  <div class="form-field">
-                    <label for="message">Votre message</label>
-                    <textarea id="message" name="message" rows="7" maxlength="2000" required><%= (formData && formData.message) ? formData.message : '' %></textarea>
-                  </div>
-
-                  <button class="btn btn-primary" type="submit">Envoyer le message</button>
-                </form>
-              </section>
-
-              <div class="social-links" aria-label="Mes réseaux sociaux">
-                <a class="social-link social-link--instagram" href="https://www.instagram.com/sandrine_mundweiler/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Sandrine Mundweiler">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <rect x="4" y="4" width="16" height="16" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.8"></rect>
-                    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
-                    <circle cx="17" cy="7" r="1.15" fill="currentColor"></circle>
-                  </svg>
-                  <span class="sr-only">Instagram</span>
-                </a>
-                <a class="social-link social-link--facebook" href="https://www.facebook.com/sandrine.mundweiler.56/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Sandrine Mundweiler">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path fill="currentColor" d="M14 8h2.1V5.5H14c-2 0-3.5 1.6-3.5 3.8V11H8.7v2.8h1.8V21h3V13.8h2.4L16.4 11h-2.9V9.7c0-.9.4-1.7 1.5-1.7z"></path>
-                  </svg>
-                  <span class="sr-only">Facebook</span>
-                </a>
-                <a class="social-link social-link--linkedin" href="https://www.linkedin.com/in/sandrine-mundweiler/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Sandrine Mundweiler">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path fill="currentColor" d="M6.5 9.2H4V20h2.5V9.2zM5.2 4C4.3 4 3.7 4.6 3.7 5.4c0 .8.6 1.5 1.5 1.5h.1c.9 0 1.5-.7 1.5-1.5C6.8 4.6 6.1 4 5.2 4zM20 14.1c0-2.9-1.6-4.2-3.8-4.2-1.8 0-2.7 1-3.1 1.7V9.2H10.6V20h2.5v-5.9c0-1.6.3-3.1 2.2-3.1 1.8 0 1.8 1.7 1.8 3.2V20H20v-5.9z"></path>
-                  </svg>
-                  <span class="sr-only">LinkedIn</span>
-                </a>
-              </div>
-
-              <section class="partners">
-                <h2>Partenariats</h2>
-                <div class="partners-grid">
-                  <a class="partner partner--ff2p" href="https://www.ff2p.fr/" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/images/FF2P.jpg" alt="FF2P" />
-                    <span>Membre de la FF2P</span>
-                  </a>
-                  <a class="partner" href="https://apsyse.com/" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/images/apsyse.jpg" alt="APsySE" />
-                    <span>APsySE</span>
-                  </a>
-                  <a class="partner partner--portrait" href="https://frederiquegranjon.com/" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/images/frederiquegranjon.jpg" alt="Frédérique Granjon" />
-                    <span>Frédérique Granjon</span>
-                  </a>
-                </div>
-              </section>
             </div>
 
-            <aside class="contact-photo">
-              <figure class="portrait portrait-contact">
-                <picture>
-                  <source type="image/webp" srcset="/assets/images/responsive/sandrine-400.webp 400w, /assets/images/responsive/sandrine-800.webp 800w, /assets/images/responsive/sandrine-1200.webp 1200w" sizes="(max-width: 600px) 90vw, 400px">
-                  <img src="/assets/images/responsive/sandrine-800.jpg" srcset="/assets/images/responsive/sandrine-400.jpg 400w, /assets/images/responsive/sandrine-800.jpg 800w, /assets/images/responsive/sandrine-1200.jpg 1200w" sizes="(max-width: 600px) 90vw, 400px" alt="Portrait de Sandrine Mundweiler" loading="eager" />
-                </picture>
-              </figure>
-            </aside>
+            <div class="social-links" aria-label="Mes réseaux sociaux">
+              <a class="social-link social-link--instagram" href="https://www.instagram.com/sandrine_mundweiler/" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.8"></rect><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17" cy="7" r="1.15" fill="currentColor"></circle></svg>
+              </a>
+              <a class="social-link social-link--facebook" href="https://www.facebook.com/sandrine.mundweiler.56/" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8h2.1V5.5H14c-2 0-3.5 1.6-3.5 3.8V11H8.7v2.8h1.8V21h3V13.8h2.4L16.4 11h-2.9V9.7c0-.9.4-1.7 1.5-1.7z"></path></svg>
+              </a>
+              <a class="social-link social-link--linkedin" href="https://www.linkedin.com/in/sandrine-mundweiler/" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.5 9.2H4V20h2.5V9.2zM5.2 4C4.3 4 3.7 4.6 3.7 5.4c0 .8.6 1.5 1.5 1.5h.1c.9 0 1.5-.7 1.5-1.5C6.8 4.6 6.1 4 5.2 4zM20 14.1c0-2.9-1.6-4.2-3.8-4.2-1.8 0-2.7 1-3.1 1.7V9.2H10.6V20h2.5v-5.9c0-1.6.3-3.1 2.2-3.1 1.8 0 1.8 1.7 1.8 3.2V20H20v-5.9z"></path></svg>
+              </a>
+            </div>
           </div>
 
-          <div class="contact-map">
-            <iframe src="<%= cabinet.mapEmbedUrl %>" allowfullscreen="" loading="lazy"></iframe>
-          </div>
-        </article>
+          <!-- Bloc de droite : Formulaire -->
+          <section class="contact-form-panel">
+            <p class="kicker">Formulaire</p>
+            <h2>Laisser un message</h2>
+            <form class="contact-form" action="/contact" method="post">
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="name">Nom et prénom</label>
+                  <input id="name" name="name" type="text" value="<%= (formData && formData.name) ? formData.name : '' %>" required />
+                </div>
+                <div class="form-field">
+                  <label for="email">Adresse e-mail</label>
+                  <input id="email" name="email" type="email" value="<%= (formData && formData.email) ? formData.email : '' %>" required />
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="message">Votre message</label>
+                <textarea id="message" name="message" rows="6" required><%= (formData && formData.message) ? formData.message : '' %></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Envoyer le message</button>
+            </form>
+          </section>
+        </div>
 
+        <!-- Carte Maps -->
+        <div class="contact-map">
+          <iframe src="<%= cabinet.mapEmbedUrl %>" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <!-- Partenariats -->
+        <section class="partners content-card">
+          <h2>Partenariats</h2>
+          <div class="partners-grid">
+            <a class="partner" href="https://www.ff2p.fr/" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/images/FF2P.jpg" alt="FF2P" />
+              <span>FF2P</span>
+            </a>
+            <a class="partner" href="https://apsyse.com/" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/images/apsyse.jpg" alt="APsySE" />
+              <span>APsySE</span>
+            </a>
+            <a class="partner" href="https://frederiquegranjon.com/" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/images/frederiquegranjon.jpg" alt="F. Granjon" />
+              <span>F. Granjon</span>
+            </a>
+          </div>
+        </section>
       </div>
     </main>
 

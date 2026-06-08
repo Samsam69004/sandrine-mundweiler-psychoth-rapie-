@@ -24,7 +24,6 @@ body {
   margin: 0;
   font-family: "Cormorant Garamond", Georgia, serif;
   color: var(--text);
-  /* Dégradé fluide et aérien : Vert d'eau vers Pêche doux, légèrement plus chaleureux */
   background: linear-gradient(135deg, #d9ede3 0%, #ffffff 40%, #ffd4b8 100%);
   background-attachment: fixed;
   line-height: 1.45;
@@ -155,6 +154,7 @@ a:focus-visible {
 }
 
 .hero,
+.page-internal-main,
 .page-split {
   padding: 60px 0;
 }
@@ -415,8 +415,40 @@ a:focus-visible {
   padding: clamp(16px, 4vw, 40px); /* Réduction du padding sur petit écran */
 }
 
-.content-card {
-  /* default card positioning */
+/* Rappel de background.jpg sur les conteneurs de texte des pages internes */
+.page-internal .content-card,
+.page-internal .contact-info,
+.page-internal .contact-form-panel,
+.page-internal .partners {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border-top: 5px solid #b2433f; /* Ligne rouge pour le rappel visuel de l'image */
+  box-shadow: 0 15px 35px rgba(178, 67, 63, 0.08); /* Légère ombre teintée */
+  border-radius: var(--radius);
+}
+
+.page-internal .content-card::before,
+.page-internal .contact-info::before,
+.page-internal .contact-form-panel::before,
+.page-internal .partners::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-art);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.12; /* Légèrement plus visible pour le rappel artistique */
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page-internal .content-card > *,
+.page-internal .contact-info > *,
+.page-internal .contact-form-panel > *,
+.page-internal .partners > * {
+  position: relative;
+  z-index: 1; /* On force le texte à passer devant l'image de fond */
 }
 
 .kicker {
@@ -446,6 +478,12 @@ h1 {
   position: relative;
   padding-bottom: 12px;
   margin-bottom: 20px;
+}
+
+/* Réduction de la taille des titres sur les pages internes uniquement */
+.page-internal h1 {
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  letter-spacing: 0.04em; /* Un peu moins espacé pour plus d'élégance en petit */
 }
 
 h1::after {
@@ -611,10 +649,7 @@ h3 {
 
 /* Contact form visual improvements */
 .contact-form-panel {
-  background: rgba(255,255,255,0.95);
-  border: 1px solid rgba(23,32,50,0.06);
-  padding: 22px;
-  border-radius: 12px;
+  /* Le padding est maintenant géré par le sélecteur groupé contact-visual */
 }
 
 .contact-form .form-grid {
@@ -1202,8 +1237,41 @@ h3 {
 .contact-visual {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  align-items: start;
+  gap: 32px;
+  align-items: stretch;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+/* Alignement visuel des titres dans la grille de contact */
+.contact-visual .kicker {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.contact-info,
+.contact-form-panel {
+  /* On force un padding identique pour les deux blocs pour l'alignement */
+  padding-top: 80px !important;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 40px;
+}
+
+.contact-visual h1,
+.contact-visual h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 24px 0;
+  padding: 0;
+}
+
+.contact-visual h1::after,
+.contact-visual h2::before {
+  display: none; /* On retire les décorations spécifiques pour un alignement parfait */
 }
 
 @media (max-width: 900px) {
@@ -1211,6 +1279,12 @@ h3 {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+}
+
+.contact-map {
+  margin-top: 40px;
+  height: 450px;
+  width: 100%;
 }
 
 .contact-info .lead {
@@ -1309,7 +1383,13 @@ h3 {
 }
 
 .partners {
-  margin-top: 18px;
+  margin-top: 40px;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.partners h2 {
+  margin-bottom: 30px;
 }
 
 .partners-grid {
@@ -1571,7 +1651,7 @@ h3 {
 
   body.home-page {
     /* On retire le !important vert pour laisser la photo rouge de l'accueil s'exprimer */
-    background: #ffffff;
+    background: linear-gradient(180deg, #d9ede3 0%, #ffffff 30%, #ffd4b8 100%);
     background-attachment: scroll;
   }
 

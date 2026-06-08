@@ -113,6 +113,7 @@ function getCanonicalBase(req) {
 function viewData(activePath, req) {
   return {
     ...baseViewData(activePath),
+    backgroundArtDataUri,
     canonicalBase: getCanonicalBase(req),
     cabinet,
     bodyClass: activePath === "/" ? "home-page" : "page-internal"
@@ -163,7 +164,6 @@ async function sendContactEmail({ name, email, message }) {
 app.get("/", (req, res) => {
   res.render("pages/home", {
     ...viewData("/", req),
-    backgroundArtDataUri,
     title: "Sandrine Mundweiler | Psychothérapie et Thérapie Psychocorporelle Lyon 6",
     description:
       "Sandrine Mundweiler, psycho-praticienne à Lyon 6. Spécialisée en psychothérapie et thérapie psychocorporelle (APSYSE) pour la gestion du stress, burn-out et traumatismes.",
