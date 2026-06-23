@@ -2,9 +2,11 @@ const navLinks = [
   { href: "/", label: "Accueil" },
   { href: "/a-propos", label: "A propos" },
   { href: "/approches-therapeutiques", label: "Approches" },
-  { href: "/experience-formation", label: "Experience" },
+  { href: "/experience-formation", label: "Expérience" },
   { href: "/contact", label: "Contact" },
-  { href: "/blog", label: "Blog" }
+  { href: "/blog", label: "Blog" },
+  { href: "/en-pratique", label: "Pratique" },
+  { href: "/avis-temoignage", label: "Avis" },
 ];
 
 const pages = {
@@ -98,18 +100,94 @@ const pages = {
       }
     ]
   },
+  "en-pratique": {
+    path: "/en-pratique",
+    title: "En pratique - Sandrine Mundweiler | Psychothérapie Lyon 6",
+    description: "Informations pratiques sur les séances de psychothérapie : durée, tarifs et cadre thérapeutique à Lyon.",
+    kicker: "Informations utiles",
+    heading: "En pratique",
+    bodyClass: "page-en-pratique",
+    sections: [
+      {
+        title: "Déroulement d'une séance en individuel au cabinet (Lyon 6)",
+        blocks: [
+          {
+            type: "html",
+            text: `
+              <p>La séance se déroule en 4 temps principaux :</p>
+              <p><strong>Temps d'accueil et de recentrage :</strong> Nous prenons un moment pour faire le point sur « comment et avec quoi j’arrive au cabinet ? », « quel est mon besoin et donc ma demande pour cette séance ? » et un « retour sur la dernière séance ».</p>
+              <p><strong>Temps de parole :</strong> Un échange pour analyser une problématique spécifique.</p>
+              <p><strong>Temps de travail corporel :</strong> Allongé sur le matelas, ou assis ou debout, le corps est invité à s'exprimer à travers les ressentis : mises en situations concrètes, mise en action, stimulations du corps pour défaire les blocages. Chaque séquence de travail corporel est suivie d'une mise en mots du vécu sensoriel.</p>
+              <p><strong>Temps de conclusion :</strong> Nous faisons le point sur « avec quoi je repars de cette séance ? ».</p>
+              <p><strong>Durée de la séance :</strong> 1h 30 en moyenne</p>
+              <p><strong>Rythme des rendez-vous :</strong> Tous les 15 jours est la durée souhaitable pour la dynamique du processus thérapeutique, mais cela peut être ajusté au cas par cas.</p>
+              <p><strong>Coût de la séance :</strong> 85 euros</p>
+            ` // Ensure this is a valid template literal
+          }
+        ]
+      },
+      {
+        title: "l’Apsyse en groupe à Lyon 4",
+        blocks: [
+          {
+            type: "html",
+            text: `
+              <p>La thérapie en groupe vient enrichir la thérapie individuelle.</p>
+              <p>Elle permet de se rencontrer à travers plusieurs autres.</p>
+              <p>Elle amplifie le travail personnel de par les échos que provoquent en soi les histoires de chacun.</p>
+              <p>Elle permet d’explorer les dynamiques relationnelles et de les expérimenter en direct.</p>
+              <p>Elle crée une expérience forte, authentique et rare de partage en humanité.</p>
+              <p>Nous sommes deux thérapeutes pour encadrer ce groupe.</p>
+              <p>Le groupe est de 10 personnes maximum.</p>
+            `
+          }
+        ]
+      }
+    ]
+  },
+  "avis-temoignage": {
+    path: "/avis-temoignage",
+    title: "Avis et Témoignages - Sandrine Mundweiler",
+    description: "Découvrez les retours et témoignages des personnes accompagnées en psychothérapie et thérapie psychocorporelle.",
+    kicker: "Retours d'expérience",
+    heading: "Avis & Témoignages",
+    sections: [
+      {
+        title: "Ce qu'ils en disent",
+        blocks: [
+          {
+            type: "html",
+            text: `
+              <div class="testimonial-card">
+                <blockquote>"Un accompagnement d'une grande finesse. L'approche par le corps m'a permis de débloquer des tensions que la parole seule n'arrivait pas à atteindre."</blockquote>
+                <cite>— Julie D.</cite>
+              </div>
+              <div class="testimonial-card">
+                <blockquote>"Sandrine offre un cadre sécurisant et bienveillant. Son écoute et sa présence m'ont beaucoup aidé dans ma reconstruction après un burn-out."</blockquote>
+                <cite>— Thomas L.</cite>
+              </div>
+              <div class="testimonial-card">
+                <blockquote>"Une thérapeute humaine et professionnelle. La méthode APSYSE est une révélation pour quiconque souhaite comprendre ses blocages profonds."</blockquote>
+                <cite>— Marine V.</cite>
+              </div>
+            `
+          }
+        ]
+      }
+    ]
+  },
   "approches-therapeutiques": {
     path: "/approches-therapeutiques",
     title: "Approches Thérapeutiques - Sandrine Mundweiler | Lyon 6",
     description:
       "Ma pratique de la psychothérapie à Lyon intègre l'APSYSE, l'EFT et la respiration consciente pour une gestion des émotions et un équilibre de santé mentale durable.",
     kicker: "",
-    heading: "Approches thérapeutiques - Sandrine Mundweiler",
+    heading: "Mes approches thérapeutiques - ",
     sections: [
       {
         title: "",
         paragraphs: [
-          "Dans mon cabinet de Lyon 6, je propose une psychothérapie intégrative s'appuyant sur différentes approches pour votre santé mentale et la gestion des émotions :"
+          "Dans mon cabinet de Lyon 6, je propose une psychothérapie intégrative s'appuyant sur différentes approches :"
         ]
       },
       {
@@ -117,9 +195,7 @@ const pages = {
         list: [
           "L'APSYSE (Analyse Psycho-Somato-Énergétique) : une thérapie psychocorporelle qui allie l'écoute psychanalytique à la végétothérapie pour libérer les blocages émotionnels cristallisés.",
           "L'EFT (Emotional Freedom Technique) pour diminuer les charges émotionnelles.",
-          "Le contact guérisseur avec l'enfant intérieur pour développer l'amour de soi et la capacité à " +
-            "être avec" +
-            " sans jugement.",
+          "Le contact guérisseur avec l'enfant intérieur pour développer l'amour de soi.",
           "Le massage thérapeutique lorsque le besoin de recevoir se manifeste.",
           "La respiration consciente qui permet de se rencontrer au delà du mental."
         ]
@@ -139,7 +215,7 @@ const pages = {
     description:
       "Expérience professionnelle à Lyon et formation continue: kinésithérapie, ostéopathie, médecine chinoise, APSYSE, EFT et respiration consciente.",
     kicker: "Expérience professionnelle",
-    heading: "Expérience et Formation - Sandrine Mundweiler",
+    heading: "Expérience et Formation - ",
     sections: [
       {
         title: "1991 à 2022",
@@ -407,6 +483,11 @@ const seoLandingPaths = [
 
 const cabinet = {
   address: "11 Rue Curie, 69006 Lyon",
+  publicTransport: [
+    "Métro Brotteaux (4 minutes à pied)",
+    "Métro Masséna (7 minutes à pied)",
+    "Métro Charpennes (env. 8 min à pied)"
+  ],
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.155460596328!2d4.849089576722659!3d45.76807691361276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea6607a75931%3A0x67399a9a304f56f1!2s11%20Rue%20Curie%2C%2069006%20Lyon!5e0!3m2!1sfr!2sfr!4v1715783315664!5m2!1sfr!2sfr"
 };
 
