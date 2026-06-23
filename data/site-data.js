@@ -164,7 +164,7 @@ const pages = {
           {
             source: "Pages Jaunes",
             sourceClass: "pages-jaunes",
-            author: "pigenel.odile",
+            author: "Pigenel Odile",
             date: "23 mars 2026",
             rating: "5/5",
             quote:
@@ -173,7 +173,7 @@ const pages = {
           {
             source: "Pages Jaunes",
             sourceClass: "pages-jaunes",
-            author: "clado",
+            author: "Clado",
             date: "21 janvier 2026",
             rating: "5/5",
             quote:
@@ -182,7 +182,7 @@ const pages = {
           {
             source: "Pages Jaunes",
             sourceClass: "pages-jaunes",
-            author: "annedelombares",
+            author: "Annedelombares",
             date: "13 janvier 2026",
             rating: "5/5",
             quote:
@@ -210,15 +210,6 @@ const pages = {
             rating: "5/5",
             quote:
               "Je suis en thérapie avec Sandrine depuis plus de 5 ans. Dans le cabinet, écoute, respect et compréhension instaurent une relation de confiance. Les séances allient échanges verbaux et travail corporel."
-          },
-          {
-            source: "Google",
-            sourceClass: "google",
-            author: "Pigenel Odile",
-            date: "il y a 2 mois",
-            rating: "5/5",
-            quote:
-              "Je tiens à saluer le grand professionnalisme de cette praticienne. Grâce à son approche globale, qui prend en compte à la fois le corps et le psychisme, elle accompagne avec justesse vers de véritables prises de conscience."
           },
           {
             source: "Google",
