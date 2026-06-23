@@ -153,12 +153,6 @@ const pages = {
     heading: "Avis & Témoignages",
     sections: [
       {
-        title: "Avis publics",
-        paragraphs: [
-          "Voici une sélection d'avis publics publiés sur Pages Jaunes et Google. Pour consulter l'ensemble des retours, utilisez les liens en fin de page."
-        ]
-      },
-      {
         title: "Pages Jaunes",
         reviews: [
           {
