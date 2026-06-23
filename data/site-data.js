@@ -148,27 +148,107 @@ const pages = {
   "avis-temoignage": {
     path: "/avis-temoignage",
     title: "Avis et Témoignages - Sandrine Mundweiler",
-    description: "Découvrez les retours et témoignages des personnes accompagnées en psychothérapie et thérapie psychocorporelle.",
+    description: "Découvrez des avis publics et des retours d'expérience sur l'accompagnement de Sandrine Mundweiler en psychothérapie et thérapie psychocorporelle.",
     kicker: "Retours d'expérience",
     heading: "Avis & Témoignages",
     sections: [
       {
-        title: "Ce qu'ils en disent",
+        title: "Avis publics",
+        paragraphs: [
+          "Voici une sélection d'avis publics publiés sur Pages Jaunes et Google. Pour consulter l'ensemble des retours, utilisez les liens en fin de page."
+        ]
+      },
+      {
+        title: "Pages Jaunes",
+        reviews: [
+          {
+            source: "Pages Jaunes",
+            sourceClass: "pages-jaunes",
+            author: "pigenel.odile",
+            date: "23 mars 2026",
+            rating: "5/5",
+            quote:
+              "Je tiens à saluer le grand professionnalisme de cette praticienne. Grâce à son approche globale, qui prend en compte à la fois le corps et le psychisme, elle accompagne avec justesse vers de véritables prises de conscience. Son travail permet d'avancer vers une meilleure connaissance de soi, dans un cadre à la fois bienveillant et structurant. Une expérience profondément enrichissante que je recommande vivement."
+          },
+          {
+            source: "Pages Jaunes",
+            sourceClass: "pages-jaunes",
+            author: "clado",
+            date: "21 janvier 2026",
+            rating: "5/5",
+            quote:
+              "Par la méthode qu'elle propose, alliant la parole et le travail corporel (Apsyse), Sandrine m'aide à comprendre mes schémas limitants et à les dépasser pour être plus à l'aise dans mon quotidien. Son écoute bienveillante, sa disponibilité et sa manière d'expliquer sont des atouts pour des séances qui aident à avancer et se reconstruire."
+          },
+          {
+            source: "Pages Jaunes",
+            sourceClass: "pages-jaunes",
+            author: "annedelombares",
+            date: "13 janvier 2026",
+            rating: "5/5",
+            quote:
+              "Excellente professionnelle à l'écoute de ses patients, toute en sensibilité et en douceur, très compétente en thérapie corporelle."
+          },
+          {
+            source: "Pages Jaunes",
+            sourceClass: "pages-jaunes",
+            author: "Charlotte Gautherot",
+            date: "7 janvier 2026",
+            rating: "5/5",
+            quote:
+              "Psychothérapeute très professionnelle et bienveillante à Lyon. À l'écoute, rassurante et efficace, elle aide à avancer avec confiance dès les premières séances."
+          }
+        ]
+      },
+      {
+        title: "Google",
+        reviews: [
+          {
+            source: "Google",
+            sourceClass: "google",
+            author: "Nolwenn Benoît",
+            date: "il y a 4 mois",
+            rating: "5/5",
+            quote:
+              "Je suis en thérapie avec Sandrine depuis plus de 5 ans. Dans le cabinet, écoute, respect et compréhension instaurent une relation de confiance. Les séances allient échanges verbaux et travail corporel."
+          },
+          {
+            source: "Google",
+            sourceClass: "google",
+            author: "Pigenel Odile",
+            date: "il y a 2 mois",
+            rating: "5/5",
+            quote:
+              "Je tiens à saluer le grand professionnalisme de cette praticienne. Grâce à son approche globale, qui prend en compte à la fois le corps et le psychisme, elle accompagne avec justesse vers de véritables prises de conscience."
+          },
+          {
+            source: "Google",
+            sourceClass: "google",
+            author: "Claude Francou",
+            date: "il y a 5 mois",
+            rating: "5/5",
+            quote:
+              "Sandrine Mundweiler m'a reçu dans un cadre respectueux, avec une écoute authentique et beaucoup de bienveillance. Les séances d'Apsyse m'apportent un apaisement durable."
+          },
+          {
+            source: "Google",
+            sourceClass: "google",
+            author: "Rachel Sintzel",
+            date: "il y a 4 mois",
+            rating: "5/5",
+            quote:
+              "Cela fait plus d'un an que j'ai commencé une thérapie avec Sandrine, et j'apprécie énormément son humanité et sa bienveillance. Au-delà des discussions, elle met en place un vrai travail corporel qui permet d'aller encore plus loin."
+          }
+        ]
+      },
+      {
+        title: "Retrouver tous les avis",
         blocks: [
           {
             type: "html",
             text: `
-              <div class="testimonial-card">
-                <blockquote>"Un accompagnement d'une grande finesse. L'approche par le corps m'a permis de débloquer des tensions que la parole seule n'arrivait pas à atteindre."</blockquote>
-                <cite>— Julie D.</cite>
-              </div>
-              <div class="testimonial-card">
-                <blockquote>"Sandrine offre un cadre sécurisant et bienveillant. Son écoute et sa présence m'ont beaucoup aidé dans ma reconstruction après un burn-out."</blockquote>
-                <cite>— Thomas L.</cite>
-              </div>
-              <div class="testimonial-card">
-                <blockquote>"Une thérapeute humaine et professionnelle. La méthode APSYSE est une révélation pour quiconque souhaite comprendre ses blocages profonds."</blockquote>
-                <cite>— Marine V.</cite>
+              <div class="review-source-links">
+                <a class="btn btn-secondary" href="https://www.pagesjaunes.fr/pros/57440598" target="_blank" rel="noopener noreferrer">Voir tous les avis sur Pages Jaunes</a>
+                <a class="btn btn-secondary" href="https://www.google.com/search?sa=X&sca_esv=53c5f5d984ac257c&sxsrf=APpeQnvHfGrBP72564ee0XMxyzLij_BOEQ:1782229697568&q=Mundweiler+Sandrine+Avis&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI0MzW1MDcwNjIyNDc3MjUwNd3AyPiKUcK3NC-lPDUzJ7VIITgxL6UoMy9VwbEss3gRK04pAOJwz1JOAAAA&rldimm=65587032217725055&tbm=lcl&hl=fr-FR&ved=2ahUKEwjO95-A252VAxWchP0HHU5cLDUQ9fQKegQISxAG&biw=1536&bih=791&dpr=1.25#lkt=LocalPoiReviews" target="_blank" rel="noopener noreferrer">Voir tous les avis sur Google</a>
               </div>
             `
           }

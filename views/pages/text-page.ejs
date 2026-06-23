@@ -23,11 +23,29 @@
                 <% if (block.type === 'emphasis') { %>
                 <p class="text-emphasis"><%= block.text %></p>
                 <% } else if (block.type === 'html') { %>
-                <p><%- block.text %></p>
+                <%- block.text %>
                 <% } else { %>
                 <p><%= block.text %></p>
                 <% } %>
               <% }) %>
+            <% } %>
+
+            <% if (section.reviews) { %>
+            <div class="reviews-grid">
+              <% section.reviews.forEach((review) => { %>
+              <article class="review-card review-card--<%= review.sourceClass || 'source' %>">
+                <div class="review-card-head">
+                  <div>
+                    <p class="review-source"><%= review.source %></p>
+                    <h3><%= review.author %></h3>
+                  </div>
+                  <p class="review-rating" aria-label="Note <%= review.rating %>"><%= review.rating %></p>
+                </div>
+                <p class="review-meta"><%= review.date %></p>
+                <blockquote><%= review.quote %></blockquote>
+              </article>
+              <% }) %>
+            </div>
             <% } %>
 
             <% if (section.paragraphs) { %>
