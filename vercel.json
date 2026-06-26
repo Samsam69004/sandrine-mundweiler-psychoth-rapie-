@@ -7,7 +7,7 @@
     }
   ],
   "env": {
-    "SITE_URL": "https://sandrine-mundweiler-psychotherapie.vercel.app"
+    "SITE_URL": "https://sandrine-mundweiler-therapeute-psychocorporelle.com"
   },
   "routes": [
     { "src": "/(.*)", "dest": "/server.js" }
