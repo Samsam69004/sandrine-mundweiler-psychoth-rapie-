@@ -49,8 +49,8 @@ app.use(
       directives: {
         ...helmet.contentSecurityPolicy.getDefaultDirectives(),
         "script-src": ["'self'", "'unsafe-inline'"],
-        "style-src": ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
-        "font-src": ["'self'", "https://fonts.gstatic.com"],
+          "style-src": ["'self'", "'unsafe-inline'"],
+          "font-src": ["'self'"],
         "img-src": ["'self'", "data:"],
         "frame-src": ["'self'", "https://www.google.com", "https://maps.google.com"],
       },
