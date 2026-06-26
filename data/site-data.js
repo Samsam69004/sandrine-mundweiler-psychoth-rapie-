@@ -5,6 +5,7 @@ const navLinks = [
   { href: "/experience-formation", label: "Expérience" },
   { href: "/contact", label: "Contact" },
   { href: "/blog", label: "Blog" },
+  { href: "/faq", label: "FAQ" },
   { href: "/en-pratique", label: "Pratique" },
   { href: "/avis-temoignage", label: "Avis" },
 ];
@@ -140,6 +141,22 @@ const pages = {
               <p>Nous sommes deux thérapeutes pour encadrer ce groupe.</p>
               <p>Le groupe est de 10 personnes maximum.</p>
             `
+          },
+          {
+            type: "html",
+            text: `
+              <div class="practice-gallery" aria-label="Photos du cadre de pratique">
+                <figure class="practice-gallery-item">
+                  <img src="/assets/images/pratique.jpeg" alt="Espace de travail corporel en groupe" loading="lazy" decoding="async" />
+                </figure>
+                <figure class="practice-gallery-item">
+                  <img src="/assets/images/pratique1.jpg" alt="Salle de consultation avec deux fauteuils" loading="lazy" decoding="async" />
+                </figure>
+                <figure class="practice-gallery-item">
+                  <img src="/assets/images/pratique2.jpg" alt="Table de soin dans le cabinet" loading="lazy" decoding="async" />
+                </figure>
+              </div>
+            `
           }
         ]
       }
@@ -234,6 +251,112 @@ const pages = {
               <div class="review-source-links">
                 <a class="btn btn-secondary" href="https://www.pagesjaunes.fr/pros/57440598" target="_blank" rel="noopener noreferrer">Voir tous les avis sur Pages Jaunes</a>
                 <a class="btn btn-secondary" href="https://www.google.com/search?sa=X&sca_esv=53c5f5d984ac257c&sxsrf=APpeQnvHfGrBP72564ee0XMxyzLij_BOEQ:1782229697568&q=Mundweiler+Sandrine+Avis&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI0MzW1MDcwNjIyNDc3MjUwNd3AyPiKUcK3NC-lPDUzJ7VIITgxL6UoMy9VwbEss3gRK04pAOJwz1JOAAAA&rldimm=65587032217725055&tbm=lcl&hl=fr-FR&ved=2ahUKEwjO95-A252VAxWchP0HHU5cLDUQ9fQKegQISxAG&biw=1536&bih=791&dpr=1.25#lkt=LocalPoiReviews" target="_blank" rel="noopener noreferrer">Voir tous les avis sur Google</a>
+              </div>
+            `
+          }
+        ]
+      }
+    ]
+  },
+  "faq": {
+    path: "/faq",
+    title: "FAQ - Thérapie psychocorporelle à Lyon | Sandrine Mundweiler",
+    description:
+      "Questions fréquentes sur le choix d'une thérapie à Lyon, le déroulement d'une séance, l'anxiété et l'approche psychocorporelle.",
+    kicker: "Questions fréquentes",
+    heading: "FAQ",
+    bodyClass: "page-faq",
+    structuredData: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Quelle thérapie choisir à Lyon ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Le bon choix dépend surtout de ce que vous vivez actuellement. Si vous cherchez un espace pour comprendre ce qui se joue dans votre histoire et dans votre corps, une approche psychocorporelle peut être pertinente. Si vous avez besoin d’un premier repère, le plus simple est souvent de prendre contact pour échanger sur votre demande et voir quel cadre vous conviendra le mieux."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Pourquoi parler ne suffit pas toujours pour aller mieux ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Certaines personnes comprennent leurs difficultés mais continuent à ressentir des tensions, de l’angoisse ou des blocages. Dans ces cas, il est souvent nécessaire de passer par le corps pour accéder aux émotions et permettre leur libération. C’est souvent à partir de là que les choses commencent vraiment à évoluer et que l’on ressent un apaisement plus profond au quotidien."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Quelle thérapie choisir pour l’anxiété à Lyon ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Plusieurs approches existent selon les besoins. Certaines personnes ont surtout besoin de comprendre, d’autres ressentent des tensions physiques importantes. Quand l’anxiété s’installe dans le corps (oppression, fatigue, tensions), un travail psychocorporel peut aider à relâcher en profondeur ce qui s’est installé. Ce travail permet progressivement de retrouver un calme intérieur plus stable, y compris dans des situations habituellement stressantes, dans le cadre d’un accompagnement proposé à Lyon."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Comment se passe une séance ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Une séance commence par un temps d’échange pour clarifier ce que vous vivez et ce que vous souhaitez travailler. Ensuite, selon votre besoin et votre rythme, le travail peut passer par la parole, le ressenti corporel, des exercices simples ou un accompagnement plus introspectif. La séance se termine par un temps de retour pour intégrer ce qui a été vécu et repartir avec quelque chose de plus clair et plus stable."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Quand consulter ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Vous pouvez consulter quand vous sentez que quelque chose devient trop lourd à porter seul: anxiété, fatigue émotionnelle, stress, burn-out, difficultés relationnelles, mal-être persistant ou sensation de blocage intérieur. Il n’est pas nécessaire d’attendre d’aller très mal pour demander de l’aide. Un accompagnement peut être utile dès que vous sentez que votre équilibre a besoin d’être soutenu."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Que signifie gérer ses émotions ?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Gérer ne veut pas dire supprimer. Chaque émotion est une information corporelle et demande à être écoutée, comprise et prise en charge : la peur a besoin d'être rassurée, la colère indique qu'un besoin a été maltraité, la tristesse, que quelque chose meurt ou se sépare et a besoin d'être consolé, etc. Cela demande de la douceur, de l'attention, de la conscience. Gérer ses émotions s'apprend. Cela fait partie du rôle du thérapeute."
+          }
+        }
+      ]
+    }),
+    sections: [
+      {
+        title: "Questions fréquentes",
+        blocks: [
+          {
+            type: "html",
+            text: `
+              <div class="faq-list">
+                <details class="faq-item">
+                  <summary>Quelle thérapie choisir à Lyon ?</summary>
+                  <p>Le bon choix dépend surtout de ce que vous vivez actuellement. Si vous cherchez un espace pour comprendre ce qui se joue dans votre histoire et dans votre corps, une approche psychocorporelle peut être pertinente. Si vous avez besoin d’un premier repère, le plus simple est souvent de prendre contact pour échanger sur votre demande et voir quel cadre vous conviendra le mieux.</p>
+                </details>
+
+                <details class="faq-item">
+                  <summary>Pourquoi parler ne suffit pas toujours pour aller mieux ?</summary>
+                  <p>Certaines personnes comprennent leurs difficultés mais continuent à ressentir des tensions, de l’angoisse ou des blocages. Dans ces cas, il est souvent nécessaire de passer par le corps pour accéder aux émotions et permettre leur libération. C’est souvent à partir de là que les choses commencent vraiment à évoluer et que l’on ressent un apaisement plus profond au quotidien.</p>
+                </details>
+
+                <details class="faq-item">
+                  <summary>Quelle thérapie choisir pour l’anxiété à Lyon ?</summary>
+                  <p>Plusieurs approches existent selon les besoins. Certaines personnes ont surtout besoin de comprendre, d’autres ressentent des tensions physiques importantes. Quand l’anxiété s’installe dans le corps (oppression, fatigue, tensions), un travail psychocorporel peut aider à relâcher en profondeur ce qui s’est installé. Ce travail permet progressivement de retrouver un calme intérieur plus stable, y compris dans des situations habituellement stressantes, dans le cadre d’un accompagnement proposé à Lyon.</p>
+                </details>
+
+                <details class="faq-item">
+                  <summary>Comment se passe une séance ?</summary>
+                  <p>Une séance commence par un temps d’échange pour clarifier ce que vous vivez et ce que vous souhaitez travailler. Ensuite, selon votre besoin et votre rythme, le travail peut passer par la parole, le ressenti corporel, des exercices simples ou un accompagnement plus introspectif. La séance se termine par un temps de retour pour intégrer ce qui a été vécu et repartir avec quelque chose de plus clair et plus stable.</p>
+                </details>
+
+                <details class="faq-item">
+                  <summary>Quand consulter ?</summary>
+                  <p>Vous pouvez consulter quand vous sentez que quelque chose devient trop lourd à porter seul: anxiété, fatigue émotionnelle, stress, burn-out, difficultés relationnelles, mal-être persistant ou sensation de blocage intérieur. Il n’est pas nécessaire d’attendre d’aller très mal pour demander de l’aide. Un accompagnement peut être utile dès que vous sentez que votre équilibre a besoin d’être soutenu.</p>
+                </details>
+
+                <details class="faq-item">
+                  <summary>Que signifie gérer ses émotions ?</summary>
+                  <p>Gérer ne veut pas dire supprimer. Chaque émotion est une information corporelle et demande à être écoutée, comprise et prise en charge : la peur a besoin d'être rassurée, la colère indique qu'un besoin a été maltraité, la tristesse, que quelque chose meurt ou se sépare et a besoin d'être consolé, etc. Cela demande de la douceur, de l'attention, de la conscience. Gérer ses émotions s'apprend. Cela fait partie du rôle du thérapeute.</p>
+                </details>
               </div>
             `
           }
@@ -406,6 +529,7 @@ const legalPages = {
           <p><strong>Adresse du cabinet :</strong> 11 Rue Curie, 69006 Lyon</p>
           <p><strong>Téléphone :</strong> 06 32 46 62 00</p>
           <p><strong>E-mail :</strong> sandrinemundweiler@gmail.com</p>
+          <p><strong>Nom de domaine :</strong> enregistré auprès de Namecheap, Inc.</p>
           <p><strong>Forme juridique :</strong> Profession libérale (Psycho-praticienne)</p>
 
           <p><strong>Hébergeur :</strong> Vercel Inc.<br>
@@ -430,30 +554,38 @@ const legalPages = {
     sections: [
       {
         type: "html",
-        text: `Politique de confidentialité : Politique de confidentialité
-Ce modèle est un exemple de texte et ne peut pas être publié. Les explications et les informations fournies ici ne sont que des explications, des informations et des exemples généraux. Vous ne devez pas vous fier à ce modèle comme à un conseil juridique ou à des recommandations sur ce que vous devez faire. Nous vous recommandons de demander un avis juridique pour vous aider à comprendre et à élaborer votre politique de protection de confidentialité.
+        text: `Cette politique de confidentialité décrit les données que nous traitons lorsque vous utilisez ce site.
 
-Une politique de confidentialité est une déclaration qui divulgue tout ou partie des façons dont un site Web collecte, utilise, divulgue et gère les données de ses visiteurs et clients. Elle répond à une obligation légale de protéger la vie privée d'un visiteur ou d'un client. Le lien vers votre politique de confidentialité doit apparaître sur toutes les pages de votre site.
+1. Responsable du traitement
+Sandrine Mundweiler, 11 Rue Curie, 69006 Lyon, sandrinemundweiler@gmail.com.
 
-Voici quelques exemples de contenu que vous pouvez inclure dans votre politique de confidentialité :
+2. Données collectées
+Lorsque vous utilisez le formulaire de contact, nous collectons les informations que vous saisissez volontairement : nom, adresse e-mail et message.
+Nous recevons également des données techniques de fonctionnement limitées via l'hébergement du site (journaux techniques, adresse IP, date et heure de connexion) pour la sécurité et la maintenance.
 
-Quelles informations vous recueillez
+3. Finalités
+Les données du formulaire servent uniquement à vous répondre et à traiter votre demande de rendez-vous.
+Les données techniques servent à assurer la sécurité, détecter les incidents et faire fonctionner le site.
 
-Comment vous recueillez les informations
+4. Base légale
+Le traitement du formulaire repose sur votre demande de contact et votre consentement explicite au moment de l'envoi.
+Le traitement technique repose sur l'intérêt légitime lié à la sécurité et au bon fonctionnement du site.
 
-Pourquoi vous recueillez les informations
+5. Destinataires
+      Vos messages sont accessibles uniquement à Sandrine Mundweiler et aux prestataires techniques nécessaires à l'hébergement et à l'envoi des e-mails.
+      Les e-mails de contact sont reçus sur la boîte Gmail sandrinemundweiler@gmail.com, hébergée par Google.
+      La carte Google Maps, lorsqu'elle est activée par votre clic, est chargée directement depuis Google.
 
-Avec qui vous partagez les informations
+6. Durée de conservation
+Les messages de contact sont conservés uniquement le temps nécessaire au traitement de votre demande puis archivés pour une durée limitée si un suivi est nécessaire.
+Les journaux techniques sont conservés sur une durée courte et proportionnée à la sécurité du service.
 
-Où sont stockées les informations
+7. Vos droits
+Vous disposez des droits d'accès, rectification, opposition, limitation, effacement et portabilité dans les conditions prévues par le RGPD.
+Pour exercer vos droits : sandrinemundweiler@gmail.com.
 
-Combien de temps vous conservez les informations
-
-Comment vous protégez les informations
-
-Les modifications ou mises à jour de la Politique de confidentialité
-
-Cliquez ici pour obtenir des informations plus détaillées sur la création de votre politique de confidentialité.`
+8. Carte Google Maps
+La carte de localisation n'est pas chargée automatiquement. Elle ne s'affiche qu'après votre action explicite sur la page Contact.`
       }
     ]
   },
@@ -466,43 +598,22 @@ Cliquez ici pour obtenir des informations plus détaillées sur la création de 
     sections: [
       {
         type: "html",
-        text: `1. Qu'est-ce qu'un cookie ?
-Un cookie est un petit fichier constitué de lettres et de chiffres, et téléchargé sur votre ordinateur lorsque vous accédez à certains sites Web. En général, les cookies permettent à un site Web de reconnaître l'ordinateur de l’utilisateur.
+        text: `1. Cookies utilisés sur ce site
+      Ce site n'utilise pas de cookies publicitaires ni de cookies de mesure d'audience.
 
-La chose la plus importante à savoir sur les cookies que nous plaçons est qu'ils servent à améliorer la convivialité de notre site web, par exemple en mémorisant les préférences du site et les paramètres linguistiques.
+2. Cookies ou technologies strictement nécessaires
+Le site peut utiliser des éléments strictement nécessaires à son hébergement et à sa sécurité. Ces composants techniques ne servent pas au suivi marketing des visiteurs.
 
-2. Pourquoi utilisons-nous des cookies ?
-Nous pouvons utiliser des cookies et d'autres technologies similaires pour un certain nombre de raisons, par exemple : i) pour des besoins de sécurité ou de protection contre la fraude, et afin d'identifier et de prévenir les cyber-attaques, ii) pour vous fournir le service que vous avez choisi de recevoir de notre part, iii) pour contrôler et analyser les performances, le fonctionnement et l'efficacité de notre service et iv) améliorer votre expérience utilisateur.
+3. Services tiers
+La carte Google Maps de la page Contact ne se charge qu'après votre action explicite. Avant ce clic, aucun contenu tiers de Google Maps n'est intégré à la page.
+      Le site ne charge pas de police externe ni de script d'analyse tiers par défaut.
 
-3. Tableau des cookies :
-Dans cette section, vous devez mentionner les cookies que vous utilisez sur votre site. Pour plus d'informations, cliquez ici.
+4. Vos choix
+Vous pouvez naviguer sur le site sans accepter de traceur marketing ou analytique, puisque le site n'en dépose pas par défaut.
+Si vous ne souhaitez pas charger Google Maps, il vous suffit de ne pas activer la carte.
 
-4. Vos choix :
-Pour en savoir plus sur les cookies, notamment sur la manière de voir quels cookies ont été définis et de comprendre comment les gérer, les supprimer ou les bloquer, visitez https://aboutcookies.org/ ou https://www.allaboutcookies.org/fr/.
-
-Il est également possible d'empêcher votre navigateur d'accepter les cookies en modifiant les paramètres concernés dans votre navigateur. Vous pouvez généralement trouver ces paramètres dans le menu « Options » ou « Préférences » de votre navigateur.
-
-Veuillez noter que la suppression de nos cookies ou la désactivation de futurs cookies ou technologies de suivi pourront vous empêcher d'accéder à certaines zones ou fonctionnalités de nos services, ou pourront autrement affecter négativement votre expérience d'utilisateur.
-
-Les liens suivants peuvent être utiles, ou vous pouvez utiliser l'option « Aide » de votre navigateur.
-
-Paramètres des cookies dans Firefox
-
-Paramètres des cookies dans Internet Explorer
-
-Paramètres des cookies dans Google Chrome
-
-Paramètres des cookies dans Safari (OS X)
-
-Paramètres des cookies dans Safari (iOS)
-
-Paramètres des cookies dans Android
-
-Pour refuser et empêcher que vos données soient utilisées par Google Analytics sur tous les sites Web, consultez les instructions suivantes :
-
-https://tools.google.com/dlpage/gaoptout?hl=fr
-
-Il se peut que nous modifiions cette politique en matière de cookies. Nous vous encourageons à consulter régulièrement cette page pour obtenir les dernières informations sur les cookies.`
+5. Mise à jour
+Cette page peut être mise à jour si le site évolue ou si un nouveau service tiers est ajouté.`
       }
     ]
   }

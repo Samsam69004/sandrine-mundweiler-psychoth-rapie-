@@ -11,7 +11,8 @@
 
 ## Fichiers modifies juste avant pause
 
-- `data/site-data.js`
+- `data/site-data.js` (Ajout des infos de transport Métro)
+- `views/pages/contact.ejs` (Liaison dynamique des stations de métro)
 - `views/pages/text-page.ejs`
 - `assets/css/styles.css`
 - `server.js` (compatibilite des anciennes URL `.html`)
@@ -33,4 +34,4 @@
 
 ## Prochaine action prevue
 
-- Verifier visuellement la teinte rouge et l'espacement sur A propos, puis harmoniser le meme style sur Approches/Experience/Contact si souhaite.
+- Verifier visuellement la page Contact et s'assurer que les liens vers les partenaires sont corrects.

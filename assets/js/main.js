@@ -8,43 +8,40 @@ if (menuToggle && nav) {
   });
 }
 
+const skipLinkButton = document.querySelector(".skip-link[data-skip-to]");
+if (skipLinkButton) {
+  skipLinkButton.addEventListener("click", () => {
+    const targetId = skipLinkButton.getAttribute("data-skip-to");
+    if (!targetId) return;
+
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    target.focus();
+    target.scrollIntoView({ behavior: "auto", block: "start" });
+  });
+}
+
+const mapConsentButton = document.querySelector("[data-map-consent]");
+if (mapConsentButton) {
+  mapConsentButton.addEventListener("click", () => {
+    const mapUrl = mapConsentButton.getAttribute("data-map-url");
+    const mapFrame = document.querySelector("[data-map-frame]");
+    if (!mapUrl || !mapFrame || mapFrame.querySelector("iframe")) return;
+
+    const iframe = document.createElement("iframe");
+    iframe.src = mapUrl;
+    iframe.allowFullscreen = true;
+    iframe.loading = "lazy";
+    iframe.referrerPolicy = "no-referrer-when-downgrade";
+    mapFrame.hidden = false;
+    mapFrame.appendChild(iframe);
+    mapConsentButton.disabled = true;
+    mapConsentButton.textContent = "Carte chargée";
+  });
+}
+
 const yearTarget = document.querySelector("[data-year]");
 if (yearTarget) {
   yearTarget.textContent = String(new Date().getFullYear());
 }
-
-// Cookie consent handling
-function showCookieBanner() {
-  const el = document.getElementById('cookie-consent');
-  if (!el) return;
-  el.style.display = 'block';
-}
-
-function hideCookieBanner() {
-  const el = document.getElementById('cookie-consent');
-  if (!el) return;
-  el.style.display = 'none';
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  try {
-    const accepted = localStorage.getItem('cookie_consent');
-    if (!accepted) showCookieBanner();
-
-    const acceptBtn = document.getElementById('consent-accept');
-    const declineBtn = document.getElementById('consent-decline');
-
-    if (acceptBtn) acceptBtn.addEventListener('click', () => {
-      localStorage.setItem('cookie_consent', 'accepted');
-      hideCookieBanner();
-      // TODO: initialize analytics if desired
-    });
-
-    if (declineBtn) declineBtn.addEventListener('click', () => {
-      localStorage.setItem('cookie_consent', 'declined');
-      hideCookieBanner();
-    });
-  } catch (e) {
-    // ignore storage errors
-  }
-});

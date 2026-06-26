@@ -38,14 +38,16 @@ Exemple:
 SMTP_HOST=smtp.gmail.com \
 SMTP_PORT=587 \
 SMTP_SECURE=false \
-SMTP_USER=votre-compte@gmail.com \
-SMTP_PASS=xxxx-xxxx-xxxx-xxxx \
-SMTP_FROM_EMAIL=votre-compte@gmail.com \
+SMTP_USER=sandrinemundweiler@gmail.com \
+SMTP_PASS=mot-de-passe-d-application-google \
+SMTP_FROM_EMAIL=sandrinemundweiler@gmail.com \
 CONTACT_TO_EMAIL=sandrinemundweiler@gmail.com \
 npm start
 ```
 
 Si la configuration SMTP est absente, le formulaire affiche un message d'erreur et n'envoie rien.
+
+Important: pour Gmail, il faut utiliser un mot de passe d'application Google et non le mot de passe du compte principal.
 
 ## Architecture dynamique
 
@@ -67,9 +69,10 @@ Si la configuration SMTP est absente, le formulaire affiche un message d'erreur 
 
 1. Copier la photo dans `assets/images/sandrine_edited_edited.jpg`.
 2. Definir le domaine final avec la variable d'environnement `SITE_URL`.
-3. Completer l'hebergeur dans les mentions legales.
+3. Completer l'hebergeur et le nom de domaine dans les mentions legales.
 4. Mettre a jour les liens reels Instagram/Facebook/LinkedIn.
 5. Soumettre `https://votre-domaine/sitemap.xml` dans Google Search Console.
+6. Verifier la configuration Gmail SMTP en production avant publication du formulaire.
 
 ## Remarque legale
 

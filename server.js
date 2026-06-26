@@ -72,6 +72,7 @@ const legacyPathMap = {
   "/approches-therapeutiques.html": "/approches-therapeutiques",
   "/experience-formation.html": "/experience-formation",
   "/contact.html": "/contact",
+  "/faq.html": "/faq",
   "/therapie-traumatisme-lyon.html": "/therapie-traumatisme-lyon",
   "/burn-out-lyon.html": "/burn-out-lyon",
   "/gestion-stress-lyon.html": "/gestion-stress-lyon",
@@ -227,6 +228,7 @@ app.post("/contact", contactLimiter, async (req, res) => {
   let name = (req.body.name || "").trim().slice(0, 200);
   let email = (req.body.email || "").trim().slice(0, 200);
   let message = (req.body.message || "").trim().slice(0, 2000);
+  const privacyConsent = req.body.privacyConsent === "yes";
 
   // Prevent header injection via CRLF
   name = name.replace(/[\r\n]/g, " ");
@@ -240,6 +242,18 @@ app.post("/contact", contactLimiter, async (req, res) => {
         "Me contacter : Sandrine Mundweiler, psycho-praticienne à Lyon 6. Téléphone, e-mail et adresse du cabinet.",
       sent: false,
       error: "Merci de remplir tous les champs du formulaire.",
+      formData: { name, email, message }
+    });
+  }
+
+  if (!privacyConsent) {
+    return res.status(400).render("pages/contact", {
+      ...viewData("/contact", req),
+      title: "Me contacter - Sandrine Mundweiler | Psychothérapie Lyon 6",
+      description:
+        "Me contacter : Sandrine Mundweiler, psycho-praticienne à Lyon 6. Téléphone, e-mail et adresse du cabinet.",
+      sent: false,
+      error: "Merci de confirmer la lecture de la politique de confidentialité avant l'envoi.",
       formData: { name, email, message }
     });
   }
@@ -321,6 +335,7 @@ app.get("/sitemap.xml", (req, res) => {
     "/approches-therapeutiques",
     "/experience-formation",
     "/contact",
+    "/faq",
     "/blog",
     "/mentions-legales",
     "/politique-confidentialite",

@@ -45,9 +45,11 @@
             <div class="access-info" style="margin-top: 30px; margin-bottom: 24px; font-size: 0.95rem; color: var(--muted);">
               <p><strong>Accès :</strong></p>
               <ul style="list-style: none; padding: 0;">
-                <li>🚇 <strong>Métro :</strong> Ligne A — Arrêt Masséna (3 min)</li>
-                <li>🚌 <strong>Bus :</strong> C1, C6, 38 — Arrêt Churchill</li>
-                <li>🚆 <strong>Gare :</strong> Lyon Part-Dieu (15 min à pied)</li>
+                <% cabinet.publicTransport.forEach(station => { %>
+                  <li>🚇 <strong><%= station %></strong></li>
+                <% }) %>
+                <li>🚌 <strong>Bus :</strong> C1, C6, 38 — Arrêt Churchill (20 minutes à pied)</li>
+                <li>🚆 <strong>Gare :</strong> Lyon Part-Dieu (16 minutes à pied)</li>
               </ul>
             </div>
 
@@ -79,6 +81,12 @@
                   <input id="email" name="email" type="email" value="<%= (formData && formData.email) ? formData.email : '' %>" required />
                 </div>
               </div>
+              <div class="form-consent">
+                <label for="privacyConsent">
+                  <input id="privacyConsent" name="privacyConsent" type="checkbox" value="yes" required />
+                  <span>J’ai lu la <a href="/politique-confidentialite">politique de confidentialité</a> et j’accepte que mes données soient utilisées pour traiter ma demande de contact.</span>
+                </label>
+              </div>
               <div class="form-field">
                 <label for="message">Votre message</label>
                 <textarea id="message" name="message" rows="6" required><%= (formData && formData.message) ? formData.message : '' %></textarea>
@@ -89,9 +97,15 @@
         </div>
 
         <!-- Carte Maps -->
-        <div class="contact-map">
-          <iframe src="<%= cabinet.mapEmbedUrl %>" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+        <section class="contact-map contact-map--consent">
+          <p class="kicker">Localisation</p>
+          <h2>Carte du cabinet</h2>
+          <p class="contact-map-note">
+            La carte Google Maps est désactivée par défaut. En cliquant sur le bouton ci-dessous, vous acceptez le chargement de contenu tiers fourni par Google.
+          </p>
+          <button class="btn btn-secondary" type="button" data-map-consent data-map-url="<%= cabinet.mapEmbedUrl %>">Afficher la carte Google Maps</button>
+          <div class="contact-map-frame" data-map-frame hidden></div>
+        </section>
 
         <!-- Partenariats -->
         <section class="partners content-card">

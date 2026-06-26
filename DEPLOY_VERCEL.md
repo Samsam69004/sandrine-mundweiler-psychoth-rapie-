@@ -22,8 +22,12 @@ git push -u origin main
 
 4) Variables d'environnement (optionnelles):
 - Pour que l'envoi d'emails fonctionne, configurez `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM_EMAIL`, `CONTACT_TO_EMAIL` dans les Settings > Environment Variables de Vercel.
+- Si vous utilisez la boîte Gmail `sandrinemundweiler@gmail.com`, privilégiez `SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=587`, `SMTP_SECURE=false` et un mot de passe d'application Google.
 
-5) Déploiement manuel via Vercel CLI (optionnel):
+5) Domaine Namecheap
+- Si le nom de domaine a été acheté chez Namecheap, ajoutez-le dans Vercel (Settings -> Domains) puis mettez à jour les enregistrements DNS selon les instructions fournies par Vercel.
+
+6) Déploiement manuel via Vercel CLI (optionnel):
 
 ```bash
 npm i -g vercel

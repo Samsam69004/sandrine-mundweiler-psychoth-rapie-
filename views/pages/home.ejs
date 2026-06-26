@@ -2,26 +2,26 @@
 <html lang="fr">
   <%- include('../partials/head') %>
   <body>
-    <a href="#contenu" class="skip-link">Aller au contenu</a>
+    <button type="button" class="skip-link" data-skip-to="contenu">Aller au contenu</button>
     <%- include('../partials/header') %>
 
-    <main id="contenu" class="hero home-hero">
+    <main id="contenu" class="hero home-hero" tabindex="-1">
       <div class="container split-grid">
         <section class="hero-card" aria-labelledby="titre-principal">
           <p class="kicker">Cabinet à LYON 6 - Adultes</p>
-          <h1 id="titre-principal">Thérapie psychocorporelle</h1>
+          <h1 id="titre-principal">Thérapeute psychocorporelle</h1>
           <p class="subtitle">
             J'accueille dans mon cabinet à LYON 6 en individuel ou en groupe des personnes adultes en
             souffrance et en recherche de sens, de compréhension, de solutions et de transformation de leurs
-            problématiques existentielles, impactant leur vie relationnelle ou leur santé physique ou psychique.
+            problématiques existentielles, impactant leur vie relationnelle ou leur santé physique et/ou mentale.
           </p>
           <p class="lead"><strong>Mon approche thérapeutique est double:</strong></p>
           <ul class="lead list-clean">
             <li>
-              analytique à travers l'écoute de la parole, référencée à la psychologie et la psychanalyse
+              <strong>analytique</strong> à travers l'écoute de la parole, référencée à la psychologie et la psychanalyse
             </li>
             <li>
-              corporelle au moyen de postures, mouvements ou respirations permettant de ressentir profondément
+              <strong>corporelle</strong> au moyen de postures, mouvements ou respirations permettant de ressentir profondément
               en soi les blocages psycho-émotionnels et de les exprimer pour s'en libérer.
             </li>
           </ul>
@@ -31,14 +31,13 @@
           </p>
           <p class="quote">APSYSE<br />analyse psycho somato énergétique</p>
           <p class="lead">
-            Indications: anxiété, dépression, angoisse, perte de confiance en soi, addictions, conflits
-            relationnels, deuils, troubles de l'émotivité, solitude, perte de désir, troubles de la sexualité,
-            somatisations, etc.
+            <strong>Indications: stress, anxiété, dépression, angoisse, perte de confiance en soi, addictions, conflits
+            relationnels, deuils, difficulté de gestion des émotions  , solitude, perte de désir, troubles de la sexualité,
+            somatisations, etc.</strong>
           </p>
           <p class="lead">
             Pour en savoir plus : <a href="https://apsyse.com/" target="_blank" rel="noopener noreferrer">https://apsyse.com/</a>
           </p>
-          <p class="quote">#lyon #thérapie psychocorporelle #apsyse</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="/contact">Prendre contact</a>
             <a class="btn btn-secondary" href="/approches-therapeutiques">Découvrir les approches</a>
@@ -48,8 +47,7 @@
         <aside
           class="photo-panel home-photo-stack"
           aria-label="Portrait"
-          style="background-image: url('<%= backgroundArtDataUri || '/assets/images/background.jpg' %>');"
-        >
+          style="background-image: url('<%= backgroundArtDataUri || '/assets/images/background.jpg' %>');">
           <figure class="portrait portrait-sandrine">
             <picture>
               <source type="image/webp" srcset="/assets/images/responsive/sandrine-400.webp 400w, /assets/images/responsive/sandrine-800.webp 800w, /assets/images/responsive/sandrine-1200.webp 1200w" sizes="(max-width: 600px) 90vw, 400px">
