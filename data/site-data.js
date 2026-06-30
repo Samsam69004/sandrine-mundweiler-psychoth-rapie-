@@ -516,30 +516,22 @@ const pages = {
 const legalPages = {
   "mentions-legales": {
     path: "/mentions-legales",
-    title: "Mentions Légales - Sandrine Mundweiler",
-    description: "Mentions legales du site.",
+    title: "Mentions légales",
+    description: "Mentions légales du site de Sandrine Mundweiler.",
     kicker: "Cadre legal",
-    heading: "Mentions Légales",
+    heading: "Mentions légales",
     sections: [
       {
         type: "html",
         text: `
           <p><strong>Responsable de la publication :</strong> Sandrine Mundweiler</p>
-          <p><strong>Dénomination sociale :</strong> Sandrine Mundweiler</p>
+          <p><strong>Activité :</strong> psycho-praticienne en thérapie psychocorporelle</p>
           <p><strong>Adresse du cabinet :</strong> 11 Rue Curie, 69006 Lyon</p>
           <p><strong>Téléphone :</strong> 06 32 46 62 00</p>
           <p><strong>E-mail :</strong> sandrinemundweiler@gmail.com</p>
           <p><strong>Nom de domaine :</strong> enregistré auprès de Namecheap, Inc.</p>
-          <p><strong>Forme juridique :</strong> Profession libérale (Psycho-praticienne)</p>
-
-          <p><strong>Hébergeur :</strong> Vercel Inc.<br>
-          440 N Barranca Ave #4133<br>
-          Covina, CA 91723<br>
-          États-Unis</p>
-
-          <p><strong>Propriété intellectuelle :</strong><br>
-          L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés.</p>
-
+          <p><strong>Hébergeur :</strong> Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</p>
+          <p><strong>Propriété intellectuelle :</strong> l'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés.</p>
           <p>La Commission européenne fournit une plateforme de règlement des litiges en ligne (OS) disponible à l'adresse <a href="http://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">http://ec.europa.eu/consumers/odr/</a>.</p>
         `
       }
@@ -547,73 +539,72 @@ const legalPages = {
   },
   "politique-confidentialite": {
     path: "/politique-confidentialite",
-    title: "Politique de confidentialite",
-    description: "Politique de confidentialite.",
+    title: "Politique de confidentialité",
+    description: "Politique de confidentialité du site.",
     kicker: "Politique de confidentialité",
     heading: "Politique de confidentialité",
     sections: [
       {
         type: "html",
-        text: `Cette politique de confidentialité décrit les données que nous traitons lorsque vous utilisez ce site.
+        text: `Cette politique de confidentialité décrit les traitements de données réalisés lorsque vous utilisez ce site.
 
 1. Responsable du traitement
 Sandrine Mundweiler, 11 Rue Curie, 69006 Lyon, sandrinemundweiler@gmail.com.
 
 2. Données collectées
-Lorsque vous utilisez le formulaire de contact, nous collectons les informations que vous saisissez volontairement : nom, adresse e-mail et message.
-Nous recevons également des données techniques de fonctionnement limitées via l'hébergement du site (journaux techniques, adresse IP, date et heure de connexion) pour la sécurité et la maintenance.
+Lorsque vous utilisez le formulaire de contact, nous collectons uniquement les informations que vous choisissez de nous transmettre : nom, adresse e-mail et message.
+Le site peut également produire des journaux techniques nécessaires à son hébergement, à sa sécurité et à son bon fonctionnement (par exemple adresse IP, date et heure de connexion).
 
-3. Finalités
-Les données du formulaire servent uniquement à vous répondre et à traiter votre demande de rendez-vous.
-Les données techniques servent à assurer la sécurité, détecter les incidents et faire fonctionner le site.
+3. Finalités et bases légales
+Les données du formulaire servent exclusivement à répondre à votre demande, à vous recontacter et à organiser un éventuel rendez-vous.
+Le traitement du formulaire repose sur votre consentement explicite au moment de l'envoi.
+Les journaux techniques servent à sécuriser le site, détecter les incidents et maintenir le service.
 
-4. Base légale
-Le traitement du formulaire repose sur votre demande de contact et votre consentement explicite au moment de l'envoi.
-Le traitement technique repose sur l'intérêt légitime lié à la sécurité et au bon fonctionnement du site.
+4. Destinataires
+Vos messages sont accessibles uniquement à Sandrine Mundweiler et aux prestataires techniques strictement nécessaires au fonctionnement du site et à l'envoi des e-mails.
+Les e-mails de contact sont reçus sur la boîte Gmail sandrinemundweiler@gmail.com, hébergée par Google.
+La carte Google Maps n'est chargée qu'après votre clic explicite sur la page Contact.
 
-5. Destinataires
-      Vos messages sont accessibles uniquement à Sandrine Mundweiler et aux prestataires techniques nécessaires à l'hébergement et à l'envoi des e-mails.
-      Les e-mails de contact sont reçus sur la boîte Gmail sandrinemundweiler@gmail.com, hébergée par Google.
-      La carte Google Maps, lorsqu'elle est activée par votre clic, est chargée directement depuis Google.
+5. Durée de conservation
+Les messages de contact sont conservés pendant le temps nécessaire au traitement de votre demande, puis archivés pour une durée limitée si un suivi est nécessaire.
+Les journaux techniques sont conservés pour une durée courte et proportionnée aux besoins de sécurité et d'administration.
 
-6. Durée de conservation
-Les messages de contact sont conservés uniquement le temps nécessaire au traitement de votre demande puis archivés pour une durée limitée si un suivi est nécessaire.
-Les journaux techniques sont conservés sur une durée courte et proportionnée à la sécurité du service.
+6. Vos droits
+Vous disposez des droits d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité dans les conditions prévues par le RGPD.
+Pour exercer vos droits ou poser une question sur le traitement de vos données, vous pouvez écrire à sandrinemundweiler@gmail.com.
+Vous pouvez également introduire une réclamation auprès de la CNIL si vous estimez que vos droits ne sont pas respectés.
 
-7. Vos droits
-Vous disposez des droits d'accès, rectification, opposition, limitation, effacement et portabilité dans les conditions prévues par le RGPD.
-Pour exercer vos droits : sandrinemundweiler@gmail.com.
-
-8. Carte Google Maps
-La carte de localisation n'est pas chargée automatiquement. Elle ne s'affiche qu'après votre action explicite sur la page Contact.`
+7. Services tiers
+La carte Google Maps est désactivée par défaut. Si vous choisissez de l'afficher, Google peut traiter des données via son propre service selon ses conditions d'utilisation et sa politique de confidentialité.`
       }
     ]
   },
   "politique-cookies": {
     path: "/politique-cookies",
     title: "Politique de cookies",
-    description: "Politique de cookies.",
+    description: "Politique de cookies du site.",
     kicker: "Cookies",
     heading: "Politique de cookies",
     sections: [
       {
         type: "html",
         text: `1. Cookies utilisés sur ce site
-      Ce site n'utilise pas de cookies publicitaires ni de cookies de mesure d'audience.
+Ce site n'utilise pas de cookies publicitaires, analytiques ou de personnalisation.
+À ce jour, il ne dépose pas non plus de cookie de consentement, car aucun traceur non essentiel n'est chargé par défaut.
 
-2. Cookies ou technologies strictement nécessaires
-Le site peut utiliser des éléments strictement nécessaires à son hébergement et à sa sécurité. Ces composants techniques ne servent pas au suivi marketing des visiteurs.
+2. Technologies strictement nécessaires
+Le site peut produire des journaux techniques liés à l'hébergement et à la sécurité du service. Ces données ne servent pas au suivi marketing des visiteurs.
 
 3. Services tiers
 La carte Google Maps de la page Contact ne se charge qu'après votre action explicite. Avant ce clic, aucun contenu tiers de Google Maps n'est intégré à la page.
-      Le site ne charge pas de police externe ni de script d'analyse tiers par défaut.
+Le site ne charge pas de script d'analyse tiers par défaut.
 
 4. Vos choix
 Vous pouvez naviguer sur le site sans accepter de traceur marketing ou analytique, puisque le site n'en dépose pas par défaut.
-Si vous ne souhaitez pas charger Google Maps, il vous suffit de ne pas activer la carte.
+Si vous ne souhaitez pas charger Google Maps, il suffit de ne pas activer la carte.
 
 5. Mise à jour
-Cette page peut être mise à jour si le site évolue ou si un nouveau service tiers est ajouté.`
+Cette page sera mise à jour si le site évolue ou si un nouveau service tiers est ajouté.`
       }
     ]
   }

@@ -103,12 +103,12 @@ function baseViewData(activePath) {
 }
 
 function getCanonicalBase(req) {
-  // Priorité absolue à l'URL officielle définie dans les variables d'environnement (SEO)
-  if (process.env.SITE_URL) {
-    return siteUrl;
+  const requestHost = req.get("host");
+  if (requestHost) {
+    return `${req.protocol}://${requestHost}`.replace(/\/$/, "");
   }
-  const host = req.get("host") || "localhost";
-  return `${req.protocol}://${host}`.replace(/\/$/, "");
+
+  return siteUrl;
 }
 
 function viewData(activePath, req) {
