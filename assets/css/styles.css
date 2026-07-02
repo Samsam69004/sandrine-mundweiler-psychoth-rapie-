@@ -177,6 +177,10 @@ a:focus-visible {
     transform 0.2s ease;
 }
 
+.site-nav a[href="/a-propos"] {
+  white-space: nowrap;
+}
+
 @media (max-width: 1200px) and (min-width: 901px) {
   .header-inner {
     gap: 10px;
@@ -313,6 +317,12 @@ a:focus-visible {
   box-shadow: 0 18px 40px rgba(20,35,61,0.09);
 }
 
+.hero .hero-card h1 {
+  font-size: clamp(1.55rem, 3.1vw, 2.25rem);
+  letter-spacing: 0.03em;
+  line-height: 0.98;
+}
+
 .hero .hero-card h1::after {
   background: linear-gradient(90deg, #ff7a5a, #ffb88c);
 }
@@ -446,6 +456,23 @@ a:focus-visible {
     min-height: auto;
     padding: 40px 0;
   }
+
+  .split-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-card,
+  .photo-panel {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-card h1 {
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    hyphens: auto !important;
+  }
 }
 
 .split-grid {
@@ -454,6 +481,10 @@ a:focus-visible {
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: start;
+}
+
+.split-grid > * {
+  min-width: 0;
 }
 
 .hero-card,
@@ -777,7 +808,7 @@ h3 {
 
 .contact-map--consent .contact-map-frame {
   margin-top: 18px;
-  height: 450px;
+  height: 220px;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(23, 32, 50, 0.1);
@@ -787,6 +818,12 @@ h3 {
 .contact-map--consent .contact-map-frame iframe {
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 900px) {
+  .contact-map--consent .contact-map-frame {
+    height: 320px;
+  }
 }
 
 .contact-map-note {
@@ -811,8 +848,17 @@ h3 {
 }
 
 @media (max-width: 900px) {
+  .contact-map--consent .contact-map-frame {
+    height: 200px;
+  }
+
   .contact-form .form-grid { grid-template-columns: 1fr; }
   .split-grid { grid-template-columns: 1fr; }
+}
+
+.contact-form .btn.btn-primary {
+  display: block;
+  margin: 0 auto;
 }
 
 /* Make banner more vivid green */
@@ -1359,6 +1405,16 @@ h3 {
   margin: 20px 0 28px;
 }
 
+.practice-gallery--compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.practice-gallery--compact .practice-gallery-item:first-child,
+.practice-gallery--compact .practice-gallery-item:nth-child(2),
+.practice-gallery--compact .practice-gallery-item:nth-child(3) {
+  grid-column: auto;
+}
+
 .practice-gallery-item {
   margin: 0;
   position: relative;
@@ -1405,6 +1461,17 @@ h3 {
 .practice-gallery-item:nth-child(2) img,
 .practice-gallery-item:nth-child(3) img {
   aspect-ratio: 16 / 10;
+}
+
+.practice-gallery--compact .practice-gallery-item:first-child,
+.practice-gallery--compact .practice-gallery-item:nth-child(2) {
+  grid-column: auto;
+}
+
+.practice-gallery--compact .practice-gallery-item img,
+.practice-gallery--compact .practice-gallery-item:first-child img,
+.practice-gallery--compact .practice-gallery-item:nth-child(2) img {
+  aspect-ratio: 4 / 3;
 }
 
 .practice-gallery-item:hover,
@@ -1616,6 +1683,142 @@ h3 {
   margin-top: 40px;
   height: 450px;
   width: 100%;
+}
+
+.contact-location-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 40px;
+}
+
+.contact-location-grid .contact-map,
+.contact-location-grid .contact-address-card {
+  margin-top: 0;
+}
+
+.contact-location-grid .contact-map {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-location-grid .contact-map--consent .contact-map-frame {
+  flex: 1;
+  height: auto;
+  min-height: 220px;
+}
+
+@media (max-width: 900px) {
+  .contact-location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-location-grid .contact-map--consent .contact-map-frame {
+    flex: initial;
+    height: 320px;
+  }
+}
+
+.contact-address-visual {
+  margin: 0 0 18px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(20, 35, 61, 0.12);
+  border: 1px solid rgba(23, 32, 50, 0.1);
+  background: #fff;
+}
+
+.contact-address-visual img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.contact-address-zoom-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(20, 35, 61, 0.12);
+  cursor: zoom-in;
+}
+
+.contact-address-zoom-trigger img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.image-lightbox {
+  position: relative;
+  border: 0;
+  padding: 0;
+  width: min(92vw, 1100px);
+  max-width: min(92vw, 1100px);
+  background: transparent;
+}
+
+.image-lightbox::backdrop {
+  background: rgba(12, 18, 31, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.image-lightbox img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 86vh;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.image-lightbox__close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: #1b3156;
+  font-size: 1.6rem;
+  line-height: 1;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+}
+
+.contact-address-card {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  min-height: 450px;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.page-internal .contact-address-card {
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.contact-address-card h2 {
+  margin-bottom: 14px;
+}
+
+.contact-address-card .contact-address-zoom-trigger {
+  flex: 1;
+}
+
+.contact-address-card .contact-address-zoom-trigger img {
+  height: 100%;
+  min-height: 320px;
 }
 
 .contact-info .lead {
@@ -1975,6 +2178,11 @@ h3 {
     overflow-wrap: normal !important;
   }
 
+  .hero .hero-card h1 {
+    font-size: clamp(1.55rem, 6.8vw, 2.25rem);
+    letter-spacing: 0.035em;
+  }
+
   body {
     background: linear-gradient(180deg, #d9ede3 0%, #ffffff 30%, #ffd4b8 100%) !important;
     background-attachment: scroll;
@@ -1987,7 +2195,7 @@ h3 {
   }
 
   .split-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .photo-panel {

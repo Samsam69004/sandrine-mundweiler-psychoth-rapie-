@@ -124,6 +124,19 @@ const pages = {
               <p><strong>Rythme des rendez-vous :</strong> Tous les 15 jours est la durée souhaitable pour la dynamique du processus thérapeutique, mais cela peut être ajusté au cas par cas.</p>
               <p><strong>Coût de la séance :</strong> 85 euros</p>
             ` // Ensure this is a valid template literal
+          },
+          {
+            type: "html",
+            text: `
+              <div class="practice-gallery" aria-label="Photos du déroulement d'une séance en individuel">
+                <figure class="practice-gallery-item">
+                  <img src="/assets/images/pratique1.jpg" alt="Salle de consultation avec deux fauteuils" loading="lazy" decoding="async" />
+                </figure>
+                <figure class="practice-gallery-item">
+                  <img src="/assets/images/pratique2.jpg" alt="Table de soin dans le cabinet" loading="lazy" decoding="async" />
+                </figure>
+              </div>
+            `
           }
         ]
       },
@@ -148,12 +161,6 @@ const pages = {
               <div class="practice-gallery" aria-label="Photos du cadre de pratique">
                 <figure class="practice-gallery-item">
                   <img src="/assets/images/pratique.jpeg" alt="Espace de travail corporel en groupe" loading="lazy" decoding="async" />
-                </figure>
-                <figure class="practice-gallery-item">
-                  <img src="/assets/images/pratique1.jpg" alt="Salle de consultation avec deux fauteuils" loading="lazy" decoding="async" />
-                </figure>
-                <figure class="practice-gallery-item">
-                  <img src="/assets/images/pratique2.jpg" alt="Table de soin dans le cabinet" loading="lazy" decoding="async" />
                 </figure>
               </div>
             `

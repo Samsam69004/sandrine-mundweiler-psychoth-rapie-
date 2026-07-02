@@ -41,6 +41,43 @@ if (mapConsentButton) {
   });
 }
 
+const imageZoomTrigger = document.querySelector("[data-zoom-image]");
+const imageLightbox = document.querySelector("[data-image-lightbox]");
+const imageLightboxImg = document.querySelector("[data-image-lightbox-img]");
+const imageLightboxClose = document.querySelector("[data-image-lightbox-close]");
+
+if (imageZoomTrigger && imageLightbox && imageLightboxImg) {
+  const closeLightbox = () => {
+    if (typeof imageLightbox.close === "function" && imageLightbox.open) {
+      imageLightbox.close();
+    }
+  };
+
+  imageZoomTrigger.addEventListener("click", () => {
+    const imageUrl = imageZoomTrigger.getAttribute("data-zoom-image");
+    const imageAlt = imageZoomTrigger.querySelector("img")?.alt || "Image agrandie";
+
+    if (!imageUrl) return;
+
+    imageLightboxImg.src = imageUrl;
+    imageLightboxImg.alt = imageAlt;
+
+    if (typeof imageLightbox.showModal === "function") {
+      imageLightbox.showModal();
+    } else {
+      window.open(imageUrl, "_blank", "noopener,noreferrer");
+    }
+  });
+
+  imageLightboxClose?.addEventListener("click", closeLightbox);
+  imageLightbox.addEventListener("click", (event) => {
+    if (event.target === imageLightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeLightbox();
+  });
+}
+
 const yearTarget = document.querySelector("[data-year]");
 if (yearTarget) {
   yearTarget.textContent = String(new Date().getFullYear());

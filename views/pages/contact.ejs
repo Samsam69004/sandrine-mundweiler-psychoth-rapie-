@@ -100,15 +100,42 @@
         </div>
 
         <!-- Carte Maps -->
-        <section class="contact-map contact-map--consent">
-          <p class="kicker">Localisation</p>
-          <h2>Carte du cabinet</h2>
-          <p class="contact-map-note">
-            La carte Google Maps est désactivée par défaut. En cliquant sur le bouton ci-dessous, vous acceptez le chargement de contenu tiers fourni par Google.
-          </p>
-          <button class="btn btn-secondary" type="button" data-map-consent data-map-url="<%= cabinet.mapEmbedUrl %>">Afficher la carte Google Maps</button>
-          <div class="contact-map-frame" data-map-frame hidden></div>
-        </section>
+        <div class="contact-location-grid">
+          <section class="contact-map contact-map--consent">
+            <p class="kicker">Localisation</p>
+            <h2>Carte du cabinet</h2>
+            <p class="contact-map-note">
+              La carte Google Maps est affichée directement ci-dessous.
+            </p>
+            <div class="contact-map-frame">
+              <iframe
+                src="<%= cabinet.mapEmbedUrl %>"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+                title="Carte Google Maps du cabinet à Lyon 6"
+              ></iframe>
+            </div>
+          </section>
+
+          <section class="contact-address-card content-card">
+            <p class="kicker">Adresse</p>
+            <h2>Photo du cabinet</h2>
+            <button
+              type="button"
+              class="contact-address-zoom-trigger"
+              data-zoom-image="/assets/images/adresse.jpg"
+              aria-label="Agrandir la photo du cabinet"
+            >
+              <img src="/assets/images/adresse.jpg" alt="Photo de l'adresse du cabinet à Lyon 6" loading="eager" decoding="async" />
+            </button>
+          </section>
+
+          <dialog class="image-lightbox" data-image-lightbox aria-label="Photo agrandie du cabinet">
+            <button type="button" class="image-lightbox__close" data-image-lightbox-close aria-label="Fermer l'image agrandie">×</button>
+            <img data-image-lightbox-img alt="Photo de l'adresse du cabinet à Lyon 6" />
+          </dialog>
+        </div>
 
         <!-- Partenariats -->
         <section class="partners content-card">
