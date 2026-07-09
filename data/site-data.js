@@ -162,6 +162,9 @@ const pages = {
                 <figure class="practice-gallery-item">
                   <img src="/assets/images/pratique.jpeg" alt="Espace de travail corporel en groupe" loading="lazy" decoding="async" />
                 </figure>
+                <figure class="practice-gallery-item">
+                  <img src="/assets/images/groupe.png" alt="Affiche du groupe de thérapie psychocorporelle APSYSE à Lyon" loading="lazy" decoding="async" />
+                </figure>
               </div>
             `
           }
