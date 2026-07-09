@@ -165,6 +165,9 @@ const pages = {
                 <figure class="practice-gallery-item">
                   <img src="/assets/images/groupe.png" alt="Affiche du groupe de thérapie psychocorporelle APSYSE à Lyon" loading="lazy" decoding="async" />
                 </figure>
+                <figure class="practice-gallery-item">
+                  <img src="/assets/images/groupe1.png" alt="Informations complémentaires du groupe de thérapie APSYSE" loading="lazy" decoding="async" />
+                </figure>
               </div>
             `
           }
