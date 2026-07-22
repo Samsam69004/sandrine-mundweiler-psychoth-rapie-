@@ -336,14 +336,15 @@ a:focus-visible {
 
 @keyframes mountainWind {
   0%,
-  100% {
-    transform: translateX(-30%) translateY(0);
-    opacity: 0.45;
-  }
-  50% {
-    transform: translateX(32%) translateY(8px);
-    opacity: 0.65;
-  }
+  background: #ffffff;
+  border: 1px solid rgba(20,35,61,0.06);
+  box-shadow: 0 14px 36px rgba(20,35,61,0.10);
+  border-radius: 14px;
+  padding: 12px; /* reduced padding to avoid large white frame */
+  max-width: 920px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: block;
 }
 
 @keyframes rightPanelDrift {
@@ -481,6 +482,12 @@ a:focus-visible {
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: start;
+}
+
+/* When the aside (photo-panel) is hidden (eg. on /en-pratique), allow the
+   content card to span the full width of the split grid. */
+.split-grid .content-card--full {
+  grid-column: 1 / -1;
 }
 
 .split-grid > * {
@@ -901,13 +908,14 @@ h3 {
     rgba(255, 255, 255, 0.32) 50%,
     rgba(255, 255, 255, 0) 62%
   );
-  transform: translateX(-130%);
-  animation: sandrineShine 7.5s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  height: clamp(420px, 48vh, 620px); /* uniform visual height like blog */
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover; /* photos fill the frame */
 }
-
-.portrait-sandrine::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -915,8 +923,89 @@ h3 {
   pointer-events: none;
   z-index: 1;
 }
+  object-fit: contain; /* posters show full content without cropping */
+  height: clamp(420px, 48vh, 620px); /* match photos' visual height */
+}
 
-.portrait-sandrine img {
+/* Force the two cabinet photos to fill the same visual frame as others */
+.page-en-pratique .practice-gallery-item.practice-poster img[src*="pratique1.jpg"],
+.page-en-pratique .practice-gallery-item.practice-poster img[src*="pratique2.jpg"] {
+  object-fit: cover;
+  height: clamp(420px, 48vh, 620px);
+}
+
+/* Strong override: make all gallery items use the same visual frame
+   - ensures pratique1/pratique2 fill same height as other images
+   - reduces extra white by keeping padding small on the figure
+*/
+.page-en-pratique .practice-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  justify-items: center;
+}
+
+.page-en-pratique .practice-gallery-item {
+  padding: 10px; /* small frame */
+  max-width: 920px;
+  border-radius: 14px;
+}
+
+.page-en-pratique .practice-gallery-item img {
+  width: 100%;
+  max-width: 900px;
+  height: clamp(480px, 48vh, 620px); /* slightly larger baseline */
+  display: block;
+  object-fit: cover; /* photos fill the frame */
+  border-radius: 10px;
+}
+
+/* Posters that need full text keep contain (no cropping) */
+.page-en-pratique .practice-gallery-item img[src*="groupe.png"],
+.page-en-pratique .practice-gallery-item img[src*="groupe1.png"],
+.page-en-pratique .practice-gallery-item img[src*="pratique.jpeg"] {
+  object-fit: contain;
+}
+
+/* Force groupe posters to visually fill the same frame as photos */
+.page-en-pratique .practice-gallery-item img[src*="groupe.png"],
+.page-en-pratique .practice-gallery-item img[src*="groupe1.png"] {
+  height: clamp(480px, 48vh, 620px);
+  width: auto;      /* keep aspect ratio, scale by height */
+  max-width: 900px; /* prevent overflow on very large screens */
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Ensure pratique photos match the same visual frame */
+.page-en-pratique .practice-gallery-item img[src*="pratique1.jpg"],
+.page-en-pratique .practice-gallery-item img[src*="pratique2.jpg"] {
+  height: clamp(480px, 48vh, 620px);
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Reduce white frame around practice images without changing dimensions */
+.page-en-pratique .practice-gallery-item.practice-poster {
+  background: transparent;
+  padding: 6px; /* smaller inner padding to reduce white space */
+  border: 0;
+  box-shadow: 0 12px 28px rgba(16,24,40,0.06);
+  border-radius: 14px;
+  overflow: hidden; /* allow image to touch rounded corners */
+}
+
+.page-en-pratique .practice-gallery-item.practice-poster img {
+  display: block;
+  width: 100%;
+  background-color: #f7f7f8; /* subtle off-white to reduce contrast with page white */
+}
   transform-origin: 52% 42%;
   animation: sandrineFloat 5.6s ease-in-out infinite;
   transition: transform 280ms ease, filter 280ms ease;
@@ -1489,6 +1578,71 @@ h3 {
 .practice-gallery-item:hover img,
 .practice-gallery-item:focus-within img {
   transform: scale(1.05);
+}
+
+/* Réglages spécifiques pour la page "En pratique" : réduire la taille
+   des images afin que les affiches restent lisibles. */
+.page-en-pratique .practice-gallery {
+  grid-template-columns: 1fr; /* une colonne pour limiter la largeur */
+  gap: 16px;
+  margin: 18px 0 24px;
+}
+
+.page-en-pratique .practice-gallery .practice-gallery-item:first-child,
+.page-en-pratique .practice-gallery .practice-gallery-item:nth-child(2),
+.page-en-pratique .practice-gallery .practice-gallery-item:nth-child(3) {
+  grid-column: auto; /* éviter l'étirement en pleine largeur */
+}
+
+/* Gallery images: use a consistent container size similar to blog posts
+   - container (figure.practice-gallery-item) provides rounded border + shadow
+   - images fill container width and keep aspect ratio (`height:auto`) so
+     posters with text remain readable (no cropping)
+*/
+.page-en-pratique .practice-gallery-item img {
+  width: 100%;
+  max-width: 900px; /* same constraint as blog post images */
+  height: auto; /* preserve full poster / photo */
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Réduire l'espace blanc global autour du contenu sur la page En pratique */
+.page-en-pratique .content-card {
+  padding: clamp(12px, 2vw, 20px);
+}
+
+/* Rendre les vignettes plus compactes (moins de fond blanc / ombre) */
+.page-en-pratique .practice-gallery {
+  justify-items: center;
+}
+
+.page-en-pratique .practice-gallery-item {
+  background: #ffffff;
+  border: 1px solid rgba(20,35,61,0.06);
+  box-shadow: 0 10px 30px rgba(20,35,61,0.06);
+  border-radius: 14px;
+  padding: 18px;
+  max-width: 920px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Posters: reduce white frame and show poster fully */
+.page-en-pratique .practice-gallery-item.practice-poster {
+  /* keep same visual container but ensure posters are shown without crop */
+  background: #ffffff;
+  border: 1px solid rgba(20,35,61,0.06);
+  box-shadow: 0 10px 30px rgba(20,35,61,0.06);
+  border-radius: 14px;
+  padding: 12px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.page-en-pratique .practice-gallery-item.practice-poster img {
+  object-fit: contain; /* posters keep their full content */
 }
 
 @media (max-width: 900px) {

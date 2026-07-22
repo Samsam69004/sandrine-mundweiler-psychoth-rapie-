@@ -103,11 +103,6 @@ function baseViewData(activePath) {
 }
 
 function getCanonicalBase(req) {
-  const requestHost = req.get("host");
-  if (requestHost) {
-    return `${req.protocol}://${requestHost}`.replace(/\/$/, "");
-  }
-
   return siteUrl;
 }
 
@@ -334,6 +329,7 @@ app.get("/sitemap.xml", (req, res) => {
     "/a-propos",
     "/approches-therapeutiques",
     "/experience-formation",
+    "/avis-temoignage",
     "/contact",
     "/faq",
     "/blog",

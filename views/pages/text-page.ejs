@@ -6,7 +6,7 @@
 
     <main class="page-split">
       <div class="container split-grid">
-        <article class="content-card">
+        <article class="content-card<%= activePath === '/en-pratique' ? ' content-card--full' : '' %>">
           <% if (kicker && activePath !== '/approches-therapeutiques' && activePath !== '/experience-formation') { %>
           <p class="kicker"><%= kicker %></p>
           <% } %>
@@ -95,6 +95,7 @@
           <% } %>
         </article>
 
+        <% if (activePath !== '/en-pratique') { %>
         <aside class="photo-panel">
           <figure class="portrait">
             <picture>
@@ -103,6 +104,7 @@
             </picture>
           </figure>
         </aside>
+        <% } %>
       </div>
     </main>
 

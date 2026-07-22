@@ -129,10 +129,10 @@ const pages = {
             type: "html",
             text: `
               <div class="practice-gallery" aria-label="Photos du déroulement d'une séance en individuel">
-                <figure class="practice-gallery-item">
+                <figure class="practice-gallery-item practice-poster">
                   <img src="/assets/images/pratique1.jpg" alt="Salle de consultation avec deux fauteuils" loading="lazy" decoding="async" />
                 </figure>
-                <figure class="practice-gallery-item">
+                <figure class="practice-gallery-item practice-poster">
                   <img src="/assets/images/pratique2.jpg" alt="Table de soin dans le cabinet" loading="lazy" decoding="async" />
                 </figure>
               </div>
@@ -159,13 +159,13 @@ const pages = {
             type: "html",
             text: `
               <div class="practice-gallery" aria-label="Photos du cadre de pratique">
-                <figure class="practice-gallery-item">
+                <figure class="practice-gallery-item practice-poster">
                   <img src="/assets/images/pratique.jpeg" alt="Espace de travail corporel en groupe" loading="lazy" decoding="async" />
                 </figure>
-                <figure class="practice-gallery-item">
+                <figure class="practice-gallery-item practice-poster">
                   <img src="/assets/images/groupe.png" alt="Affiche du groupe de thérapie psychocorporelle APSYSE à Lyon" loading="lazy" decoding="async" />
                 </figure>
-                <figure class="practice-gallery-item">
+                <figure class="practice-gallery-item practice-poster">
                   <img src="/assets/images/groupe1.png" alt="Informations complémentaires du groupe de thérapie APSYSE" loading="lazy" decoding="async" />
                 </figure>
               </div>
@@ -252,6 +252,16 @@ const pages = {
             rating: "5/5",
             quote:
               "Cela fait plus d'un an que j'ai commencé une thérapie avec Sandrine, et j'apprécie énormément son humanité et sa bienveillance. Au-delà des discussions, elle met en place un vrai travail corporel qui permet d'aller encore plus loin."
+          }
+          ,
+          {
+            source: "Google",
+            sourceClass: "google",
+            author: "Nolwenn",
+            date: "05 juillet 2026",
+            rating: "5/5",
+            quote:
+              "J'ai entamé une thérapie en Apsyse en 2020 à l'âge de 48 ans. J'avais auparavant, plus jeune, suivi une psychothérapie puis les circonstances de la vie m'ont amenée à tenter une autre thérapie basée sur la parole et les sensations corporelles. Cette dernière ayant pris fin en dehors de ma volonté, j'ai souhaité reprendre une thérapie mais je tenais absolument à ce qu'elle englobe un travail sur le corps car j'avais compris qu'il était indispensable pour aller au plus profond de moi-même. Les paroles et le mental, seuls, n'assouvissaient pas mon désir de me comprendre et d'avancer dans mes questionnements intérieurs.\n\nC'est par le bouche à oreille que j'ai eu connaissance de l'Apsyse et que j'ai rencontré Sandrine, qui m'a alors accompagnée pendant six ans. Nous avons commencé par des séances individuelles. J'ai adhéré tout de suite à la « méthode ». J'ai été chamboulée dès les premiers sistims (terme signifiant simulation-stimulation et qui correspond aux mises en situation corporelles), qui ont provoqué des sensations et des images jusque-là inconnues de moi et qui ont rapidement touché des zones profondes de mon histoire. Assez rapidement, je suis remontée jusqu'à ma toute petite enfance puis jusqu'à la période intra-utérine. En allant si loin, j'ai pu me confronter aux peurs qui avaient jalonné cette partie de ma vie. Ce sont les sistims qui ont permis cette connexion avec les ressentis que j'ai eus lors de cette période mais que j'avais refoulés mentalement. Donc je ne m'en souvenais plus mais ils ressurgissaient sous forme de sensations dans mon corps. C'est ainsi, au cours des séances, que je suis allée de découverte en découverte sur moi, sur qui j'étais. J'avais besoin de comprendre pourquoi j'agissais de telle ou telle manière selon les situations que je vivais. J'avais besoin de comprendre pourquoi mon état intérieur variait selon les moments.\n\nAu bout de deux ans, j'ai intégré un groupe de travail en Apsyse tout en poursuivant les séances individuelles. Ce fut alors une autre étape qui a contribué largement à l'avancée de ma thérapie. Je suis sortie du « cocon » du cabinet et de ma zone de confort pour aller me confronter au vaste monde de l'Autre. Les débuts en groupe furent difficiles pour moi mais j'ai tenu bon. Petit à petit j'ai appris à oser dire devant plusieurs personnes ce que je ressentais au fond de moi. J'ai appris aussi à ne pas me laisser submerger, juger par les autres. J'ai beaucoup gagné en affirmation de moi. Le groupe permet tout cela car c'est un cadre sécurisant où la parole est libre, respectueuse et respectée.\n\nLe groupe est un lieu d'écoute, de confiance, de partage, de cœurs ouverts.\n\nDe mon avis, il ne se suffit pas à lui-même et l'aller-retour entre les séances individuelles et collectives m'a été nécessaire pour poursuivre mon chemin.\n\nJ'ai senti le besoin d'arrêter la thérapie au bout de six ans. Je suis maintenant calme à l'intérieur, sereine. S'il m'arrive de vivre des états émotionnels variés, je suis capable de les identifier, de les accueillir, de les vivre et ainsi de les laisser passer. Ils ne me débordent ni ne m'envahissent plus. Je les maîtrise. Je suis en accord avec moi-même, je connais mes besoins que je parviens à affirmer (plus ou moins) face aux autres. Je sais ce que je veux !\n\nPour conclure, je comparerai ma thérapie à un long voyage autour du Moi. Un voyage parsemé de découvertes, de magie, de sensations, de rencontres avec la Beauté. Je suis contente d'avoir voyagé, découvert des contrées quasiment inatteignables et même s'il y a eu des moments difficiles et que j'ai pensé parfois ne jamais y parvenir, j'y suis arrivée et j'en suis fière ! Ceci dit le voyage se poursuit mais je dispose maintenant des moyens pour le continuer en toute autonomie."
           }
         ]
       },
