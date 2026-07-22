@@ -398,6 +398,66 @@ a:focus-visible {
 
 .photo-panel { border-left: none !important; }
 
+/* === En-pratique: uniformiser exactement le cadre des images === */
+.page-en-pratique .practice-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.page-en-pratique .practice-gallery-item {
+  background: transparent;
+  padding: 6px; /* keep small padding */
+  border: 0;
+  box-shadow: 0 12px 28px rgba(16,24,40,0.06);
+  border-radius: 14px;
+  max-width: 940px; /* container width for card */
+  width: 100%;
+  display: block;
+}
+
+/* Apply the exact same rendered frame to all practice images (posters + photos) */
+.page-en-pratique .practice-gallery-item img[src*="groupe.png"],
+.page-en-pratique .practice-gallery-item img[src*="groupe1.png"],
+.page-en-pratique .practice-gallery-item img[src*="pratique.jpeg"],
+.page-en-pratique .practice-gallery-item img[src*="pratique1.jpg"],
+.page-en-pratique .practice-gallery-item img[src*="pratique2.jpg"] {
+  height: clamp(480px, 48vh, 620px); /* same visual height */
+  max-width: 900px; /* same max width */
+  width: auto; /* scale by height to keep aspect */
+  display: block;
+  margin: 0 auto;
+  object-position: center;
+}
+
+/* Poster images with text: keep contain so text isn't cropped */
+.page-en-pratique .practice-gallery-item img[src*="groupe.png"],
+.page-en-pratique .practice-gallery-item img[src*="groupe1.png"],
+.page-en-pratique .practice-gallery-item img[src*="pratique.jpeg"] {
+  object-fit: contain;
+  background-color: #f7f7f8;
+}
+
+/* Photo images: cover but sized by same height so they visually match posters */
+.page-en-pratique .practice-gallery-item img[src*="pratique1.jpg"],
+.page-en-pratique .practice-gallery-item img[src*="pratique2.jpg"] {
+  object-fit: cover;
+}
+
+/* Small responsive tweak: on very narrow screens let width expand but keep height proportional */
+@media (max-width: 520px) {
+  .page-en-pratique .practice-gallery-item img[src*="groupe.png"],
+  .page-en-pratique .practice-gallery-item img[src*="groupe1.png"],
+  .page-en-pratique .practice-gallery-item img[src*="pratique.jpeg"],
+  .page-en-pratique .practice-gallery-item img[src*="pratique1.jpg"],
+  .page-en-pratique .practice-gallery-item img[src*="pratique2.jpg"] {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 /* ensure hero card sits above the background image */
 .hero .hero-card { z-index: 3; }
 
