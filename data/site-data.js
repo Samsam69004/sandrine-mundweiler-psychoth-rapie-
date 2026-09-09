@@ -668,9 +668,9 @@ const blogPosts = [
     title: "Respiration et connaissance de soi",
     date: "09 septembre 2026",
     excerpt: "Une journée de travail en groupe autour de la respiration consciente, du breathwork et de l'élargissement de la conscience.",
-    image: "respiration et connaissance de soi.jpg",
+    image: "respiration-connaissance-de-soi.jpg",
     fullImage: true,
-    pdf: "/assets/images/RESPIRATION%20ET%20CONNAISSANCE%20DE%20SOI.pdf",
+    pdf: "/assets/images/respiration-connaissance-de-soi.pdf",
     pdfLabel: "Télécharger le PDF",
     paragraphs: [
       "DIMANCHE 15 Novembre 2026 A LA CROIX ROUSSE",
