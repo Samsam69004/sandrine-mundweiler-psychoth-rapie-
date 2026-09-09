@@ -41,6 +41,12 @@
           </div>
         <% } %>
 
+        <% if (post.pdf) { %>
+          <p class="post-download">
+            <a href="<%= post.pdf %>" target="_blank" rel="noopener noreferrer"><%= post.pdfLabel || 'Télécharger le PDF' %></a>
+          </p>
+        <% } %>
+
         <p><a href="/blog">Retour au blog</a></p>
       </article>
     </main>

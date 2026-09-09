@@ -662,6 +662,25 @@ const blogPosts = [
       "Ces groupes réguliers offrent un cadre sécurisant pour explorer votre intériorité, assouplir les cuirasses musculaires et permettre à l'énergie de vie de circuler plus librement.",
       "Vous pouvez consulter l'affiche complète ci-dessus pour le détail des dates et des modalités d'inscription, ou me contacter directement pour plus de renseignements."
     ]
+  },
+  {
+    slug: "respiration-et-connaissance-de-soi",
+    title: "Respiration et connaissance de soi",
+    date: "09 septembre 2026",
+    excerpt: "Une journée de travail en groupe autour de la respiration consciente, du breathwork et de l'élargissement de la conscience.",
+    image: "respiration et connaissance de soi.jpg",
+    fullImage: true,
+    pdf: "/assets/images/RESPIRATION%20ET%20CONNAISSANCE%20DE%20SOI.pdf",
+    pdfLabel: "Télécharger le PDF",
+    paragraphs: [
+      "DIMANCHE 15 Novembre 2026 A LA CROIX ROUSSE",
+      "Nous vous proposons une journée de travail en groupe de développement personnel à partir de techniques de breathwork (inspirées de la respiration holotropique et de la transformational breath) pour mieux vous rencontrer en état de conscience élargie.",
+      "Cette expérience de respiration consciente aura des résonances aussi bien physiques, que psychiques et spirituelles, qui vous aideront à cheminer vers votre “être authentique”.",
+      "La journée sera thématique et servira de support au travail psychique avec plus de conscience pour avancer dans sa Vie.",
+      "Date : dimanche 15 novembre 2026 de 9h à 18h",
+      "Prix 120 euros",
+      "Lieu: Salle Tao Yoga 2, rue Dumont d’Urville Lyon 69004"
+    ]
   }
 ];
 
