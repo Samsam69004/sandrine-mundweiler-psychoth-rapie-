@@ -635,6 +635,21 @@ Cette page sera mise à jour si le site évolue ou si un nouveau service tiers e
 
 const blogPosts = [
   {
+    slug: "fatigue-persistante-stress-et-si-le-corps-avait-quelque-chose-a-dire",
+    title: "Fatigue persistante, stress, tensions… et si le corps avait quelque chose à dire ?",
+    date: "26 octobre 2026",
+    excerpt:
+      "Certaines fatigues ne disparaissent pas avec le repos. À Lyon, la thérapie psychocorporelle APSySE aide à explorer les liens entre le corps, les ressentis et les émotions.",
+    image: "therapiecorporelle.png",
+    fullImage: true,
+    paragraphs: [
+      "Certaines fatigues ne disparaissent pas simplement avec du repos. Retenir ses émotions, rester constamment en contrôle ou vivre avec des tensions chroniques peut demander beaucoup d’énergie.",
+      "La thérapie psychocorporelle APsySE permet d’explorer les liens entre le corps, les ressentis et les émotions, afin de retrouver progressivement davantage d’équilibre.",
+      "À Lyon, Sandrine Mundweiler vous accompagne dans cette démarche, à votre rythme.",
+      "Un premier échange permet de faire connaissance et d’évaluer si cet accompagnement peut vous convenir.",
+    ]
+  },
+  {
     slug: "retrouver-la-confiance-en-soi",
     title: "Retrouver la confiance en soi",
     date: "19 mai 2026",
