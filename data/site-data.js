@@ -635,6 +635,22 @@ Cette page sera mise à jour si le site évolue ou si un nouveau service tiers e
 
 const blogPosts = [
   {
+    slug: "livret-didactique-apsyse",
+    title: "Livret didactique sur l’APSYSE",
+    date: "20 novembre 2026",
+    excerpt:
+      "Un livret didactique réservé aux professionnels et étudiants en thérapie psychocorporelle ayant réalisé une analyse personnelle complète. Disponible à l’achat.",
+    image: "livret-didactique.jpg",
+    fullImage: true,
+    paragraphs: [
+      "Ce livret didactique présente l’APSYSE, Analyse PsychoSomatoÉnergétique, dans une perspective à la fois clinique, corporelle et énergétique.",
+      "Il s’adresse aux professionnels et aux étudiants en thérapie psychocorporelle qui ont effectué une analyse personnelle complète et disposent ainsi des repères nécessaires pour aborder cette approche en conscience.",
+      "Conçu comme un support pédagogique, le livret accompagne la compréhension du travail thérapeutique corporel et des liens entre l’histoire personnelle, les émotions, les tensions musculaires et l’énergie de vie.",
+      "Disponible à l’achat. Pour obtenir les modalités de commande et les informations tarifaires, vous pouvez me contacter via la page Contact.",
+      "#livret #apsyse #thérapiepsychocorporelle #formation"
+    ]
+  },
+  {
     slug: "fatigue-persistante-stress-et-si-le-corps-avait-quelque-chose-a-dire",
     title: "Fatigue persistante, stress, tensions… et si le corps avait quelque chose à dire ?",
     date: "26 octobre 2026",
