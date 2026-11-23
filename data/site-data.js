@@ -130,10 +130,10 @@ const pages = {
             text: `
               <div class="practice-gallery" aria-label="Photos du déroulement d'une séance en individuel">
                 <figure class="practice-gallery-item practice-poster">
-                  <img src="/assets/images/pratique1.jpg" alt="Salle de consultation avec deux fauteuils" loading="lazy" decoding="async" />
+                  <img src="/assets/images/pratique1.png" alt="Salle de consultation avec deux fauteuils" loading="lazy" decoding="async" />
                 </figure>
                 <figure class="practice-gallery-item practice-poster">
-                  <img src="/assets/images/pratique2.jpg" alt="Table de soin dans le cabinet" loading="lazy" decoding="async" />
+                  <img src="/assets/images/pratique2.png" alt="Table de soin dans le cabinet" loading="lazy" decoding="async" />
                 </figure>
               </div>
             `

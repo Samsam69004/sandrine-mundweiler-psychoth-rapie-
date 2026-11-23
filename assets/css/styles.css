@@ -421,8 +421,8 @@ a:focus-visible {
 .page-en-pratique .practice-gallery-item img[src*="groupe.png"],
 .page-en-pratique .practice-gallery-item img[src*="groupe1.png"],
 .page-en-pratique .practice-gallery-item img[src*="pratique.jpeg"],
-.page-en-pratique .practice-gallery-item img[src*="pratique1.jpg"],
-.page-en-pratique .practice-gallery-item img[src*="pratique2.jpg"] {
+.page-en-pratique .practice-gallery-item img[src*="pratique1.png"],
+.page-en-pratique .practice-gallery-item img[src*="pratique2.png"] {
   height: clamp(480px, 48vh, 620px); /* same visual height */
   max-width: 900px; /* same max width */
   width: auto; /* scale by height to keep aspect */
@@ -440,8 +440,8 @@ a:focus-visible {
 }
 
 /* Photo images: cover but sized by same height so they visually match posters */
-.page-en-pratique .practice-gallery-item img[src*="pratique1.jpg"],
-.page-en-pratique .practice-gallery-item img[src*="pratique2.jpg"] {
+.page-en-pratique .practice-gallery-item img[src*="pratique1.png"],
+.page-en-pratique .practice-gallery-item img[src*="pratique2.png"] {
   object-fit: cover;
 }
 
@@ -450,8 +450,8 @@ a:focus-visible {
   .page-en-pratique .practice-gallery-item img[src*="groupe.png"],
   .page-en-pratique .practice-gallery-item img[src*="groupe1.png"],
   .page-en-pratique .practice-gallery-item img[src*="pratique.jpeg"],
-  .page-en-pratique .practice-gallery-item img[src*="pratique1.jpg"],
-  .page-en-pratique .practice-gallery-item img[src*="pratique2.jpg"] {
+  .page-en-pratique .practice-gallery-item img[src*="pratique1.png"],
+  .page-en-pratique .practice-gallery-item img[src*="pratique2.png"] {
     height: auto;
     width: 100%;
     max-width: 100%;
@@ -988,8 +988,8 @@ h3 {
 }
 
 /* Force the two cabinet photos to fill the same visual frame as others */
-.page-en-pratique .practice-gallery-item.practice-poster img[src*="pratique1.jpg"],
-.page-en-pratique .practice-gallery-item.practice-poster img[src*="pratique2.jpg"] {
+.page-en-pratique .practice-gallery-item.practice-poster img[src*="pratique1.png"],
+.page-en-pratique .practice-gallery-item.practice-poster img[src*="pratique2.png"] {
   object-fit: cover;
   height: clamp(420px, 48vh, 620px);
 }
@@ -1040,8 +1040,8 @@ h3 {
 }
 
 /* Ensure pratique photos match the same visual frame */
-.page-en-pratique .practice-gallery-item img[src*="pratique1.jpg"],
-.page-en-pratique .practice-gallery-item img[src*="pratique2.jpg"] {
+.page-en-pratique .practice-gallery-item img[src*="pratique1.png"],
+.page-en-pratique .practice-gallery-item img[src*="pratique2.png"] {
   height: clamp(480px, 48vh, 620px);
   width: 100%;
   max-width: 900px;
